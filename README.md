@@ -10,6 +10,57 @@ Documentação:
 Backup inicial do banco de dados:
 # https://github.com/tiagoifsp/CertiFind/tree/master/Backup
 
+Grupos:
+
+Grupo 1
+Marcelo, Rafael, Fabio, André, Giovane, Harbs, Gabriel Rocha
+
+Grupo 2
+Juliene, Igor, Danilo, Eduardo, Jonathas, Gabriel Reis
+
+Grupo 3
+Nathan, Bruno, Emerson, Evelyn, Alan, Getulio
+
+Grupo 4
+Fabricio, Eliane, Agatha, João, Mikael, Murilo, Vinicius
+
+Requisitos:
+
+Grupo 4
+RF01	Configuração inicial
+RF02	Entrada no sistema
+RF03	Edição das configurações do sistema
+RF04	Criação de usuário
+RF05	Manutenção de usuário
+RF06	Alteração de senha por parte do próprio usuário
+RF07	Recuperação de senha por parte do usuário
+RF08	Saída do sistema
+
+Grupo 1
+RF09	Cadastro de Campo
+RF10	Manutenção de Campo
+RF11	Cadastro de Tipo de Atividade
+RF12	Manutenção de Tipo de Atividade
+RF13	Cadastro de Certificado
+RF14	Manutenção de Certificado
+RF15	Relatório de Certificado
+
+Grupo 2
+RF16	Cadastro de Grupo de Pesquisa
+RF17	Manutenção de Grupo de Pesquisa
+RF18	Vinculação Docente / Grupo de Pesquisa
+RF19	Transferência de liderança do Grupo de Pesquisa
+RF20	Relatório por grupo de pesquisa
+RF21	Comunicados do sistema
+
+Grupo 3
+RF22	Histórico de erros do sistema
+RF23	Backup do sistema
+RF24	Envio e leitura de sugestões
+RF25	Status do sistema
+RF26	Relatório de utilização do sistema
+RF27	Auditoria do sistema
+
 Regras:
 
 @GitHub
