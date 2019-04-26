@@ -20,7 +20,7 @@ namespace CertiFind
         private void btnFormCadastroTipoDados_Click(object sender, EventArgs e)
         {
             FormCadastroTipoDado form = new FormCadastroTipoDado();
-            form.Show();
+            form.ShowDialog();
         }
     }
 }
