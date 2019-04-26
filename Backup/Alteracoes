@@ -1,1 +1,2 @@
-As alterações realizadas no SGBD devem ser armazenadas aqui (texto)
+ALTER TABLE TBTipoDados
+  ADD Descricao varchar(100) not null;
