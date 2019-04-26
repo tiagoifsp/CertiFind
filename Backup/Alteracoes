@@ -1,1 +1,3 @@
 As alterações realizadas no SGBD devem ser armazenadas aqui (texto)
+
+sp_rename 'TBTipoAtividadeCampo.FKTipoAtivodadeID', 'FKTipoAtividadeID', 'COLUMN';
