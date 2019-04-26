@@ -30,7 +30,6 @@ namespace DAL
                 Connection = new SqlConnection(ConnectionString);
             }
 
-
             try
             {
                 Connection.Open();
@@ -45,7 +44,7 @@ namespace DAL
         {
             bool retorno = false;
 
-            if(Connection != null && Connection.State == System.Data.ConnectionState.Open)
+            if (Connection != null && Connection.State == System.Data.ConnectionState.Open)
             {
                 try
                 {
