@@ -99,4 +99,5 @@ Regras:
   i) RadioButton: rdoGrupo
   j) RichTextBox: rtbDescricao
   k) Button: btnSalvar
-  
+8) Verificar os forms de Exemplo para desenvolver a interface;
+9) Em CRUDs básicos, o mesmo form deve ser utilizado para salvar/editar informações.  
