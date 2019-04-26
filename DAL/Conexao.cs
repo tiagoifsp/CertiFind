@@ -16,7 +16,7 @@ namespace DAL
         static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["ConexaoProducao"].ConnectionString;
 #endif
 
-        static SqlConnection Connection = null;
+        public static SqlConnection Connection = null;
 
         public static bool Abrir()
         {
@@ -49,6 +49,7 @@ namespace DAL
                 try
                 {
                     Connection.Close();
+                    Connection = null;
                     retorno = true;
                 }
                 catch { }
