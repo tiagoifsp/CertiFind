@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace CertiFind
 {
-    public partial class FormTest : Form
+    public partial class VSugestaoEnviar : Form
     {
-        public FormTest()
+        public VSugestaoEnviar()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEnviarSugestão_Click(object sender, EventArgs e)
         {
-            VSugestaoEnviar sugestao = new VSugestaoEnviar();
-            sugestao.Visible = true;
+
         }
     }
 }
