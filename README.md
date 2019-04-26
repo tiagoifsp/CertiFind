@@ -98,4 +98,5 @@ Regras:
   h) PictureBox: pcbFoto
   i) RadioButton: rdoGrupo
   j) RichTextBox: rtbDescricao
+  k) Button: btnSalvar
   
