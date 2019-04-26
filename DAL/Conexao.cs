@@ -22,16 +22,21 @@ namespace DAL
         {
             bool retorno = false;
 
-            if (Connection != null)
+            if (Connection != null && Connection.State != System.Data.ConnectionState.Closed)
+                return false;
+
+            if (Connection == null)
             {
                 Connection = new SqlConnection(ConnectionString);
-                try
-                {
-                    Connection.Open();
-                    retorno = true;
-                }
-                catch { }
             }
+
+
+            try
+            {
+                Connection.Open();
+                retorno = true;
+            }
+            catch { }
 
             return retorno;
         }
