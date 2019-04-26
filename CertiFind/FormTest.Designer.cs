@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.btnFormCadastroTipoDados = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -43,11 +44,22 @@
             this.label1.Text = "Form apenas para testes. Utilize para chamar outros formulários. Quando o login f" +
     "uncionar, este formulário deverá ser removido.";
             // 
+            // btnFormCadastroTipoDados
+            // 
+            this.btnFormCadastroTipoDados.Location = new System.Drawing.Point(16, 43);
+            this.btnFormCadastroTipoDados.Name = "btnFormCadastroTipoDados";
+            this.btnFormCadastroTipoDados.Size = new System.Drawing.Size(143, 23);
+            this.btnFormCadastroTipoDados.TabIndex = 1;
+            this.btnFormCadastroTipoDados.Text = "FormCadastroTipoDados";
+            this.btnFormCadastroTipoDados.UseVisualStyleBackColor = true;
+            this.btnFormCadastroTipoDados.Click += new System.EventHandler(this.btnFormCadastroTipoDados_Click);
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 450);
+            this.Controls.Add(this.btnFormCadastroTipoDados);
             this.Controls.Add(this.label1);
             this.Name = "FormTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -60,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnFormCadastroTipoDados;
     }
 }

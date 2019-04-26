@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace CertiFind
 {
-    public partial class FormTest : Form
+    public partial class FormCadastroTipoDado : Form
     {
-        public FormTest()
+        public FormCadastroTipoDado()
         {
             InitializeComponent();
-        }
-
-        private void btnFormCadastroTipoDados_Click(object sender, EventArgs e)
-        {
-            FormCadastroTipoDado form = new FormCadastroTipoDado();
-            form.Show();
         }
     }
 }
