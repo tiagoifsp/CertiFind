@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class CSugestaoEnviar
+    class CSugestao
     {
-
     }
 }

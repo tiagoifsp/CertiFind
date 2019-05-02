@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DAL
 {
-    class DSugestaoEnviar
+    class DSugestao
     {
     }
 }
