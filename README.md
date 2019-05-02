@@ -100,4 +100,7 @@ Regras:
   j) RichTextBox: rtbDescricao
   k) Button: btnSalvar
 8) Verificar os forms de Exemplo para desenvolver a interface;
-9) Em CRUDs básicos, o mesmo form deve ser utilizado para salvar/editar informações.  
+9) Em CRUDs básicos, o mesmo form deve ser utilizado para salvar/editar informações;
+10) Utilizar a classe Model.Erros para armazenar as mensagens de erro que devem ser exibidadas ao usuário;
+11) Utilizar a classe DAL.ExcecaoPadrao para disparar exceções esperadas pelo sistema;
+12) Utilizar a classe DAL.Conexao para abrir/fechar conexões com o SGBD.
