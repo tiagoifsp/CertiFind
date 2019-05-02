@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormExemploInsercaoEdicao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExemploInsercaoEdicao.Designer.cs">
+      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExemploPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExemploPesquisa.Designer.cs">
+      <DependentUpon>FormExemploPesquisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroTipoDado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
+      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExemploPesquisa.resx">
+      <DependentUpon>FormExemploPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroTipoDado.resx">
       <DependentUpon>FormCadastroTipoDado.cs</DependentUpon>
     </EmbeddedResource>

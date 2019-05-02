@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTipoDado.cs" />
+    <Compile Include="Conexao.cs" />
+    <Compile Include="ExcecaoPadrao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
