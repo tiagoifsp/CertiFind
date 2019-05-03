@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class MTipoSugestao
+    public class MUsuario
     {
         public string nome;
-        public string descricao;
+        public string email;
+        public string senha;
+        public char situacao;
+        public MTipoUsuario tipoUsuario;
     }
 }

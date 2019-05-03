@@ -44,6 +44,8 @@
     <Compile Include="Erros.cs" />
     <Compile Include="MSugestao.cs" />
     <Compile Include="MTipoSugestao.cs" />
+    <Compile Include="MTipoUsuario.cs" />
+    <Compile Include="MUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
