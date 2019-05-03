@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VCadastroGrupoPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCadastroGrupoPesquisa.Designer.cs">
+      <DependentUpon>VCadastroGrupoPesquisa.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
       <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VCadastroGrupoPesquisa.resx">
+      <DependentUpon>VCadastroGrupoPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

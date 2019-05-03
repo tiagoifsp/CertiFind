@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.btncadastrogp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -43,11 +44,22 @@
             this.label1.Text = "Form apenas para testes. Utilize para chamar outros formulários. Quando o login f" +
     "uncionar, este formulário deverá ser removido.";
             // 
+            // btncadastrogp
+            // 
+            this.btncadastrogp.Location = new System.Drawing.Point(184, 197);
+            this.btncadastrogp.Name = "btncadastrogp";
+            this.btncadastrogp.Size = new System.Drawing.Size(171, 23);
+            this.btncadastrogp.TabIndex = 1;
+            this.btncadastrogp.Text = "cadastro grupo pesquisa";
+            this.btncadastrogp.UseVisualStyleBackColor = true;
+            this.btncadastrogp.Click += new System.EventHandler(this.btncadastrogp_Click);
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 450);
+            this.Controls.Add(this.btncadastrogp);
             this.Controls.Add(this.label1);
             this.Name = "FormTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -60,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btncadastrogp;
     }
 }
