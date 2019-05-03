@@ -22,5 +22,11 @@ namespace CertiFind
             VSugestaoEnviar sugestao = new VSugestaoEnviar();
             sugestao.Visible = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new VSugestaoVisualizar().ShowDialog();
+        }
+
     }
 }

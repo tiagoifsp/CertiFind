@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VSugestaoVisualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VSugestaoVisualizar.Designer.cs">
+      <DependentUpon>VSugestaoVisualizar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
       <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="VSugestaoEnviar.resx">
       <DependentUpon>VSugestaoEnviar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VSugestaoVisualizar.resx">
+      <DependentUpon>VSugestaoVisualizar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
