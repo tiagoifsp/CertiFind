@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -53,20 +53,20 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Descrição";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtNome.Location = new System.Drawing.Point(72, 12);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(177, 20);
+            this.txtNome.TabIndex = 0;
             // 
-            // textBox2
+            // txtDescricao
             // 
-            this.textBox2.Location = new System.Drawing.Point(72, 45);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 76);
-            this.textBox2.TabIndex = 1;
+            this.txtDescricao.Location = new System.Drawing.Point(72, 45);
+            this.txtDescricao.Multiline = true;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(177, 76);
+            this.txtDescricao.TabIndex = 1;
             // 
             // btnSalvar
             // 
@@ -76,6 +76,7 @@
             this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // FormCadastroTipoDado
             // 
@@ -83,8 +84,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(261, 162);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -94,7 +95,7 @@
             this.MinimumSize = new System.Drawing.Size(277, 201);
             this.Name = "FormCadastroTipoDado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Incluir tipo de dado";
+            this.Text = "tipo de dado";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,8 +105,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Button btnSalvar;
     }
 }

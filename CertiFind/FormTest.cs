@@ -22,5 +22,11 @@ namespace CertiFind
             FormCadastroTipoDado form = new FormCadastroTipoDado();
             form.ShowDialog();
         }
+
+        private void btnFormPesquisaTipoDados_Click(object sender, EventArgs e)
+        {
+            FormPesquisaTipoDado form = new FormPesquisaTipoDado();
+            form.ShowDialog();
+        }
     }
 }

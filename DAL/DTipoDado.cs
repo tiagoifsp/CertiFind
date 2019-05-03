@@ -14,8 +14,34 @@ namespace DAL
     {
         public static void Inserir(MTipoDado item)
         {
-            SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = ConfigurationManager.ConnectionStrings["conexao"].ConnectionString;
+            if(!Conexao.Abrir())
+                throw new ExcecaoPadrao(Erros.ErroFalhaConexaoSGBD);
+            
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = Conexao.Connection;
+
+            comando.CommandText = "INSERT INTO TBTipoDados(Nome, Descricao)" + " " + "VALUES(@Nome, @Descricao)";
+
+            SqlParameter parametro = new SqlParameter("@Nome", SqlDbType.VarChar);
+            parametro.Value = item.Nome;
+            comando.Parameters.Add(parametro);
+
+            parametro = new SqlParameter("@Descricao", SqlDbType.VarChar);
+            parametro.Value = item.Descricao;
+            comando.Parameters.Add(parametro);
+
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                Conexao.Fechar();
+            }
         }
     }
 }

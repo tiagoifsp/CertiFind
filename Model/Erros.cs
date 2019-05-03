@@ -12,5 +12,7 @@ namespace Model
     public static class Erros
     {
         public static string ErroGeral = "O sistema se comportou de maneira inesperada.";
+        public static string ErroFalhaConexaoSGBD = "Falha na conexão com o SGBD.";
+        public static string ErroTipoDeDado = "Tipo de dados inválido";
     }
 }

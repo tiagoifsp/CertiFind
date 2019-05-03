@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnFormCadastroTipoDados = new System.Windows.Forms.Button();
+            this.btnFormPesquisaTipoDados = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -54,11 +55,22 @@
             this.btnFormCadastroTipoDados.UseVisualStyleBackColor = true;
             this.btnFormCadastroTipoDados.Click += new System.EventHandler(this.btnFormCadastroTipoDados_Click);
             // 
+            // btnFormPesquisaTipoDados
+            // 
+            this.btnFormPesquisaTipoDados.Location = new System.Drawing.Point(16, 72);
+            this.btnFormPesquisaTipoDados.Name = "btnFormPesquisaTipoDados";
+            this.btnFormPesquisaTipoDados.Size = new System.Drawing.Size(143, 23);
+            this.btnFormPesquisaTipoDados.TabIndex = 2;
+            this.btnFormPesquisaTipoDados.Text = "FormPesquisaTipoDados";
+            this.btnFormPesquisaTipoDados.UseVisualStyleBackColor = true;
+            this.btnFormPesquisaTipoDados.Click += new System.EventHandler(this.btnFormPesquisaTipoDados_Click);
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 450);
+            this.Controls.Add(this.btnFormPesquisaTipoDados);
             this.Controls.Add(this.btnFormCadastroTipoDados);
             this.Controls.Add(this.label1);
             this.Name = "FormTest";
@@ -73,5 +85,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFormCadastroTipoDados;
+        private System.Windows.Forms.Button btnFormPesquisaTipoDados;
     }
 }

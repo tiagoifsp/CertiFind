@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controller;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,24 @@ namespace CertiFind
         public FormCadastroTipoDado()
         {
             InitializeComponent();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            MTipoDado item = new MTipoDado();
+
+            item.Nome = txtNome.Text;
+            item.Descricao = txtDescricao.Text;
+
+            try
+            {
+                CTipoDado.Inserir(item);
+                MessageBox.Show("Tipo de dado salvo com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
