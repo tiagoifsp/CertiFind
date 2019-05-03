@@ -1,1 +1,3 @@
 As alterações realizadas no SGBD devem ser armazenadas aqui (texto)
+INSERT INTO TBTipoUsuario (NOME, DESCRICAO, SITUACAO) VALUES('ADMIN', 'USUARIO ADMINISTRADOR PADRAO', 'A');
+INSERT INTO TBUsuario (NOME, EMAIL, SENHA, SITUACAO, FKTipoUsuario) VALUES('ADMIN', 'ADMIN', 'ADMIN','A','1');
