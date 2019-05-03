@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace Controller
 {
     /// <summary>
     /// Classe que deve ser utilizada para disparar exceções esperadas pelo sistema
