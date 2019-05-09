@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormCadastroTipoDado.cs">
+    <Compile Include="VCadastroTipoDado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroTipoDado.Designer.cs">
-      <DependentUpon>FormCadastroTipoDado.cs</DependentUpon>
+    <Compile Include="VCadastroTipoDado.Designer.cs">
+      <DependentUpon>VCadastroTipoDado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPesquisaTipoDado.cs">
+    <Compile Include="VPesquisaTipoDado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPesquisaTipoDado.Designer.cs">
-      <DependentUpon>FormPesquisaTipoDado.cs</DependentUpon>
+    <Compile Include="VPesquisaTipoDado.Designer.cs">
+      <DependentUpon>VPesquisaTipoDado.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTest.cs">
       <SubType>Form</SubType>
@@ -66,11 +66,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormCadastroTipoDado.resx">
-      <DependentUpon>FormCadastroTipoDado.cs</DependentUpon>
+    <EmbeddedResource Include="VCadastroTipoDado.resx">
+      <DependentUpon>VCadastroTipoDado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPesquisaTipoDado.resx">
-      <DependentUpon>FormPesquisaTipoDado.cs</DependentUpon>
+    <EmbeddedResource Include="VPesquisaTipoDado.resx">
+      <DependentUpon>VPesquisaTipoDado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>

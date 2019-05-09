@@ -13,6 +13,10 @@ namespace Model
     {
         public static string ErroGeral = "O sistema se comportou de maneira inesperada.";
         public static string ErroFalhaConexaoSGBD = "Falha na conexão com o SGBD.";
-        public static string ErroTipoDeDado = "Tipo de dados inválido";
+
+        //Tipo dado
+        public static string ErroTipoDadoNull = "Campo(s) inválido(s)";
+        public static string ErroTipoDadoNome = "Campo nome inválido";
+        public static string ErroTipoDadoDescricao = "Campo descrição inválido";
     }
 }

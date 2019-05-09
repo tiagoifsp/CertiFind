@@ -14,9 +14,9 @@ namespace DAL
     {
         public static void Inserir(MTipoDado item)
         {
-            if(!Conexao.Abrir())
-                throw new ExcecaoPadrao(Erros.ErroFalhaConexaoSGBD);
-            
+            if (!Conexao.Abrir())
+                throw new Exception(); //Revisar
+
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 

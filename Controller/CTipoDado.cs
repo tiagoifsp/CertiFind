@@ -14,17 +14,26 @@ namespace Controller
         {
             if(item == null)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDeDado);
+                throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
             }
 
             if(item.Nome.Trim() == "" || item.Nome.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDeDado);
+                throw new ExcecaoPadrao(Erros.ErroTipoDadoNome);
             }
 
-            if (item.Descricao.Trim() == "" || item.Descricao.Length > 100)
+            if (item.Descricao.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDeDado);
+                throw new ExcecaoPadrao(Erros.ErroTipoDadoDescricao);
+            }
+
+            try
+            {
+                DTipoDado.Inserir(item);
+            }
+            catch
+            {
+                throw;
             }
         }
     }

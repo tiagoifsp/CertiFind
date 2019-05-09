@@ -19,13 +19,13 @@ namespace CertiFind
 
         private void btnFormCadastroTipoDados_Click(object sender, EventArgs e)
         {
-            FormCadastroTipoDado form = new FormCadastroTipoDado();
+            VCadastroTipoDado form = new VCadastroTipoDado();
             form.ShowDialog();
         }
 
         private void btnFormPesquisaTipoDados_Click(object sender, EventArgs e)
         {
-            FormPesquisaTipoDado form = new FormPesquisaTipoDado();
+            VPesquisaTipoDado form = new VPesquisaTipoDado();
             form.ShowDialog();
         }
     }

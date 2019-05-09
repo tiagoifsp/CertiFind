@@ -1,6 +1,6 @@
 ﻿namespace CertiFind
 {
-    partial class FormPesquisaTipoDado
+    partial class VPesquisaTipoDado
     {
         /// <summary>
         /// Required designer variable.
@@ -84,7 +84,7 @@
             this.MinimumSize = new System.Drawing.Size(405, 302);
             this.Name = "FormPesquisaTipoDado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pesquisa tipo dado";
+            this.Text = "Pesquisar tipo de dado";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

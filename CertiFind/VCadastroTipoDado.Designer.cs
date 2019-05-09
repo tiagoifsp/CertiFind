@@ -1,6 +1,6 @@
 ﻿namespace CertiFind
 {
-    partial class FormCadastroTipoDado
+    partial class VCadastroTipoDado
     {
         /// <summary>
         /// Required designer variable.
@@ -95,7 +95,7 @@
             this.MinimumSize = new System.Drawing.Size(277, 201);
             this.Name = "FormCadastroTipoDado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "tipo de dado";
+            this.Load += new System.EventHandler(this.FormCadastroTipoDado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
