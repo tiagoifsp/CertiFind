@@ -16,5 +16,10 @@ namespace CertiFind
         {
             InitializeComponent();
         }
+
+        private void btnPesquisaGrupo_Click(object sender, EventArgs e)
+        {
+            new VGrupoPesquisar().ShowDialog();
+        }
     }
 }

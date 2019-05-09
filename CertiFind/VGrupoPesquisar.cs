@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controller;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,21 @@ namespace CertiFind
         public VGrupoPesquisar()
         {
             InitializeComponent();
+        }
+
+        private void dgvGrupoPesquisa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tsbPesquisaGrupo_Click(object sender, EventArgs e)
+        {
+            MGrupoPesquisa item = new MGrupoPesquisa();
+
+           // item.Nome = "";
+
+
+            dgvGrupoPesquisa.DataSource = CGrupoPesquisa.PesquisaGrupo(item);
         }
     }
 }
