@@ -33,5 +33,10 @@ namespace CertiFind
 
             dgvGrupoPesquisa.DataSource = CGrupoPesquisa.PesquisaGrupo(item);
         }
+
+        private void tsbEditarGrupo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,18 +33,18 @@
             this.dgvGrupoPesquisa = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbPesquisaGrupo = new System.Windows.Forms.ToolStripButton();
-            this.mGrupoPesquisaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mGrupoPesquisaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.mGrupoPesquisaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataTermino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tsbEditarGrupo = new System.Windows.Forms.ToolStripButton();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mGrupoPesquisaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.mGrupoPesquisaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mGrupoPesquisaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupoPesquisa)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mGrupoPesquisaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGrupoPesquisaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGrupoPesquisaBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mGrupoPesquisaBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvGrupoPesquisa
@@ -82,31 +82,13 @@
             // tsbPesquisaGrupo
             // 
             this.tsbPesquisaGrupo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbPesquisaGrupo.Image = ((System.Drawing.Image)(resources.GetObject("tsbPesquisaGrupo.Image")));
+            this.tsbPesquisaGrupo.Image = global::CertiFind.Properties.Resources.search;
             this.tsbPesquisaGrupo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPesquisaGrupo.Name = "tsbPesquisaGrupo";
             this.tsbPesquisaGrupo.Size = new System.Drawing.Size(23, 22);
             this.tsbPesquisaGrupo.Text = "tsbPesquisar";
             this.tsbPesquisaGrupo.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
             this.tsbPesquisaGrupo.Click += new System.EventHandler(this.tsbPesquisaGrupo_Click);
-            // 
-            // mGrupoPesquisaBindingSource
-            // 
-            this.mGrupoPesquisaBindingSource.DataSource = typeof(Model.MGrupoPesquisa);
-            // 
-            // mGrupoPesquisaBindingSource1
-            // 
-            this.mGrupoPesquisaBindingSource1.DataSource = typeof(Model.MGrupoPesquisa);
-            // 
-            // mGrupoPesquisaBindingSource2
-            // 
-            this.mGrupoPesquisaBindingSource2.DataSource = typeof(Model.MGrupoPesquisa);
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             // 
             // DataInicio
             // 
@@ -127,7 +109,26 @@
             this.tsbEditarGrupo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditarGrupo.Name = "tsbEditarGrupo";
             this.tsbEditarGrupo.Size = new System.Drawing.Size(23, 22);
-            this.tsbEditarGrupo.Text = "toolStripButton1";
+            this.tsbEditarGrupo.Text = "Editar";
+            this.tsbEditarGrupo.Click += new System.EventHandler(this.tsbEditarGrupo_Click);
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // mGrupoPesquisaBindingSource2
+            // 
+            this.mGrupoPesquisaBindingSource2.DataSource = typeof(Model.MGrupoPesquisa);
+            // 
+            // mGrupoPesquisaBindingSource
+            // 
+            this.mGrupoPesquisaBindingSource.DataSource = typeof(Model.MGrupoPesquisa);
+            // 
+            // mGrupoPesquisaBindingSource1
+            // 
+            this.mGrupoPesquisaBindingSource1.DataSource = typeof(Model.MGrupoPesquisa);
             // 
             // VGrupoPesquisar
             // 
@@ -141,9 +142,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupoPesquisa)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mGrupoPesquisaBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGrupoPesquisaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGrupoPesquisaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mGrupoPesquisaBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
