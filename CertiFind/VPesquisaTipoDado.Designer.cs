@@ -28,64 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VPesquisaTipoDado));
+            this.dgvResultado = new System.Windows.Forms.DataGridView();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.tbBotoes = new System.Windows.Forms.ToolStrip();
+            this.btnInserir = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnRemover = new System.Windows.Forms.ToolStripButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
+            this.tbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvResultado
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(367, 211);
-            this.dataGridView1.TabIndex = 11;
+            this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultado.Location = new System.Drawing.Point(12, 53);
+            this.dgvResultado.Name = "dgvResultado";
+            this.dgvResultado.Size = new System.Drawing.Size(367, 211);
+            this.dgvResultado.TabIndex = 11;
             // 
-            // button1
+            // btnPesquisar
             // 
-            this.button1.Location = new System.Drawing.Point(282, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Location = new System.Drawing.Point(282, 25);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(97, 23);
+            this.btnPesquisar.TabIndex = 10;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(53, 12);
+            this.txtNome.Location = new System.Drawing.Point(53, 27);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(223, 20);
             this.txtNome.TabIndex = 7;
             // 
-            // label1
+            // lblNome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Nome";
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(12, 30);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.TabIndex = 6;
+            this.lblNome.Text = "Nome";
             // 
-            // FormPesquisaTipoDado
+            // tbBotoes
+            // 
+            this.tbBotoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnInserir,
+            this.btnEditar,
+            this.btnRemover});
+            this.tbBotoes.Location = new System.Drawing.Point(0, 0);
+            this.tbBotoes.Name = "tbBotoes";
+            this.tbBotoes.Size = new System.Drawing.Size(389, 25);
+            this.tbBotoes.TabIndex = 12;
+            this.tbBotoes.Text = "toolStrip1";
+            // 
+            // btnInserir
+            // 
+            this.btnInserir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
+            this.btnInserir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(23, 22);
+            this.btnInserir.Text = "Inserir";
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(23, 22);
+            this.btnEditar.Text = "Editar";
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnRemover.Image")));
+            this.btnRemover.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(23, 22);
+            this.btnRemover.Text = "Remover";
+            // 
+            // VPesquisaTipoDado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 263);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(389, 273);
+            this.Controls.Add(this.tbBotoes);
+            this.Controls.Add(this.dgvResultado);
+            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(405, 302);
+            this.MaximumSize = new System.Drawing.Size(405, 312);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(405, 302);
-            this.Name = "FormPesquisaTipoDado";
+            this.MinimumSize = new System.Drawing.Size(405, 312);
+            this.Name = "VPesquisaTipoDado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisar tipo de dado";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.VPesquisaTipoDado_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).EndInit();
+            this.tbBotoes.ResumeLayout(false);
+            this.tbBotoes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,9 +143,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvResultado;
+        private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.ToolStrip tbBotoes;
+        private System.Windows.Forms.ToolStripButton btnInserir;
+        private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.ToolStripButton btnRemover;
     }
 }
