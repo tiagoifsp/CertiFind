@@ -36,17 +36,5 @@ namespace Controller
                 throw;
             }
         }
-
-        public static List<MTipoDado> Pesquisar(MTipoDado item)
-        {
-            List<MTipoDado> retorno = null;
-
-            if (item != null && item.Nome != null && item.Nome.Length <= 100)
-            {
-                retorno = DTipoDado.Pesquisar(item);
-            }
-
-            return retorno;
-        }
     }
 }
