@@ -12,12 +12,12 @@ namespace Controller
     {
         public static void Inserir(MTipoDado item)
         {
-            if(item == null)
+            if (item == null)
             {
                 throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
             }
 
-            if(item.Nome.Trim() == "" || item.Nome.Length > 100)
+            if (item.Nome.Trim() == "" || item.Nome.Length > 100)
             {
                 throw new ExcecaoPadrao(Erros.ErroTipoDadoNome);
             }
@@ -35,6 +35,18 @@ namespace Controller
             {
                 throw;
             }
+        }
+
+        public static List<MTipoDado> Pesquisar(MTipoDado item)
+        {
+            List<MTipoDado> retorno = null;
+
+            if (item != null && item.Nome != null && item.Nome.Length <= 100)
+            {
+                retorno = DTipoDado.Pesquisar(item);
+            }
+
+            return retorno;
         }
     }
 }

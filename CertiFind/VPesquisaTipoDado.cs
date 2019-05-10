@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controller;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +25,23 @@ namespace CertiFind {
             Form frmInserir = new VCadastroTipoDado();
             frmInserir.Show();
 
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            MTipoDado item = new MTipoDado();
+            item.Nome = txtNome.Text;
+
+            dgvResultado.DataSource = null;
+
+            try
+            {
+                dgvResultado.DataSource = CTipoDado.Pesquisar(item);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
