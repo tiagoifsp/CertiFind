@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnFormCadastroTipoDados = new System.Windows.Forms.Button();
-            this.btnFormPesquisaTipoDados = new System.Windows.Forms.Button();
+            this.btnVPesquisaTipoDado = new System.Windows.Forms.Button();
+            this.btnVCadastroTipoDado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -45,33 +45,33 @@
             this.label1.Text = "Form apenas para testes. Utilize para chamar outros formulários. Quando o login f" +
     "uncionar, este formulário deverá ser removido.";
             // 
-            // btnFormCadastroTipoDados
+            // btnVPesquisaTipoDado
             // 
-            this.btnFormCadastroTipoDados.Location = new System.Drawing.Point(16, 43);
-            this.btnFormCadastroTipoDados.Name = "btnFormCadastroTipoDados";
-            this.btnFormCadastroTipoDados.Size = new System.Drawing.Size(143, 23);
-            this.btnFormCadastroTipoDados.TabIndex = 1;
-            this.btnFormCadastroTipoDados.Text = "FormCadastroTipoDados";
-            this.btnFormCadastroTipoDados.UseVisualStyleBackColor = true;
-            this.btnFormCadastroTipoDados.Click += new System.EventHandler(this.btnFormCadastroTipoDados_Click);
+            this.btnVPesquisaTipoDado.Location = new System.Drawing.Point(16, 74);
+            this.btnVPesquisaTipoDado.Name = "btnVPesquisaTipoDado";
+            this.btnVPesquisaTipoDado.Size = new System.Drawing.Size(143, 23);
+            this.btnVPesquisaTipoDado.TabIndex = 2;
+            this.btnVPesquisaTipoDado.Text = "VPesquisaTipoDado";
+            this.btnVPesquisaTipoDado.UseVisualStyleBackColor = true;
+            this.btnVPesquisaTipoDado.Click += new System.EventHandler(this.btnFormPesquisaTipoDados_Click);
             // 
-            // btnFormPesquisaTipoDados
+            // btnVCadastroTipoDado
             // 
-            this.btnFormPesquisaTipoDados.Location = new System.Drawing.Point(16, 72);
-            this.btnFormPesquisaTipoDados.Name = "btnFormPesquisaTipoDados";
-            this.btnFormPesquisaTipoDados.Size = new System.Drawing.Size(143, 23);
-            this.btnFormPesquisaTipoDados.TabIndex = 2;
-            this.btnFormPesquisaTipoDados.Text = "FormPesquisaTipoDados";
-            this.btnFormPesquisaTipoDados.UseVisualStyleBackColor = true;
-            this.btnFormPesquisaTipoDados.Click += new System.EventHandler(this.btnFormPesquisaTipoDados_Click);
+            this.btnVCadastroTipoDado.Location = new System.Drawing.Point(16, 45);
+            this.btnVCadastroTipoDado.Name = "btnVCadastroTipoDado";
+            this.btnVCadastroTipoDado.Size = new System.Drawing.Size(143, 23);
+            this.btnVCadastroTipoDado.TabIndex = 3;
+            this.btnVCadastroTipoDado.Text = "VCadastroTipoDado";
+            this.btnVCadastroTipoDado.UseVisualStyleBackColor = true;
+            this.btnVCadastroTipoDado.Click += new System.EventHandler(this.btnVCadastroTipoDado_Click);
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 450);
-            this.Controls.Add(this.btnFormPesquisaTipoDados);
-            this.Controls.Add(this.btnFormCadastroTipoDados);
+            this.Controls.Add(this.btnVCadastroTipoDado);
+            this.Controls.Add(this.btnVPesquisaTipoDado);
             this.Controls.Add(this.label1);
             this.Name = "FormTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -84,7 +84,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnFormCadastroTipoDados;
-        private System.Windows.Forms.Button btnFormPesquisaTipoDados;
+        private System.Windows.Forms.Button btnVPesquisaTipoDado;
+        private System.Windows.Forms.Button btnVCadastroTipoDado;
     }
 }
