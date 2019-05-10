@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VPesquisaTipoDado));
             this.dgvResultado = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -89,7 +88,7 @@
             // btnInserir
             // 
             this.btnInserir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
+            this.btnInserir.Image = global::CertiFind.Properties.Resources.circularplusbutton_121982;
             this.btnInserir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(23, 22);
@@ -99,7 +98,8 @@
             // btnEditar
             // 
             this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Enabled = false;
+            this.btnEditar.Image = global::CertiFind.Properties.Resources.inclinedpencil_122017;
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(23, 22);
@@ -108,7 +108,8 @@
             // btnRemover
             // 
             this.btnRemover.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnRemover.Image")));
+            this.btnRemover.Enabled = false;
+            this.btnRemover.Image = global::CertiFind.Properties.Resources.biggarbagebin_121980;
             this.btnRemover.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(23, 22);
