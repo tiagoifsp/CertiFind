@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VPesquisaTipoDado));
             this.dgvResultado = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.tbBotoes = new System.Windows.Forms.ToolStrip();
+            this.btnRemover = new System.Windows.Forms.ToolStripButton();
             this.btnInserir = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.btnRemover = new System.Windows.Forms.ToolStripButton();
-            this.mTipoDadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mTipoDadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
             this.tbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mTipoDadoBindingSource)).BeginInit();
@@ -103,6 +102,16 @@
             this.tbBotoes.TabIndex = 12;
             this.tbBotoes.Text = "toolStrip1";
             // 
+            // btnRemover
+            // 
+            this.btnRemover.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRemover.Enabled = false;
+            this.btnRemover.Image = global::CertiFind.Properties.Resources.remover;
+            this.btnRemover.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(23, 22);
+            this.btnRemover.Text = "Remover";
+            // 
             // btnInserir
             // 
             this.btnInserir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -116,24 +125,12 @@
             // btnEditar
             // 
             this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditar.Enabled = false;
             this.btnEditar.Image = global::CertiFind.Properties.Resources.editar;
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(23, 22);
             this.btnEditar.Text = "Editar";
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnRemover.Image = global::CertiFind.Properties.Resources.remover;
-            this.btnRemover.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(23, 22);
-            this.btnRemover.Text = "Remover";
-            // 
-            // mTipoDadoBindingSource
-            // 
-            this.mTipoDadoBindingSource.DataSource = typeof(Model.MTipoDado);
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -143,6 +140,10 @@
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             this.nomeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // mTipoDadoBindingSource
+            // 
+            this.mTipoDadoBindingSource.DataSource = typeof(Model.MTipoDado);
             // 
             // VPesquisaTipoDado
             // 
