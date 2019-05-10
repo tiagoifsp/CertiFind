@@ -63,9 +63,9 @@ namespace CertiFind.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap biggarbagebin_121980 {
+        internal static System.Drawing.Bitmap editar {
             get {
-                object obj = ResourceManager.GetObject("biggarbagebin_121980", resourceCulture);
+                object obj = ResourceManager.GetObject("editar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace CertiFind.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap circularplusbutton_121982 {
+        internal static System.Drawing.Bitmap inserir {
             get {
-                object obj = ResourceManager.GetObject("circularplusbutton_121982", resourceCulture);
+                object obj = ResourceManager.GetObject("inserir", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace CertiFind.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap inclinedpencil_122017 {
+        internal static System.Drawing.Bitmap remover {
             get {
-                object obj = ResourceManager.GetObject("inclinedpencil_122017", resourceCulture);
+                object obj = ResourceManager.GetObject("remover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

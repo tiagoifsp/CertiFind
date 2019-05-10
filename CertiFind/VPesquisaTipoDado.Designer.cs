@@ -88,7 +88,7 @@
             // btnInserir
             // 
             this.btnInserir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnInserir.Image = global::CertiFind.Properties.Resources.circularplusbutton_121982;
+            this.btnInserir.Image = global::CertiFind.Properties.Resources.inserir;
             this.btnInserir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(23, 22);
@@ -98,8 +98,7 @@
             // btnEditar
             // 
             this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditar.Enabled = false;
-            this.btnEditar.Image = global::CertiFind.Properties.Resources.inclinedpencil_122017;
+            this.btnEditar.Image = global::CertiFind.Properties.Resources.editar;
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(23, 22);
@@ -108,8 +107,7 @@
             // btnRemover
             // 
             this.btnRemover.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnRemover.Enabled = false;
-            this.btnRemover.Image = global::CertiFind.Properties.Resources.biggarbagebin_121980;
+            this.btnRemover.Image = global::CertiFind.Properties.Resources.remover;
             this.btnRemover.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(23, 22);
