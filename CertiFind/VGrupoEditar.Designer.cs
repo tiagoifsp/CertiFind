@@ -34,7 +34,7 @@
             this.cboNomeGrupo = new System.Windows.Forms.ComboBox();
             this.dtpDataInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpDataTermino = new System.Windows.Forms.DateTimePicker();
-            this.btnE = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Nome
@@ -86,21 +86,22 @@
             this.dtpDataTermino.Size = new System.Drawing.Size(243, 20);
             this.dtpDataTermino.TabIndex = 5;
             // 
-            // btnE
+            // btnSalvar
             // 
-            this.btnE.Location = new System.Drawing.Point(42, 181);
-            this.btnE.Name = "btnE";
-            this.btnE.Size = new System.Drawing.Size(321, 23);
-            this.btnE.TabIndex = 6;
-            this.btnE.Text = "Salvar";
-            this.btnE.UseVisualStyleBackColor = true;
+            this.btnSalvar.Location = new System.Drawing.Point(42, 181);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(321, 23);
+            this.btnSalvar.TabIndex = 6;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnE_Click);
             // 
             // VGrupoEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 256);
-            this.Controls.Add(this.btnE);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.dtpDataTermino);
             this.Controls.Add(this.dtpDataInicio);
             this.Controls.Add(this.cboNomeGrupo);
@@ -122,6 +123,6 @@
         private System.Windows.Forms.ComboBox cboNomeGrupo;
         private System.Windows.Forms.DateTimePicker dtpDataInicio;
         private System.Windows.Forms.DateTimePicker dtpDataTermino;
-        private System.Windows.Forms.Button btnE;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }

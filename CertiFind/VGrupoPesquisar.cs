@@ -36,6 +36,10 @@ namespace CertiFind
 
         private void tsbEditarGrupo_Click(object sender, EventArgs e)
         {
+            MGrupoPesquisa item = new MGrupoPesquisa();
+
+            VGrupoEditar g = new VGrupoEditar(item);
+            g.ShowDialog();
 
         }
     }
