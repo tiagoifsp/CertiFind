@@ -55,7 +55,6 @@
             this.gboxLogin.Size = new System.Drawing.Size(360, 304);
             this.gboxLogin.TabIndex = 0;
             this.gboxLogin.TabStop = false;
-            this.gboxLogin.Enter += new System.EventHandler(this.gboxLogin_Enter);
             // 
             // lbRecuperarSenha
             // 
@@ -100,7 +99,6 @@
             this.txtSenha.Size = new System.Drawing.Size(217, 26);
             this.txtSenha.TabIndex = 3;
             this.txtSenha.WordWrap = false;
-            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // txtEmail
             // 
@@ -121,7 +119,6 @@
             this.lbSenha.TabIndex = 1;
             this.lbSenha.Text = "Senha:";
             this.lbSenha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbSenha.Click += new System.EventHandler(this.lbSenha_Click);
             // 
             // lbEmail
             // 
@@ -145,6 +142,7 @@
             this.Name = "VLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.VLogin_Load);
             this.gboxLogin.ResumeLayout(false);
             this.gboxLogin.PerformLayout();
             this.ResumeLayout(false);

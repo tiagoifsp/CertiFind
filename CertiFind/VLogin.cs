@@ -9,6 +9,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,12 +17,7 @@ namespace CertiFind
 {
     public partial class VLogin : Form
     {
-        private static string Encriptar(String t)
-        {
-            byte[] bytes = Encoding.UTF8.GetBytes(t);
-            SHA256Managed hash = new SHA256Managed();
-            return BitConverter.ToString(hash.ComputeHash(bytes)).Replace("-","");                
-        }
+        public static MUsuario usuarioAtual { get; set; }
 
         public VLogin()
         {
@@ -30,35 +26,46 @@ namespace CertiFind
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text.Trim() == "")
-            {
+             Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
 
+            if ((!rg.IsMatch(txtEmail.Text)))
+            {
                 MessageBox.Show("Campo E-mail vazio");
                 txtEmail.Focus();
 
+                //todo: trocar pra errorProvider
             }
+            
             if (txtSenha.Text.Trim() == "")
             {
-
                 MessageBox.Show("Campo Senha vazio");
                 txtSenha.Focus();
+
+                //todo: trocar pra errorProvider
             }
 
             MUsuario u = new MUsuario
             {
-                Email = txtEmail.Text.ToString(),
-                Senha = Encriptar(txtSenha.Text.ToString())
+                Email = txtEmail.Text,
+                Senha = CUsuario.Encriptar(txtSenha.Text)
             };
+
             try
             {
-                if (CUsuario.Login(u) == true)
+                usuarioAtual = CUsuario.Login(u);
+                if (usuarioAtual != null)
                 {
+                    usuarioAtual = CUsuario.Obter(usuarioAtual);
+                    this.Visible = false;
                     new FormTest().ShowDialog();
+                    LimparCampos();
+                    this.Visible = true;
                 }
                 else
                 {
-                    // lbMessage.Text = "Usuario ou senha inválidos";
-                    lbRecuperarSenha.Text = "Clique aqui para recuperar senha";
+                    MessageBox.Show("Usuário/senha inválido. Alterar esta mensagem");
+                    //lbMessage.Text = "Usuario ou senha inválidos";
+                    //lbRecuperarSenha.Text = "Clique aqui para recuperar senha";
                 }
             }
             catch(ExcecaoPadrao ex)
@@ -70,20 +77,20 @@ namespace CertiFind
                 MessageBox.Show(Erros.ErroGeral);
             }
         }
-            
-        private void txtSenha_TextChanged(object sender, EventArgs e)
-        {
 
+        private void LimparCampos()
+        {
+            usuarioAtual = null;
+
+            txtEmail.Text = "";
+            txtSenha.Text = "";
+
+            txtEmail.Focus(); //não funcionou?
         }
 
-        private void lbSenha_Click(object sender, EventArgs e)
+        private void VLogin_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void gboxLogin_Enter(object sender, EventArgs e)
-        {
-
+            usuarioAtual = null;
         }
     }
 }
