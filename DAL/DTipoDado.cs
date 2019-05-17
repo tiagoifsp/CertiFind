@@ -16,12 +16,12 @@ namespace DAL
         public static void Inserir(MTipoDado item)
         {
             if (!Conexao.Abrir())
-                throw new Exception(); 
+                throw new Exception();
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 
-            comando.CommandText = "INSERT INTO TBTipoDados(Nome, Descricao)" + " " + "VALUES(@Nome, @Descricao)";
+            comando.CommandText = "INSERT INTO TBTipoDados(Nome, Descricao) VALUES(@Nome, @Descricao)";
 
             SqlParameter parametro = new SqlParameter("@Nome", SqlDbType.VarChar);
             parametro.Value = item.Nome;

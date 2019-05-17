@@ -32,7 +32,7 @@ namespace CertiFind
 
             try
             {
-                if(atual != null)
+                if (atual != null)
                 {
                     item.ID = atual.ID;
                     CTipoDado.Editar(item);
@@ -45,7 +45,7 @@ namespace CertiFind
                 }
                 this.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -53,7 +53,7 @@ namespace CertiFind
 
         private void FormCadastroTipoDado_Load(object sender, EventArgs e)
         {
-            if(atual != null)
+            if (atual != null)
             {
                 this.Text = "Editando tipo de dado";
             }
@@ -64,7 +64,7 @@ namespace CertiFind
 
             try
             {
-                if(atual != null)
+                if (atual != null)
                 {
                     txtNome.Text = atual.Nome;
                     txtDescricao.Text = atual.Descricao;

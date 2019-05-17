@@ -10,13 +10,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CertiFind {
-    public partial class VPesquisaTipoDado : Form {
-        public VPesquisaTipoDado() {
+namespace CertiFind
+{
+    public partial class VPesquisaTipoDado : Form
+    {
+        public VPesquisaTipoDado()
+        {
             InitializeComponent();
         }
 
-        private void btnInserir_Click(object sender, EventArgs e) {
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
             Form form = new VCadastroTipoDado(null);
             form.ShowDialog();
 
@@ -39,7 +43,7 @@ namespace CertiFind {
                 MessageBox.Show(ex.Message);
             }
 
-            if(dgvResultado.DataSource == null)
+            if (dgvResultado.DataSource == null)
             {
                 DialogResult modal = MessageBox.Show("Nenhum tipo de dado a ser exibido.", "",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -91,5 +95,6 @@ namespace CertiFind {
                 }
             }
         }
+
     }
 }

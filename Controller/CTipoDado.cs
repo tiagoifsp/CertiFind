@@ -28,6 +28,11 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.ErroTipoDadoDescricao);
             }
 
+            if (Pesquisar(item) != null)
+            {
+                throw new ExcecaoPadrao(Erros.ErroTipoDadoNomeDuplicado);
+            }
+
             try
             {
                 DTipoDado.Inserir(item);
@@ -80,6 +85,11 @@ namespace Controller
             if (item.Descricao.Length > 100)
             {
                 throw new ExcecaoPadrao(Erros.ErroTipoDadoDescricao);
+            }
+
+            if (Pesquisar(item) != null)
+            {
+                throw new ExcecaoPadrao(Erros.ErroTipoDadoNomeDuplicado);
             }
 
             try
