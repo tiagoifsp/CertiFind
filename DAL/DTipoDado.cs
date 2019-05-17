@@ -58,7 +58,7 @@ namespace DAL
 
             if (item.Nome.Trim() != "")
             {
-                comando.CommandText += " AND Nome LIKE @Nome ";
+                comando.CommandText += " AND Nome LIKE @Nome ORDER BY Nome ASC";
 
                 SqlParameter parametro = new SqlParameter("@Nome", SqlDbType.VarChar);
                 parametro.Value = "%" + item.Nome + "%";
@@ -175,5 +175,33 @@ namespace DAL
             }
         }
 
+        //EXCLUIR
+        public static void Excluir(MTipoDado item)
+        {
+            if (!Conexao.Abrir())
+                throw new Exception();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = Conexao.Connection;
+
+            comando.CommandText = "DELETE FROM TBTipoDados where ID = @ID";
+
+            SqlParameter parametro = new SqlParameter("@ID", SqlDbType.Int);
+            parametro.Value = item.ID;
+            comando.Parameters.Add(parametro);
+
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                Conexao.Fechar();
+            }
+        }
     }
 }

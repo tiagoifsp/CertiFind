@@ -43,7 +43,7 @@ namespace Controller
         {
             List<MTipoDado> retorno = null;
 
-            if (item != null && item.Nome != null && item.Nome.Length <= 100)
+            if (item != null && item.Nome.Trim() != null && item.Nome.Length <= 100)
             {
                 retorno = DTipoDado.Pesquisar(item);
             }
@@ -85,6 +85,24 @@ namespace Controller
             try
             {
                 DTipoDado.Editar(item);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //EXCLUIR
+        public static void Excluir(MTipoDado item)
+        {
+            if (item == null)
+            {
+                throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
+            }
+
+            try
+            {
+                DTipoDado.Excluir(item);
             }
             catch
             {

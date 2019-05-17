@@ -27,8 +27,8 @@ namespace CertiFind
         {
             MTipoDado item = new MTipoDado();
 
-            item.Nome = txtNome.Text;
-            item.Descricao = txtDescricao.Text;
+            item.Nome = txtNome.Text.Trim();
+            item.Descricao = txtDescricao.Text.Trim();
 
             try
             {
