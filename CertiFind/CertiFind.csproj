@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VCadastroCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCadastroCampo.Designer.cs">
+      <DependentUpon>VCadastroCampo.cs</DependentUpon>
+    </Compile>
     <Compile Include="VCadastroTipoDado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VCadastroTipoDado.Designer.cs">
       <DependentUpon>VCadastroTipoDado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPesquisaCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPesquisaCampo.Designer.cs">
+      <DependentUpon>VPesquisaCampo.cs</DependentUpon>
     </Compile>
     <Compile Include="VPesquisaTipoDado.cs">
       <SubType>Form</SubType>
@@ -70,8 +82,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="VCadastroCampo.resx">
+      <DependentUpon>VCadastroCampo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VCadastroTipoDado.resx">
       <DependentUpon>VCadastroTipoDado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPesquisaCampo.resx">
+      <DependentUpon>VPesquisaCampo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaTipoDado.resx">
       <DependentUpon>VPesquisaTipoDado.cs</DependentUpon>
@@ -84,6 +102,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\Model.MCampo.datasource" />
     <None Include="Properties\DataSources\Model.MTipoDado.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
