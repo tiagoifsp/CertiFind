@@ -14,11 +14,13 @@ namespace CertiFind
 {
     public partial class VCadastroTipoDado : Form
     {
-        internal bool edicao = false;
+        MTipoDado atual = null;
 
-        public VCadastroTipoDado()
+        public VCadastroTipoDado(MTipoDado item)
         {
             InitializeComponent();
+            item = CTipoDado.Obter(item);
+            atual = item;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -30,19 +32,20 @@ namespace CertiFind
 
             try
             {
-                if (!edicao)
+                if(atual != null)
+                {
+                    item.ID = atual.ID;
+                    CTipoDado.Editar(item);
+                    MessageBox.Show("Tipo de dado alterado com sucesso.");
+                }
+                else
                 {
                     CTipoDado.Inserir(item);
                     MessageBox.Show("Tipo de dado salvo com sucesso.");
                 }
-                else
-                {
-                    //CTipoDado.Editar(item);
-                    MessageBox.Show("Tipo de dado alterado com sucesso.");
-                }
                 this.Close();
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -50,13 +53,26 @@ namespace CertiFind
 
         private void FormCadastroTipoDado_Load(object sender, EventArgs e)
         {
-            if (!edicao)
+            if(atual != null)
             {
-                this.Text = "Novo tipo de dado";
+                this.Text = "Editando tipo de dado";
             }
             else
             {
-                this.Text = "Editando tipo de dado";
+                this.Text = "Novo tipo de dado";
+            }
+
+            try
+            {
+                if(atual != null)
+                {
+                    txtNome.Text = atual.Nome;
+                    txtDescricao.Text = atual.Descricao;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

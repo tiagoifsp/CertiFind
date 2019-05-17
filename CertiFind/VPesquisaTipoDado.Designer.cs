@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvResultado = new System.Windows.Forms.DataGridView();
-            this.mTipoDadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
@@ -38,10 +37,12 @@
             this.btnInserir = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnRemover = new System.Windows.Forms.ToolStripButton();
+            this.mTipoDadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mTipoDadoBindingSource)).BeginInit();
             this.tbBotoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mTipoDadoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvResultado
@@ -53,18 +54,17 @@
             this.dgvResultado.AutoGenerateColumns = false;
             this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn});
             this.dgvResultado.DataSource = this.mTipoDadoBindingSource;
             this.dgvResultado.Location = new System.Drawing.Point(12, 53);
+            this.dgvResultado.MultiSelect = false;
             this.dgvResultado.Name = "dgvResultado";
             this.dgvResultado.ReadOnly = true;
             this.dgvResultado.RowHeadersVisible = false;
+            this.dgvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultado.Size = new System.Drawing.Size(367, 211);
             this.dgvResultado.TabIndex = 11;
-            // 
-            // mTipoDadoBindingSource
-            // 
-            this.mTipoDadoBindingSource.DataSource = typeof(Model.MTipoDado);
             // 
             // btnPesquisar
             // 
@@ -117,22 +117,33 @@
             // btnEditar
             // 
             this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditar.Enabled = false;
             this.btnEditar.Image = global::CertiFind.Properties.Resources.editar;
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(23, 22);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnRemover
             // 
             this.btnRemover.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnRemover.Enabled = false;
             this.btnRemover.Image = global::CertiFind.Properties.Resources.remover;
             this.btnRemover.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(23, 22);
             this.btnRemover.Text = "Remover";
+            // 
+            // mTipoDadoBindingSource
+            // 
+            this.mTipoDadoBindingSource.DataSource = typeof(Model.MTipoDado);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -162,9 +173,9 @@
             this.Text = "Pesquisar tipo de dado";
             this.Load += new System.EventHandler(this.VPesquisaTipoDado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mTipoDadoBindingSource)).EndInit();
             this.tbBotoes.ResumeLayout(false);
             this.tbBotoes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mTipoDadoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,6 +192,7 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnRemover;
         private System.Windows.Forms.BindingSource mTipoDadoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
     }
 }

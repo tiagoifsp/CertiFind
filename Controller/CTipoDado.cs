@@ -10,6 +10,7 @@ namespace Controller
 {
     public static class CTipoDado
     {
+        //INSERIR
         public static void Inserir(MTipoDado item)
         {
             if (item == null)
@@ -37,6 +38,7 @@ namespace Controller
             }
         }
 
+        //PESQUISAR
         public static List<MTipoDado> Pesquisar(MTipoDado item)
         {
             List<MTipoDado> retorno = null;
@@ -47,6 +49,47 @@ namespace Controller
             }
 
             return retorno;
+        }
+
+        //OBTER
+        public static MTipoDado Obter(MTipoDado item)
+        {
+            MTipoDado retorno = null;
+
+            if (item != null)
+            {
+                retorno = DTipoDado.Obter(item);
+            }
+
+            return retorno;
+        }
+
+        //EDITAR
+        public static void Editar(MTipoDado item)
+        {
+            if (item == null)
+            {
+                throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
+            }
+
+            if (item.Nome.Trim() == "" || item.Nome.Length > 100)
+            {
+                throw new ExcecaoPadrao(Erros.ErroTipoDadoNome);
+            }
+
+            if (item.Descricao.Length > 100)
+            {
+                throw new ExcecaoPadrao(Erros.ErroTipoDadoDescricao);
+            }
+
+            try
+            {
+                DTipoDado.Editar(item);
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }
