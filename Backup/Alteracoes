@@ -1,2 +1,5 @@
 ALTER TABLE TBTipoDados
-  ADD Descricao varchar(100);
+ADD Descricao varchar(100);
+  
+ALTER TABLE TBTipoDados
+ADD UNIQUE (Nome);
