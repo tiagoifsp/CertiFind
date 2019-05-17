@@ -1,1 +1,2 @@
-As alterações realizadas no SGBD devem ser armazenadas aqui (texto)
+INSERT INTO TBTipoUsuario (NOME, DESCRICAO, SITUACAO) VALUES('ADMIN', 'Usuário administrador padrão', 'A');
+INSERT INTO TBUsuario (NOME, EMAIL, SENHA, SITUACAO, FKTipoUsuarioID) VALUES('admin', 'admin@admin.com', CONVERT(CHAR(64), HASHBYTES('SHA2_256', 'admin'), 2), 'A','1');
