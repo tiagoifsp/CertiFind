@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Conexao.cs" />
     <Compile Include="DUsuario.cs" />
-    <Compile Include="ExcecaoPadrao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

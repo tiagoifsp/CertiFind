@@ -52,7 +52,7 @@
             this.gboxLogin.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gboxLogin.Location = new System.Drawing.Point(12, 12);
             this.gboxLogin.Name = "gboxLogin";
-            this.gboxLogin.Size = new System.Drawing.Size(360, 537);
+            this.gboxLogin.Size = new System.Drawing.Size(360, 304);
             this.gboxLogin.TabIndex = 0;
             this.gboxLogin.TabStop = false;
             this.gboxLogin.Enter += new System.EventHandler(this.gboxLogin_Enter);
@@ -63,7 +63,7 @@
             this.lbRecuperarSenha.BackColor = System.Drawing.SystemColors.Control;
             this.lbRecuperarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRecuperarSenha.ForeColor = System.Drawing.Color.Red;
-            this.lbRecuperarSenha.Location = new System.Drawing.Point(92, 515);
+            this.lbRecuperarSenha.Location = new System.Drawing.Point(78, 221);
             this.lbRecuperarSenha.Name = "lbRecuperarSenha";
             this.lbRecuperarSenha.Size = new System.Drawing.Size(0, 20);
             this.lbRecuperarSenha.TabIndex = 6;
@@ -73,7 +73,7 @@
             this.lbMessage.AutoSize = true;
             this.lbMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMessage.ForeColor = System.Drawing.Color.Red;
-            this.lbMessage.Location = new System.Drawing.Point(104, 209);
+            this.lbMessage.Location = new System.Drawing.Point(85, 180);
             this.lbMessage.Name = "lbMessage";
             this.lbMessage.Size = new System.Drawing.Size(0, 20);
             this.lbMessage.TabIndex = 5;
@@ -82,9 +82,9 @@
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.Control;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(23, 198);
+            this.btnLogin.Location = new System.Drawing.Point(75, 119);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(314, 31);
+            this.btnLogin.Size = new System.Drawing.Size(217, 31);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -93,7 +93,7 @@
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(120, 137);
+            this.txtSenha.Location = new System.Drawing.Point(101, 84);
             this.txtSenha.MaxLength = 200;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -105,7 +105,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(120, 77);
+            this.txtEmail.Location = new System.Drawing.Point(101, 48);
             this.txtEmail.MaxLength = 200;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(217, 26);
@@ -115,7 +115,7 @@
             // 
             this.lbSenha.AutoSize = true;
             this.lbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSenha.Location = new System.Drawing.Point(38, 141);
+            this.lbSenha.Location = new System.Drawing.Point(19, 88);
             this.lbSenha.Name = "lbSenha";
             this.lbSenha.Size = new System.Drawing.Size(54, 18);
             this.lbSenha.TabIndex = 1;
@@ -127,7 +127,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(43, 81);
+            this.lbEmail.Location = new System.Drawing.Point(24, 52);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(49, 18);
             this.lbEmail.TabIndex = 0;
@@ -136,14 +136,15 @@
             // 
             // VLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 561);
+            this.ClientSize = new System.Drawing.Size(384, 326);
             this.Controls.Add(this.gboxLogin);
             this.MaximizeBox = false;
             this.Name = "VLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Formulário de Login";
+            this.Text = "Login";
             this.gboxLogin.ResumeLayout(false);
             this.gboxLogin.PerformLayout();
             this.ResumeLayout(false);

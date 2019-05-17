@@ -30,24 +30,47 @@ namespace CertiFind
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            if (txtEmail.Text.Trim() == "")
+            {
+
+                MessageBox.Show("Campo E-mail vazio");
+                txtEmail.Focus();
+
+            }
+            if (txtSenha.Text.Trim() == "")
+            {
+
+                MessageBox.Show("Campo Senha vazio");
+                txtSenha.Focus();
+            }
+
             MUsuario u = new MUsuario
             {
                 Email = txtEmail.Text.ToString(),
                 Senha = Encriptar(txtSenha.Text.ToString())
             };
-            
-
-            if(CUsuario.Login(u) == true)
+            try
             {
-                new FormTest().ShowDialog();
+                if (CUsuario.Login(u) == true)
+                {
+                    new FormTest().ShowDialog();
+                }
+                else
+                {
+                    // lbMessage.Text = "Usuario ou senha inválidos";
+                    lbRecuperarSenha.Text = "Clique aqui para recuperar senha";
+                }
             }
-            else
+            catch(ExcecaoPadrao ex)
             {
-                lbMessage.Text = "Usuario ou senha inválidos";
-                lbRecuperarSenha.Text = "Clique aqui para recuperar senha";
+                MessageBox.Show(ex.Message);
+            }
+            catch
+            {
+                MessageBox.Show(Erros.ErroGeral);
             }
         }
-
+            
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
 
