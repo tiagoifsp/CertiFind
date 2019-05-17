@@ -7,11 +7,21 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    public class CSugestao
+    public static class CSugestao
     {
-        public void Enviar(MSugestao sugestao)
+        public static void Enviar(MSugestao sugestao, bool id)
         {
+            //
+        }
 
+        public static void ValidarSugestão(MSugestao sugestao)
+        {
+            //
+        }
+
+        public static string[] BuscarTipoSugestao()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -119,6 +119,7 @@
             // 
             // btnEnviarSugestão
             // 
+            this.btnEnviarSugestão.Enabled = false;
             this.btnEnviarSugestão.Location = new System.Drawing.Point(579, 385);
             this.btnEnviarSugestão.Name = "btnEnviarSugestão";
             this.btnEnviarSugestão.Size = new System.Drawing.Size(125, 23);
@@ -142,6 +143,7 @@
             this.Name = "VSugestaoEnviar";
             this.ShowIcon = false;
             this.Text = "Sugestao";
+            this.Load += new System.EventHandler(this.VSugestaoEnviar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

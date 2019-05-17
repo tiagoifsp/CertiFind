@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
-    <Compile Include="ExcecaoPadrao.cs" />
     <Compile Include="DSugestao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,7 +8,7 @@ namespace Model
 {
     public class MTipoSugestao
     {
-        public string nome;
-        public string descricao;
+        string Nome;
+        string Descricao;
     }
 }
