@@ -223,7 +223,7 @@ namespace DAL
                     "SET" +
                     "(ID, NOME, EMAIL, SENHA, SITUACAO, FKTIPOUSUARIOID) " +
                     "VALUES " +
-                    "(@ID, @NOME, @EMAIL, CONVERT(CHAR(64), @SENHA, @SITUACAO, @FKTIPOUSUARIOID) WHERE ID = @ID",
+                    "(@ID, @NOME, @EMAIL,  @SENHA, @SITUACAO, @FKTIPOUSUARIOID) WHERE ID = @ID",
                     Connection = Conexao.Connection,
                 };
 
