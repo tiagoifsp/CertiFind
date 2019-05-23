@@ -8,10 +8,11 @@ namespace Model
 {
     public class MUsuario
     {
-        public string nome;
-        public string email;
-        public string senha;
-        public char situacao;
-        public MTipoUsuario tipoUsuario;
+        public int? ID { get; set; }
+        public String Nome { get; set; }
+        public String Email { get; set; }
+        public String Senha { get; set; }
+        public String Situacao { get; set; }
+        public int FKTipoUsuarioID { get; set; }
     }
 }

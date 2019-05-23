@@ -17,6 +17,14 @@ namespace CertiFind
             InitializeComponent();
         }
 
+        private void FormTest_Load(object sender, EventArgs e)
+        {
+            if(VLogin.usuarioAtual != null)
+            {
+                label2.Text = VLogin.usuarioAtual.Nome + " (" + VLogin.usuarioAtual.ID + ")";
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             VSugestaoEnviar sugestao = new VSugestaoEnviar();

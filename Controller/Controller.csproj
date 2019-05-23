@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CUsuario.cs" />
     <Compile Include="ExcecaoPadrao.cs" />
     <Compile Include="CSugestao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
