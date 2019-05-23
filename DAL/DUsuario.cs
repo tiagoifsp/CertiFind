@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Model;
 
 namespace DAL
@@ -14,6 +11,11 @@ namespace DAL
 
         public static MUsuario Login(MUsuario u)
         {
+            if(u == null)
+            {
+                throw new ArgumentNullException(Erros.ErroGeral);
+            }
+
             MUsuario retorno = null;
 
             if (Conexao.Abrir())
@@ -21,7 +23,13 @@ namespace DAL
                 SqlCommand command = new SqlCommand
                 {
                     Connection = Conexao.Connection,
-                    CommandText = "SELECT ID, EMAIL, SENHA FROM TBUSUARIO WHERE EMAIL = @EMAIL AND SITUACAO = 'A' "
+                    CommandText = "" +
+                    "SELECT " +
+                    "ID, EMAIL, SENHA " +
+                    "FROM " +
+                    "TBUSUARIO " +
+                    "WHERE " +
+                    "EMAIL = @EMAIL AND SITUACAO = 'A' "
                 };
 
                 SqlParameter param = new SqlParameter("@EMAIL", SqlDbType.VarChar)
@@ -33,8 +41,10 @@ namespace DAL
                 {
                     if (u.Senha == (reader["SENHA"].ToString()))
                     {
-                        retorno = new MUsuario();
-                        retorno.ID = (int)reader["ID"];
+                        retorno = new MUsuario
+                        {
+                            ID = (int)reader["ID"]
+                        };
                     }
                 }
 
@@ -47,6 +57,11 @@ namespace DAL
 
         public static MUsuario Obter(MUsuario u)
         {
+            if (u == null)
+            {
+                throw new ArgumentNullException(Erros.ErroGeral);
+            }
+
             MUsuario retorno = null;
 
             if (Conexao.Abrir())
@@ -64,12 +79,14 @@ namespace DAL
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    retorno = new MUsuario();
-                    retorno.ID = (int)reader["ID"];
-                    retorno.Nome = reader["Nome"].ToString();
-                    retorno.Situacao = reader["SITUACAO"].ToString();
-                    retorno.Email = reader["EMAIL"].ToString();
-                    retorno.FKTipoUsuarioID = (int)reader["FKTipoUsuarioID"];
+                    retorno = new MUsuario
+                    {
+                        ID = (int)reader["ID"],
+                        Nome = reader["Nome"].ToString(),
+                        Situacao = reader["SITUACAO"].ToString(),
+                        Email = reader["EMAIL"].ToString(),
+                        FKTipoUsuarioID = (int)reader["FKTipoUsuarioID"]
+                    };
                 }
 
                 reader.Close();
@@ -81,42 +98,175 @@ namespace DAL
 
         public static List<MUsuario> Pesquisar(MUsuario u)
         {
+            List<MUsuario> usuarios = null;
+
             if (u == null)
             {
-                throw new ArgumentNullException(nameof(u));
+                throw new ArgumentNullException(Erros.ErroGeral);
             }
 
-            throw new NotImplementedException();
+            if(Conexao.Abrir())
+            {
+                SqlCommand comando = new SqlCommand
+                {
+                    CommandText = "SELECT ID, NOME, EMAIL, SITUACAO, FKTipoUsuarioID FROM TBUsuario WHERE 1=1 ",
+                    Connection = Conexao.Connection
+                };
+
+                if(0 != u.ID)
+                {
+                    comando.CommandText += "AND ID = @ID ";
+                    SqlParameter param = new SqlParameter("@ID", SqlDbType.Int) { Value = u.ID };
+                    comando.Parameters.Add(param);
+                }
+
+                if (!"".Equals(u.Nome))
+                {
+                    comando.CommandText += "AND NOME = @NOME ";
+                    SqlParameter param = new SqlParameter("@NOME", SqlDbType.VarChar) { Value = u.Nome };
+                    comando.Parameters.Add(param);
+                }
+
+                if (!"".Equals(u.Email))
+                {
+                    comando.CommandText += "AND EMAIL = @EMAIL ";
+                    SqlParameter param = new SqlParameter("@EMAIL", SqlDbType.VarChar) { Value = u.Email };
+                    comando.Parameters.Add(param);
+                }
+
+                if (!"".Equals(u.Situacao))
+                {
+                    comando.CommandText += "AND SITUACAO = @SITUACAO ";
+                    SqlParameter param = new SqlParameter("@SITUACAO", SqlDbType.Char) { Value = u.Situacao };
+                    comando.Parameters.Add(param);
+                }
+
+                if (!"".Equals(u.FKTipoUsuarioID))
+                {
+                    comando.CommandText += "AND FKTIPOUSUARIOID = @FKTIPOUSUARIOID ";
+                    SqlParameter param = new SqlParameter("@FKTIPOUSUARIOID ", SqlDbType.Int) { Value = u.FKTipoUsuarioID };
+                    comando.Parameters.Add(param);
+                }
+
+                SqlDataReader reader = comando.ExecuteReader();
+
+                MUsuario usuario;
+
+                while (reader.Read())
+                {
+                    usuario = new MUsuario
+                    {
+                        ID = (int)reader["ID"],
+                        Nome = reader["Nome"].ToString(),
+                        Situacao = reader["SITUACAO"].ToString(),
+                        Email = reader["EMAIL"].ToString(),
+                        FKTipoUsuarioID = (int)reader["FKTipoUsuarioID"]
+                    };
+
+                    usuarios.Add(usuario);
+                }
+            }
+
+            return usuarios;
+
         }
 
         public static void Inserir(MUsuario u)
         {
             if (u == null)
-            {
                 throw new ArgumentNullException(nameof(u));
-            }
 
-            throw new NotImplementedException();
+            if(Conexao.Abrir())
+            {
+                SqlCommand comando = new SqlCommand
+                {
+                    CommandText = "" +
+                    "INSERT INTO " +
+                    "TBUSUARIO " +
+                    "(ID, NOME, EMAIL, SENHA, SITUACAO, FKTIPOUSUARIOID) " +
+                    "VALUES " +
+                    "(@ID, @NOME, @EMAIL, CONVERT(CHAR(64), HASHBYTES('SHA2_256', @SENHA), 2), @SITUACAO, @FKTIPOUSUARIOID) ",
+                    Connection = Conexao.Connection,
+                };
+                                
+                SqlParameter param = new SqlParameter("@ID", SqlDbType.Int) { Value = u.ID };
+                comando.Parameters.Add(param);
+
+                param = new SqlParameter("@NOME", SqlDbType.VarChar) { Value = u.Nome };
+                comando.Parameters.Add(param);
+                
+                param = new SqlParameter("@EMAIL", SqlDbType.VarChar) { Value = u.Email };
+                comando.Parameters.Add(param);
+                
+                param = new SqlParameter("@SITUACAO", SqlDbType.Char) { Value = u.Situacao };
+                comando.Parameters.Add(param);
+
+                param = new SqlParameter("@FKTIPOUSUARIOID ", SqlDbType.Int) { Value = u.FKTipoUsuarioID };
+                comando.Parameters.Add(param);
+
+                if (0 < comando.ExecuteNonQuery())
+                    throw new Exception(Erros.ErroGeral);
+            }
         }
 
         public static void Atualizar(MUsuario u)
         {
             if (u == null)
-            {
                 throw new ArgumentNullException(nameof(u));
-            }
 
-            throw new NotImplementedException();
+            if (Conexao.Abrir())
+            {
+                SqlCommand comando = new SqlCommand
+                {
+                    CommandText = "" +
+                    "UPDATE TBUSUARIO " +
+                    "SET" +
+                    "(ID, NOME, EMAIL, SENHA, SITUACAO, FKTIPOUSUARIOID) " +
+                    "VALUES " +
+                    "(@ID, @NOME, @EMAIL, CONVERT(CHAR(64), @SENHA, @SITUACAO, @FKTIPOUSUARIOID) WHERE ID = @ID",
+                    Connection = Conexao.Connection,
+                };
+
+                SqlParameter param = new SqlParameter("@ID", SqlDbType.Int) { Value = u.ID };
+                comando.Parameters.Add(param);
+
+                param = new SqlParameter("@NOME", SqlDbType.VarChar) { Value = u.Nome };
+                comando.Parameters.Add(param);
+
+                param = new SqlParameter("@EMAIL", SqlDbType.VarChar) { Value = u.Email };
+                comando.Parameters.Add(param);
+
+                param = new SqlParameter("@SITUACAO", SqlDbType.Char) { Value = u.Situacao };
+                comando.Parameters.Add(param);
+
+                param = new SqlParameter("@FKTIPOUSUARIOID ", SqlDbType.Int) { Value = u.FKTipoUsuarioID };
+                comando.Parameters.Add(param);
+
+                if(0 < comando.ExecuteNonQuery())
+                    throw new Exception(Erros.ErroGeral);
+                
+            }
         }
 
         public static void Remover(MUsuario u)
         {
             if (u == null)
-            {
                 throw new ArgumentNullException(nameof(u));
-            }
 
-            throw new NotImplementedException();
+            if (Conexao.Abrir())
+            {
+                SqlCommand comando = new SqlCommand
+                {
+                    CommandText = "DELETE FROM TBUSUARIO WHERE ID = @ID",
+                    Connection = Conexao.Connection,
+                };
+
+                SqlParameter param = new SqlParameter("@ID", SqlDbType.Int) { Value = u.ID };
+                comando.Parameters.Add(param);
+
+                if (0 < comando.ExecuteNonQuery())
+                    throw new Exception(Erros.ErroGeral);
+            }
         }
     }
 }
