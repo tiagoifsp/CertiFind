@@ -42,5 +42,11 @@ namespace Controller
 
             return DUsuario.Obter(u);
         }
+
+        public static void Inserir(MUsuario u)
+        {
+            
+            DUsuario.Inserir(u);
+        }
     }
 }

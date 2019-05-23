@@ -113,23 +113,23 @@ namespace DAL
                     Connection = Conexao.Connection
                 };
 
-                if(0 != u.ID)
-                {
-                    comando.CommandText += "AND ID = @ID ";
-                    SqlParameter param = new SqlParameter("@ID", SqlDbType.Int) { Value = u.ID };
-                    comando.Parameters.Add(param);
-                }
+                //if(0 != u.ID)
+                //{
+                //    comando.CommandText += "AND ID LIKE %@ID% ";
+                //    SqlParameter param = new SqlParameter("@ID", SqlDbType.Int) { Value = u.ID };
+                //    comando.Parameters.Add(param);
+                //}
 
                 if (!"".Equals(u.Nome))
                 {
-                    comando.CommandText += "AND NOME = @NOME ";
+                    comando.CommandText += "AND NOME LIKE %@NOME% ";
                     SqlParameter param = new SqlParameter("@NOME", SqlDbType.VarChar) { Value = u.Nome };
                     comando.Parameters.Add(param);
                 }
 
                 if (!"".Equals(u.Email))
                 {
-                    comando.CommandText += "AND EMAIL = @EMAIL ";
+                    comando.CommandText += "AND EMAIL LIKE %@EMAIL% ";
                     SqlParameter param = new SqlParameter("@EMAIL", SqlDbType.VarChar) { Value = u.Email };
                     comando.Parameters.Add(param);
                 }
@@ -185,7 +185,7 @@ namespace DAL
                     "TBUSUARIO " +
                     "(ID, NOME, EMAIL, SENHA, SITUACAO, FKTIPOUSUARIOID) " +
                     "VALUES " +
-                    "(@ID, @NOME, @EMAIL, CONVERT(CHAR(64), HASHBYTES('SHA2_256', @SENHA), 2), @SITUACAO, @FKTIPOUSUARIOID) ",
+                    "(@ID, @NOME, @EMAIL, @SENHA, @SITUACAO, @FKTIPOUSUARIOID) ",
                     Connection = Conexao.Connection,
                 };
                                 
