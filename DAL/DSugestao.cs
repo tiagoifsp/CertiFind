@@ -24,40 +24,25 @@ namespace DAL
                 };
 
                 SqlDataReader reader = command.ExecuteReader();
-                if(reader.Read())
+                while (reader.Read())
                 {
-                    LTipo = new List<MTipoSugestao>();
+                    if (LTipo == null)
+                        LTipo = new List<MTipoSugestao>();
 
-                    while(true)
-                    {
-                        MTipoSugestao tipoSugestao = new MTipoSugestao();
-                        try
-                        {
-                            tipoSugestao.ID = reader.GetInt32(0);
-                            tipoSugestao.Nome = reader.GetTextReader(1).ReadLine();
-                            tipoSugestao.Descricao = reader.GetTextReader(2).ReadLine();
+                    MTipoSugestao tipoSugestao = new MTipoSugestao();
+                    tipoSugestao.ID = (int)reader["ID"];
+                    tipoSugestao.Nome = reader["Nome"].ToString();
+                    tipoSugestao.Descricao = reader["Descricao"].ToString();
 
-                            LTipo.Add(tipoSugestao);
-                            reader.Read();
-                        }
-                        catch
-                        {
-                            break;
-                        }
-                    }                  
-                    return LTipo;
+                    LTipo.Add(tipoSugestao);
                 }
-                else
-                {
-                    Conexao.Fechar();
-                    return LTipo;
-                }
-            }
-            else
-            {
-                return LTipo;
+
+                reader.Close();
+                Conexao.Fechar();
+
             }
 
+            return LTipo;
         }
     }
 }
