@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -23,11 +24,26 @@ namespace CertiFind
         private void Listar()
         {
             DirectoryInfo Dir = new DirectoryInfo(ConfigurationManager.ConnectionStrings["CaminhoBackup"].ConnectionString);
-            DirectoryInfo[] Files = Dir.GetDirectories("*", SearchOption.AllDirectories);
+            DirectoryInfo[] Files = Dir.GetDirectories("*", SearchOption.TopDirectoryOnly);
             foreach (DirectoryInfo File in Files)
             {
                 dgvGerarRestaurarBackup.Rows.Add(File.FullName, null);
             }
+        }
+
+        private void cmd()
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo("cmd.exe");
+            startInfo.RedirectStandardInput = true;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.UseShellExecute = false;
+            Process process = Process.Start(startInfo);
+
+            process.StandardInput.WriteLine(@"IF EXIST E:\Backup\Backup_Manual_%date:~6,4%-%date:~3,2%-%date:~0,2% ( rmdir E:\Backup\Backup_Manual_%date:~6,4%-%date:~3,2%-%date:~0,2% /S /Q )");
+            process.StandardInput.WriteLine(@"mkdir E:\Backup\Backup_Manual_%date:~6,4%-%date:~3,2%-%date:~0,2%");
+            process.StandardInput.WriteLine(@"xcopy E:\Test\*.* E:\Backup\Backup_Manual_%date:~6,4%-%date:~3,2%-%date:~0,2%\ /s /e");
+            process.StandardInput.WriteLine("sqlcmd -S .\\SQLSERVER2014EPE -Q \"BACKUP DATABASE DBCertiFind TO disk = 'E:\\Backup\\Backup_Manual_%date:~6,4%-%date:~3,2%-%date:~0,2%\\backup.bak' WITH FORMAT\"");
+            process.StandardInput.WriteLine(@"exit");
         }
 
         private void frmGerarRestaurarBackup_Load(object sender, EventArgs e)
@@ -86,8 +102,8 @@ namespace CertiFind
             foreach (var file in dir.GetDirectories())
             {
                 // Copy the file.
-                file.c(ConfigurationManager.ConnectionStrings["CaminhoBackup"].ConnectionString + @"Backup_" + DateTime.Now.ToString("yyyy-MM-dd") + @"_Manual\" + file.Name, true);
-                SubPastas();
+                //file.c(ConfigurationManager.ConnectionStrings["CaminhoBackup"].ConnectionString + @"Backup_" + DateTime.Now.ToString("yyyy-MM-dd") + @"_Manual\" + file.Name, true);
+                //SubPastas();
             }
         }
 
@@ -106,36 +122,8 @@ namespace CertiFind
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = ConfigurationManager.ConnectionStrings["ConexaoLocal"].ConnectionString;
-
-            try
-            {
-                conexao.Open();
-            }
-            catch
-            {
-                throw new Exception("Erro de Conexão");
-            }
-
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexao;
-
-            comando.CommandText = "BACKUP DATABASE DBCertiFind TO disk = '" + ConfigurationManager.ConnectionStrings["CaminhoBackup"].ConnectionString + @"Backup_"+ DateTime.Now.ToString("yyyy-MM-dd") +@"_Manual\backup_manual.bak' WITH FORMAT;";
-            MessageBox.Show(comando.CommandText);
-
-            try
-            {
-                comando.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
-            finally
-            {
-                conexao.Close();
-            }
+            cmd();
+            //System.Diagnostics.Process.Start(ConfigurationManager.ConnectionStrings["CaminhoExecutavel"].ConnectionString);
         }
     }
 }
