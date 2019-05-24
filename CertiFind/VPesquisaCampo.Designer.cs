@@ -30,19 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tbBotoes = new System.Windows.Forms.ToolStrip();
+            this.btnInserir = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnExcluir = new System.Windows.Forms.ToolStripButton();
             this.dgvResultado = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeTipoDadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mCampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboTipoDado = new System.Windows.Forms.ComboBox();
-            this.btnInserir = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.btnExcluir = new System.Windows.Forms.ToolStripButton();
-            this.mCampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mCampoBindingSource)).BeginInit();
@@ -60,6 +61,36 @@
             this.tbBotoes.TabIndex = 17;
             this.tbBotoes.Text = "toolStrip1";
             // 
+            // btnInserir
+            // 
+            this.btnInserir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnInserir.Image = global::CertiFind.Properties.Resources.inserir;
+            this.btnInserir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(23, 22);
+            this.btnInserir.Text = "Inserir";
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditar.Image = global::CertiFind.Properties.Resources.editar;
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(23, 22);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnExcluir.Image = global::CertiFind.Properties.Resources.remover;
+            this.btnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(23, 22);
+            this.btnExcluir.Text = "Remover";
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // dgvResultado
             // 
             this.dgvResultado.AllowUserToAddRows = false;
@@ -71,7 +102,8 @@
             this.dgvResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
-            this.tipoDadoDataGridViewTextBoxColumn});
+            this.tipoDadoDataGridViewTextBoxColumn,
+            this.nomeTipoDadoDataGridViewTextBoxColumn});
             this.dgvResultado.DataSource = this.mCampoBindingSource;
             this.dgvResultado.Location = new System.Drawing.Point(12, 58);
             this.dgvResultado.MultiSelect = false;
@@ -82,6 +114,42 @@
             this.dgvResultado.Size = new System.Drawing.Size(464, 211);
             this.dgvResultado.TabIndex = 16;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDadoDataGridViewTextBoxColumn
+            // 
+            this.tipoDadoDataGridViewTextBoxColumn.DataPropertyName = "TipoDado";
+            this.tipoDadoDataGridViewTextBoxColumn.HeaderText = "TipoDado";
+            this.tipoDadoDataGridViewTextBoxColumn.Name = "tipoDadoDataGridViewTextBoxColumn";
+            this.tipoDadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoDadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nomeTipoDadoDataGridViewTextBoxColumn
+            // 
+            this.nomeTipoDadoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeTipoDadoDataGridViewTextBoxColumn.DataPropertyName = "NomeTipoDado";
+            this.nomeTipoDadoDataGridViewTextBoxColumn.HeaderText = "Tipo de dado";
+            this.nomeTipoDadoDataGridViewTextBoxColumn.Name = "nomeTipoDadoDataGridViewTextBoxColumn";
+            this.nomeTipoDadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mCampoBindingSource
+            // 
+            this.mCampoBindingSource.DataSource = typeof(Model.MCampo);
+            // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(379, 29);
@@ -90,6 +158,7 @@
             this.btnPesquisar.TabIndex = 15;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtNome
             // 
@@ -118,67 +187,14 @@
             // 
             // cboTipoDado
             // 
+            this.cboTipoDado.DisplayMember = "Nome";
             this.cboTipoDado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoDado.FormattingEnabled = true;
             this.cboTipoDado.Location = new System.Drawing.Point(85, 31);
             this.cboTipoDado.Name = "cboTipoDado";
             this.cboTipoDado.Size = new System.Drawing.Size(121, 21);
             this.cboTipoDado.TabIndex = 19;
-            // 
-            // btnInserir
-            // 
-            this.btnInserir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnInserir.Image = global::CertiFind.Properties.Resources.inserir;
-            this.btnInserir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(23, 22);
-            this.btnInserir.Text = "Inserir";
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditar.Image = global::CertiFind.Properties.Resources.editar;
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(23, 22);
-            this.btnEditar.Text = "Editar";
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnExcluir.Image = global::CertiFind.Properties.Resources.remover;
-            this.btnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(23, 22);
-            this.btnExcluir.Text = "Remover";
-            // 
-            // mCampoBindingSource
-            // 
-            this.mCampoBindingSource.DataSource = typeof(Model.MCampo);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoDadoDataGridViewTextBoxColumn
-            // 
-            this.tipoDadoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tipoDadoDataGridViewTextBoxColumn.DataPropertyName = "TipoDado";
-            this.tipoDadoDataGridViewTextBoxColumn.HeaderText = "Tipo de dado";
-            this.tipoDadoDataGridViewTextBoxColumn.Name = "tipoDadoDataGridViewTextBoxColumn";
-            this.tipoDadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cboTipoDado.ValueMember = "ID";
             // 
             // VPesquisaCampo
             // 
@@ -222,9 +238,10 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboTipoDado;
-        private System.Windows.Forms.BindingSource mCampoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeTipoDadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource mCampoBindingSource;
     }
 }

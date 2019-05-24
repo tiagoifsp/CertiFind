@@ -8,34 +8,34 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    public static class CTipoDado
+    public static class CCampo
     {
         //INSERIR
-        public static void Inserir(MTipoDado item)
+        public static void Inserir(MCampo item)
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
+                throw new ExcecaoPadrao(Erros.ErroCampoNull);
             }
 
             if (item.Nome.Trim() == "" || item.Nome.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNome);
+                throw new ExcecaoPadrao(Erros.ErroCampoNome);
             }
 
-            if (item.Descricao.Length > 100)
+            if (item.TipoDado == 0)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoDescricao);
+                throw new ExcecaoPadrao(Erros.ErroCampoTipoDado);
             }
 
             //if (Pesquisar(item) != null)
             //{
-            //    throw new ExcecaoPadrao(Erros.ErroTipoDadoNomeDuplicado);
+            //    throw new ExcecaoPadrao(Erros.ErroCampoNomeDuplicado);
             //}
 
             try
             {
-                DTipoDado.Inserir(item);
+                DCampo.Inserir(item);
             }
             catch
             {
@@ -44,57 +44,57 @@ namespace Controller
         }
 
         //PESQUISAR
-        public static List<MTipoDado> Pesquisar(MTipoDado item)
+        public static List<MCampo> Pesquisar(MCampo item)
         {
-            List<MTipoDado> retorno = null;
+            List<MCampo> retorno = null;
 
             if (item.Nome != null && item.Nome.Length <= 100)
             {
-                retorno = DTipoDado.Pesquisar(item);
+                retorno = DCampo.Pesquisar(item);
             }
 
             return retorno;
         }
 
         //OBTER
-        public static MTipoDado Obter(MTipoDado item)
+        public static MCampo Obter(MCampo item)
         {
-            MTipoDado retorno = null;
+            MCampo retorno = null;
 
             if (item != null)
             {
-                retorno = DTipoDado.Obter(item);
+                retorno = DCampo.Obter(item);
             }
 
             return retorno;
         }
 
         //EDITAR
-        public static void Editar(MTipoDado item)
+        public static void Editar(MCampo item)
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
+                throw new ExcecaoPadrao(Erros.ErroCampoNull);
             }
 
             if (item.Nome.Trim() == "" || item.Nome.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNome);
+                throw new ExcecaoPadrao(Erros.ErroCampoNome);
             }
 
-            if (item.Descricao.Length > 100)
+            if (item.TipoDado == 0)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoDescricao);
+                throw new ExcecaoPadrao(Erros.ErroCampoTipoDado);
             }
 
             //if (Pesquisar(item) != null)
             //{
-            //    throw new ExcecaoPadrao(Erros.ErroTipoDadoNomeDuplicado);
+            //    throw new ExcecaoPadrao(Erros.ErroCampoNomeDuplicado);
             //}
 
             try
             {
-                DTipoDado.Editar(item);
+                DCampo.Editar(item);
             }
             catch
             {
@@ -103,16 +103,16 @@ namespace Controller
         }
 
         //EXCLUIR
-        public static void Excluir(MTipoDado item)
+        public static void Excluir(MCampo item)
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
+                throw new ExcecaoPadrao(Erros.ErroCampoNull);
             }
 
             try
             {
-                DTipoDado.Excluir(item);
+                DCampo.Excluir(item);
             }
             catch
             {

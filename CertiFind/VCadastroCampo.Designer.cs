@@ -43,6 +43,7 @@
             this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtNome
             // 
@@ -71,11 +72,13 @@
             // 
             // cboTipoDado
             // 
+            this.cboTipoDado.DisplayMember = "Nome";
             this.cboTipoDado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoDado.Location = new System.Drawing.Point(87, 42);
             this.cboTipoDado.Name = "cboTipoDado";
             this.cboTipoDado.Size = new System.Drawing.Size(162, 21);
             this.cboTipoDado.TabIndex = 8;
+            this.cboTipoDado.ValueMember = "ID";
             // 
             // VCadastroCampo
             // 
@@ -94,6 +97,7 @@
             this.MinimumSize = new System.Drawing.Size(277, 142);
             this.Name = "VCadastroCampo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.VCadastroCampo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

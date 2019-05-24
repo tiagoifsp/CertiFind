@@ -31,7 +31,7 @@ namespace CertiFind
 
         private void btnVCadastroCampo_Click(object sender, EventArgs e)
         {
-            VCadastroCampo form = new VCadastroCampo();
+            VCadastroCampo form = new VCadastroCampo(null);
             form.ShowDialog();
         }
 

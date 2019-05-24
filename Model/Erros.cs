@@ -19,5 +19,11 @@ namespace Model
         public static string ErroTipoDadoNome = "Campo nome inválido";
         public static string ErroTipoDadoDescricao = "Campo descrição inválido";
         public static string ErroTipoDadoNomeDuplicado = "Campo nome já existe.";
+
+        //Campo
+        public static string ErroCampoNull = "Campo(s) inválido(s)";
+        public static string ErroCampoNome = "Campo nome inválido";
+        public static string ErroCampoTipoDado = "Campo tipo de dado inválido";
+        public static string ErroCampoNomeDuplicado = "Campo nome já existe.";
     }
 }

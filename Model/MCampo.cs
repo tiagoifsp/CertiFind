@@ -12,7 +12,8 @@ namespace Model
     {
         public int ID { get; set; }
         public string Nome { get; set; }
-        public int TipoDado { get; set; }
+        public int? TipoDado { get; set; }
+        public string NomeTipoDado { get; set; }
     }
 }
 
