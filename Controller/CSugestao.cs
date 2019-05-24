@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using DAL;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,11 @@ namespace Controller
 {
     public static class CSugestao
     {
-        public static void Enviar(MSugestao sugestao, bool id)
+        public static List<MTipoSugestao> BuscarTipo()
         {
-            //
-        }
-
-        public static void ValidarSugestão(MSugestao sugestao)
-        {
-            //
-        }
-
-        public static string[] BuscarTipoSugestao()
-        {
-            throw new NotImplementedException();
+            List<MTipoSugestao> retorno = DSugestao.BuscarTipo();
+            //checagem retorno se necessário
+            return retorno;
         }
     }
 }

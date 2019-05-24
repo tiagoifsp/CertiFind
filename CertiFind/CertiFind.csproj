@@ -129,6 +129,10 @@
       <Project>{ec476687-4af9-45ac-9c09-2474c7040fd1}</Project>
       <Name>Controller</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{9925FA26-EE1E-4984-AD38-6D02FA739760}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{350da48d-daab-4585-86b0-923836031ae9}</Project>
       <Name>Model</Name>
