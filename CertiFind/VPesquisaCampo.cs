@@ -103,6 +103,9 @@ namespace CertiFind
             item.Nome = "";
             List<MTipoDado> lista = CTipoDado.Pesquisar(item);
 
+            if (lista == null)
+                lista = new List<MTipoDado>();
+
             item.Nome = "[Todos]";
             lista.Insert(0, item);
 

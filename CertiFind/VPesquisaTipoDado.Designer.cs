@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvResultado = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mTipoDadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
@@ -37,13 +41,9 @@
             this.btnInserir = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnExcluir = new System.Windows.Forms.ToolStripButton();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mTipoDadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
-            this.tbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mTipoDadoBindingSource)).BeginInit();
+            this.tbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvResultado
@@ -67,6 +67,34 @@
             this.dgvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultado.Size = new System.Drawing.Size(367, 211);
             this.dgvResultado.TabIndex = 11;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descricaoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // mTipoDadoBindingSource
+            // 
+            this.mTipoDadoBindingSource.DataSource = typeof(Model.MTipoDado);
             // 
             // btnPesquisar
             // 
@@ -133,36 +161,8 @@
             this.btnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(23, 22);
-            this.btnExcluir.Text = "Remover";
+            this.btnExcluir.Text = "Excluir";
             this.btnExcluir.Click += new System.EventHandler(this.btnRemover_Click);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descricaoDataGridViewTextBoxColumn
-            // 
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descricaoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // mTipoDadoBindingSource
-            // 
-            this.mTipoDadoBindingSource.DataSource = typeof(Model.MTipoDado);
             // 
             // VPesquisaTipoDado
             // 
@@ -183,9 +183,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisar tipo de dado";
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mTipoDadoBindingSource)).EndInit();
             this.tbBotoes.ResumeLayout(false);
             this.tbBotoes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mTipoDadoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

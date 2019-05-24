@@ -55,16 +55,19 @@ namespace CertiFind
         {
             if (atual != null)
             {
-                this.Text = "Editando campo";
+                this.Text = "Editar campo";
             }
             else
             {
-                this.Text = "Novo campo";
+                this.Text = "Inserir campo";
             }
 
             MTipoDado item = new MTipoDado();
             item.Nome = "";
-            List<MTipoDado> lista = CTipoDado.Pesquisar(item); 
+            List<MTipoDado> lista = CTipoDado.Pesquisar(item);
+
+            if (lista == null)
+                lista = new List<MTipoDado>();
 
             item.Nome = "[Escolha]";
             lista.Insert(0, item);

@@ -28,10 +28,10 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.ErroCampoTipoDado);
             }
 
-            //if (Pesquisar(item) != null)
-            //{
-            //    throw new ExcecaoPadrao(Erros.ErroCampoNomeDuplicado);
-            //}
+            if (Pesquisar(item) != null)
+            {
+                throw new ExcecaoPadrao(Erros.ErroCampoNomeDuplicado);
+            }
 
             try
             {
@@ -87,10 +87,10 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.ErroCampoTipoDado);
             }
 
-            //if (Pesquisar(item) != null)
-            //{
-            //    throw new ExcecaoPadrao(Erros.ErroCampoNomeDuplicado);
-            //}
+            if (Pesquisar(item) != null && Pesquisar(item)[0].ID != item.ID)
+            {
+                throw new ExcecaoPadrao(Erros.ErroCampoNomeDuplicado);
+            }
 
             try
             {

@@ -88,7 +88,7 @@
             this.btnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(23, 22);
-            this.btnExcluir.Text = "Remover";
+            this.btnExcluir.Text = "Excluir";
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // dgvResultado

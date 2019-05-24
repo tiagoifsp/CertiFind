@@ -65,7 +65,7 @@ namespace DAL
                 comando.Parameters.Add(parametro);
             }
 
-            if (item.TipoDado != null)
+            if (item.TipoDado != 0)
             {
                 comando.CommandText += " AND C.FKTipoDadosID = @FKTipoDadosID";
 

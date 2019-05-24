@@ -55,11 +55,11 @@ namespace CertiFind
         {
             if (atual != null)
             {
-                this.Text = "Editando tipo de dado";
+                this.Text = "Editar tipo de dado";
             }
             else
             {
-                this.Text = "Novo tipo de dado";
+                this.Text = "Inserir tipo de dado";
             }
 
             try
