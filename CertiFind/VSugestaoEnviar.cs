@@ -26,20 +26,30 @@ namespace CertiFind
 
         private void btnEnviarSugestão_Click(object sender, EventArgs e)
         {
-            if(rdoSim.Checked == true)
-            {
-                MUsuario usuario = new MUsuario();
+            MUsuario usuario = new MUsuario();
+            MSugestao sugestao = new MSugestao();
+            MTipoSugestao tipo = new MTipoSugestao();
+
+            if (rdoSim.Checked == true)
+            {                
                 usuario.ID = VLogin.usuarioAtual.ID;
             }
             else
             {
-                
+                usuario = null;
             }
+
+            sugestao.DataEnvio = DateTime.Now;           
+            
         }
 
         private void VSugestaoEnviar_Load(object sender, EventArgs e)
         {
             MTipos = CSugestao.BuscarTipo();
+
+            if (MTipos == null)
+                return;
+
             foreach (MTipoSugestao tipo in MTipos)
             {
                 cboTipoLista.Items.Add(tipo.Nome);

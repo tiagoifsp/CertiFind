@@ -16,5 +16,14 @@ namespace Controller
             //checagem retorno se necessário
             return retorno;
         }
+
+        public static object Pesquisar()
+        {
+            List<MSugestao> retorno = null;
+
+            retorno = DSugestao.Pesquisar();
+
+            return retorno;
+        }
     }
 }

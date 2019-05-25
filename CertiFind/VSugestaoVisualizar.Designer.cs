@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dgvSugestoes = new System.Windows.Forms.DataGridView();
+            this.dtpDataFinal = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataInicial = new System.Windows.Forms.DateTimePicker();
+            this.cboTipo = new System.Windows.Forms.ComboBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtSugestao = new System.Windows.Forms.TextBox();
+            this.mSugestaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSugestoes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mSugestaoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -56,15 +59,15 @@
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker2);
-            this.splitContainer1.Panel1.Controls.Add(this.dateTimePicker1);
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.dgvSugestoes);
+            this.splitContainer1.Panel1.Controls.Add(this.dtpDataFinal);
+            this.splitContainer1.Panel1.Controls.Add(this.dtpDataInicial);
+            this.splitContainer1.Panel1.Controls.Add(this.cboTipo);
+            this.splitContainer1.Panel1.Controls.Add(this.btnPesquisar);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.txtSugestao);
             this.splitContainer1.Size = new System.Drawing.Size(1324, 618);
             this.splitContainer1.SplitterDistance = 487;
             this.splitContainer1.TabIndex = 0;
@@ -96,70 +99,69 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Tipo";
             // 
-            // dataGridView1
+            // dgvSugestoes
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvSugestoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(481, 550);
-            this.dataGridView1.TabIndex = 13;
+            this.dgvSugestoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSugestoes.Location = new System.Drawing.Point(3, 65);
+            this.dgvSugestoes.Name = "dgvSugestoes";
+            this.dgvSugestoes.Size = new System.Drawing.Size(481, 550);
+            this.dgvSugestoes.TabIndex = 13;
             // 
-            // dateTimePicker2
+            // dtpDataFinal
             // 
-            this.dateTimePicker2.Checked = false;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(246, 38);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowCheckBox = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(101, 20);
-            this.dateTimePicker2.TabIndex = 12;
+            this.dtpDataFinal.Checked = false;
+            this.dtpDataFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataFinal.Location = new System.Drawing.Point(246, 38);
+            this.dtpDataFinal.Name = "dtpDataFinal";
+            this.dtpDataFinal.ShowCheckBox = true;
+            this.dtpDataFinal.Size = new System.Drawing.Size(101, 20);
+            this.dtpDataFinal.TabIndex = 12;
             // 
-            // dateTimePicker1
+            // dtpDataInicial
             // 
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(78, 39);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowCheckBox = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(101, 20);
-            this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.Value = new System.DateTime(2019, 5, 2, 20, 38, 9, 0);
+            this.dtpDataInicial.Checked = false;
+            this.dtpDataInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataInicial.Location = new System.Drawing.Point(78, 39);
+            this.dtpDataInicial.Name = "dtpDataInicial";
+            this.dtpDataInicial.ShowCheckBox = true;
+            this.dtpDataInicial.Size = new System.Drawing.Size(101, 20);
+            this.dtpDataInicial.TabIndex = 11;
+            this.dtpDataInicial.Value = new System.DateTime(2019, 5, 2, 20, 38, 9, 0);
             // 
-            // comboBox1
+            // cboTipo
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Critica",
-            "Dúvida",
-            "Elogio",
-            "Reclamação",
-            "Sugestão"});
-            this.comboBox1.Location = new System.Drawing.Point(80, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(267, 21);
-            this.comboBox1.TabIndex = 10;
+            this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipo.FormattingEnabled = true;
+            this.cboTipo.Location = new System.Drawing.Point(80, 12);
+            this.cboTipo.Name = "cboTipo";
+            this.cboTipo.Size = new System.Drawing.Size(267, 21);
+            this.cboTipo.TabIndex = 10;
             // 
-            // button1
+            // btnPesquisar
             // 
-            this.button1.Location = new System.Drawing.Point(353, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 47);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Location = new System.Drawing.Point(353, 12);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(132, 47);
+            this.btnPesquisar.TabIndex = 9;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // textBox1
+            // txtSugestao
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(833, 618);
-            this.textBox1.TabIndex = 0;
+            this.txtSugestao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSugestao.Location = new System.Drawing.Point(0, 0);
+            this.txtSugestao.Multiline = true;
+            this.txtSugestao.Name = "txtSugestao";
+            this.txtSugestao.Size = new System.Drawing.Size(833, 618);
+            this.txtSugestao.TabIndex = 0;
+            // 
+            // mSugestaoBindingSource
+            // 
+            this.mSugestaoBindingSource.DataSource = typeof(Model.MSugestao);
             // 
             // VSugestaoVisualizar
             // 
@@ -168,14 +170,17 @@
             this.ClientSize = new System.Drawing.Size(1324, 618);
             this.Controls.Add(this.splitContainer1);
             this.Name = "VSugestaoVisualizar";
-            this.Text = "VSugestaoVisualizar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Vizualizar Sugestões";
+            this.Load += new System.EventHandler(this.VSugestaoVisualizar_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSugestoes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mSugestaoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,11 +191,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dgvSugestoes;
+        private System.Windows.Forms.DateTimePicker dtpDataFinal;
+        private System.Windows.Forms.DateTimePicker dtpDataInicial;
+        private System.Windows.Forms.ComboBox cboTipo;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.TextBox txtSugestao;
+        private System.Windows.Forms.BindingSource mSugestaoBindingSource;
     }
 }

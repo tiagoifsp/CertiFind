@@ -111,6 +111,7 @@
     <EmbeddedResource Include="VSugestaoVisualizar.resx">
       <DependentUpon>VSugestaoVisualizar.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Model.MSugestao.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
