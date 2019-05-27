@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VPesquisaCampo));
             this.tbBotoes = new System.Windows.Forms.ToolStrip();
             this.btnInserir = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
@@ -44,6 +45,7 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboTipoDado = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mCampoBindingSource)).BeginInit();
@@ -58,7 +60,7 @@
             this.tbBotoes.Location = new System.Drawing.Point(0, 0);
             this.tbBotoes.Name = "tbBotoes";
             this.tbBotoes.Size = new System.Drawing.Size(489, 25);
-            this.tbBotoes.TabIndex = 17;
+            this.tbBotoes.TabIndex = 0;
             this.tbBotoes.Text = "toolStrip1";
             // 
             // btnInserir
@@ -112,7 +114,8 @@
             this.dgvResultado.RowHeadersVisible = false;
             this.dgvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultado.Size = new System.Drawing.Size(464, 211);
-            this.dgvResultado.TabIndex = 16;
+            this.dgvResultado.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.dgvResultado, "Dados registrados");
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -155,8 +158,9 @@
             this.btnPesquisar.Location = new System.Drawing.Point(379, 29);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(97, 23);
-            this.btnPesquisar.TabIndex = 15;
+            this.btnPesquisar.TabIndex = 3;
             this.btnPesquisar.Text = "Pesquisar";
+            this.toolTip1.SetToolTip(this.btnPesquisar, "Pesquisar registros");
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
@@ -165,7 +169,7 @@
             this.txtNome.Location = new System.Drawing.Point(253, 31);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(120, 20);
-            this.txtNome.TabIndex = 14;
+            this.txtNome.TabIndex = 2;
             // 
             // lblNome
             // 
@@ -193,7 +197,8 @@
             this.cboTipoDado.Location = new System.Drawing.Point(85, 31);
             this.cboTipoDado.Name = "cboTipoDado";
             this.cboTipoDado.Size = new System.Drawing.Size(121, 21);
-            this.cboTipoDado.TabIndex = 19;
+            this.cboTipoDado.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.cboTipoDado, "Selecione o tipo de dados");
             this.cboTipoDado.ValueMember = "ID";
             // 
             // VPesquisaCampo
@@ -209,6 +214,7 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(505, 320);
             this.MinimizeBox = false;
@@ -243,5 +249,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeTipoDadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource mCampoBindingSource;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

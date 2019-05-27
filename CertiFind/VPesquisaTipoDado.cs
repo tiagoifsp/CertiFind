@@ -90,7 +90,16 @@ namespace CertiFind
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        //Gambiarra - vefificar senão tem outra forma
+                        if (ex.Source == ".Net SqlClient Data Provider")
+                        {
+                            MessageBox.Show("Existe um campo cadastrado com este tipo de dado!");
+                        }
+                        else
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        
                     }
                 }
             }

@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VCadastroCampo));
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboTipoDado = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -40,8 +43,9 @@
             this.btnSalvar.Location = new System.Drawing.Point(174, 69);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Text = "Salvar";
+            this.toolTip1.SetToolTip(this.btnSalvar, "Salvar registro");
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -50,7 +54,7 @@
             this.txtNome.Location = new System.Drawing.Point(87, 12);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(162, 20);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 0;
             // 
             // label2
             // 
@@ -77,7 +81,8 @@
             this.cboTipoDado.Location = new System.Drawing.Point(87, 42);
             this.cboTipoDado.Name = "cboTipoDado";
             this.cboTipoDado.Size = new System.Drawing.Size(162, 21);
-            this.cboTipoDado.TabIndex = 8;
+            this.cboTipoDado.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.cboTipoDado, "Selecione o tipo de dado");
             this.cboTipoDado.ValueMember = "ID";
             // 
             // VCadastroCampo
@@ -91,6 +96,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(277, 142);
             this.MinimizeBox = false;
@@ -110,5 +116,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboTipoDado;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

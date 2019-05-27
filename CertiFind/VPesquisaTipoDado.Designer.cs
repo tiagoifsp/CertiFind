@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VPesquisaTipoDado));
             this.dgvResultado = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +42,7 @@
             this.btnInserir = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnExcluir = new System.Windows.Forms.ToolStripButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mTipoDadoBindingSource)).BeginInit();
             this.tbBotoes.SuspendLayout();
@@ -66,7 +68,8 @@
             this.dgvResultado.RowHeadersVisible = false;
             this.dgvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultado.Size = new System.Drawing.Size(367, 211);
-            this.dgvResultado.TabIndex = 11;
+            this.dgvResultado.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.dgvResultado, "Dados registrados");
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -101,8 +104,9 @@
             this.btnPesquisar.Location = new System.Drawing.Point(282, 28);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(97, 23);
-            this.btnPesquisar.TabIndex = 10;
+            this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
+            this.toolTip1.SetToolTip(this.btnPesquisar, "Pesquisar Tipo de Dados");
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
@@ -111,7 +115,7 @@
             this.txtNome.Location = new System.Drawing.Point(50, 30);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(223, 20);
-            this.txtNome.TabIndex = 7;
+            this.txtNome.TabIndex = 1;
             // 
             // lblNome
             // 
@@ -131,7 +135,7 @@
             this.tbBotoes.Location = new System.Drawing.Point(0, 0);
             this.tbBotoes.Name = "tbBotoes";
             this.tbBotoes.Size = new System.Drawing.Size(392, 25);
-            this.tbBotoes.TabIndex = 12;
+            this.tbBotoes.TabIndex = 0;
             this.tbBotoes.Text = "toolStrip1";
             // 
             // btnInserir
@@ -175,6 +179,7 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(408, 318);
             this.MinimizeBox = false;
@@ -205,5 +210,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource mTipoDadoBindingSource;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
