@@ -23,7 +23,7 @@ namespace CertiFind
 
         private void VSugestaoVisualizar_Load(object sender, EventArgs e)
         {
-            MTipos = CSugestao.BuscarTipo();
+            MTipos = CTipoSugestao.BuscarTipo();
             if (MTipos == null)
                 return;
 
@@ -37,7 +37,7 @@ namespace CertiFind
         {
             dgvSugestoes.Columns.Clear();
 
-            dgvSugestoes.DataSource = CSugestao.Pesquisar();
+            dgvSugestoes.DataSource = CTipoSugestao.Pesquisar();
         }
     }
 }

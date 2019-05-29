@@ -45,7 +45,7 @@ namespace CertiFind
 
         private void VSugestaoEnviar_Load(object sender, EventArgs e)
         {
-            MTipos = CSugestao.BuscarTipo();
+            MTipos = CTipoSugestao.BuscarTipo();
 
             if (MTipos == null)
                 return;
