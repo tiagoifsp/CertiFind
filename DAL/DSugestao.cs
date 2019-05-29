@@ -11,7 +11,9 @@ namespace DAL
 {
     public static class DSugestao
     {
-        
-
+        public static void EnviarSugestao(MSugestao sugestao)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,6 +10,16 @@ namespace Controller
 {
     public static class CSugestao
     {
-        
+        public static void EnviarSugestao(MSugestao sugestao)
+        {
+            try
+            {
+                DSugestao.EnviarSugestao(sugestao);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+        }
     }
 }
