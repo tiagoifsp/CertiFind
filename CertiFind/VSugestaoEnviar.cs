@@ -27,22 +27,22 @@ namespace CertiFind
         private void btnEnviarSugestão_Click(object sender, EventArgs e)
         {
             MSugestao sugestao = new MSugestao();
-            string selecao = cboTipoLista.SelectedText;
             foreach (MTipoSugestao mTipo in MTipos)
             {
-                if(mTipo.Nome == cboTipoLista.SelectedText)
+                if(mTipo.Nome == cboTipoLista.SelectedItem.ToString())
                 {
                     sugestao.FKTipoSugestaoID = mTipo;
                     break;
                 }
             }
-            if(rdoSim.Checked == true)
+            sugestao.Texto = rtbOpiniao.Text;
+            sugestao.DataEnvio = DateTime.Now;
+            if (rdoSim.Checked == true)
             {
                 sugestao.FKUsuarioID = VLogin.usuarioAtual;
             }
-            sugestao.Texto = rtbOpiniao.Text;
-            sugestao.DataEnvio = DateTime.Now;
             CSugestao.EnviarSugestao(sugestao);
+            Close();
         }
 
         private void VSugestaoEnviar_Load(object sender, EventArgs e)

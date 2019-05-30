@@ -18,7 +18,7 @@ namespace Controller
             }
             catch
             {
-                throw new Exception();
+                throw new ExcecaoPadrao("Falha no envio");
             }
         }
     }
