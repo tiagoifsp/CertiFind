@@ -12,5 +12,8 @@ namespace Model
     public static class Erros
     {
         public static string ErroGeral = "O sistema se comportou de maneira inesperada.";
+        public static string EmailVazio = "O campo E-mail não pode estar vazio. ";
+        public static string SenhaVazio = "O campo Senha não pode estar vazio. ";
+        public static string EmailInvalido = "O campo E-mail não é válido. ";
     }
 }
