@@ -39,15 +39,13 @@ namespace CertiFind
             {
                 dgvResultado.DataSource = CCampo.Pesquisar(item);
             }
-            catch (Exception ex)
+            catch (ExcecaoPadrao ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            if (dgvResultado.DataSource == null)
+            catch
             {
-                DialogResult modal = MessageBox.Show("Nenhum campo a ser exibido.", "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Erros.ErroGeral);
             }
         }
 
@@ -89,9 +87,13 @@ namespace CertiFind
 
                         btnPesquisar_Click(null, null);
                     }
-                    catch (Exception ex)
+                    catch (ExcecaoPadrao ex)
                     {
                         MessageBox.Show(ex.Message);
+                    }
+                    catch
+                    {
+                        MessageBox.Show(Erros.ErroGeral);
                     }
                 }
             }

@@ -45,9 +45,13 @@ namespace CertiFind
                 }
                 this.Close();
             }
-            catch (Exception ex)
+            catch (ExcecaoPadrao ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            catch
+            {
+                MessageBox.Show(Erros.ErroGeral);
             }
         }
 
@@ -70,9 +74,13 @@ namespace CertiFind
                     txtDescricao.Text = atual.Descricao;
                 }
             }
-            catch (Exception ex)
+            catch (ExcecaoPadrao ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            catch
+            {
+                MessageBox.Show(Erros.ErroGeral);
             }
         }
     }

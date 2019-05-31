@@ -38,15 +38,13 @@ namespace CertiFind
             {
                 dgvResultado.DataSource = CTipoDado.Pesquisar(item);
             }
-            catch (Exception ex)
+            catch (ExcecaoPadrao ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            if (dgvResultado.DataSource == null)
+            catch
             {
-                DialogResult modal = MessageBox.Show("Nenhum tipo de dado a ser exibido.", "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Erros.ErroGeral);
             }
         }
 
@@ -88,18 +86,13 @@ namespace CertiFind
 
                         btnPesquisar_Click(null, null);
                     }
-                    catch (Exception ex)
+                    catch (ExcecaoPadrao ex)
                     {
-                        //Gambiarra - vefificar senão tem outra forma
-                        if (ex.Source == ".Net SqlClient Data Provider")
-                        {
-                            MessageBox.Show("Existe um campo cadastrado com este tipo de dado!");
-                        }
-                        else
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                        
+                        MessageBox.Show(ex.Message);
+                    }
+                    catch
+                    {
+                        MessageBox.Show(Erros.ErroGeral);
                     }
                 }
             }

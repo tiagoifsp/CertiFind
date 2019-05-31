@@ -28,7 +28,8 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.ErroTipoDadoDescricao);
             }
 
-            if (Pesquisar(item) != null)
+            List<MTipoDado> lista = Pesquisar(item);
+            if (lista != null && lista.Count != 0)
             {
                 throw new ExcecaoPadrao(Erros.ErroTipoDadoNomeDuplicado);
             }
@@ -87,7 +88,8 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.ErroTipoDadoDescricao);
             }
 
-            if (Pesquisar(item) != null && Pesquisar(item)[0].ID != item.ID)
+            List<MTipoDado> lista = Pesquisar(item);
+            if (lista != null && lista.Count != 0 && lista[0].ID != item.ID)
             {
                 throw new ExcecaoPadrao(Erros.ErroTipoDadoNomeDuplicado);
             }
@@ -108,6 +110,14 @@ namespace Controller
             if (item == null)
             {
                 throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
+            }
+
+            MCampo pesquisa = new MCampo();
+            pesquisa.Nome = "";
+            pesquisa.TipoDado = item.ID;
+            if (CCampo.Pesquisar(pesquisa) != null)
+            {
+                throw new ExcecaoPadrao(Erros.ErroTipoDadoChaveEstrangeira);
             }
 
             try

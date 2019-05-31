@@ -28,7 +28,12 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.ErroCampoTipoDado);
             }
 
-            if (Pesquisar(item) != null)
+            MCampo pesquisa = new MCampo();
+            pesquisa.Nome = item.Nome;
+            pesquisa.TipoDado = 0;
+
+            List<MCampo> lista = Pesquisar(pesquisa);
+            if (lista != null && lista.Count != 0)
             {
                 throw new ExcecaoPadrao(Erros.ErroCampoNomeDuplicado);
             }
@@ -87,7 +92,12 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.ErroCampoTipoDado);
             }
 
-            if (Pesquisar(item) != null && Pesquisar(item)[0].ID != item.ID)
+            MCampo pesquisa = new MCampo();
+            pesquisa.Nome = item.Nome;
+            pesquisa.TipoDado = 0;
+
+            List<MCampo> lista = Pesquisar(pesquisa);
+            if (lista != null && lista.Count != 0 && lista[0].ID != item.ID)
             {
                 throw new ExcecaoPadrao(Erros.ErroCampoNomeDuplicado);
             }

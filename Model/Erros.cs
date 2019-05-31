@@ -19,6 +19,7 @@ namespace Model
         public static string ErroTipoDadoNome = "Campo nome inválido";
         public static string ErroTipoDadoDescricao = "Campo descrição inválido";
         public static string ErroTipoDadoNomeDuplicado = "Campo nome já existe.";
+        public static string ErroTipoDadoChaveEstrangeira = "Impossível excluir. Tipo de dando sendo usado no cadastro de Campo.";
 
         //Campo
         public static string ErroCampoNull = "Campo(s) inválido(s)";
