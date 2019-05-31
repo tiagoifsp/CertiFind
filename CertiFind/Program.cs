@@ -16,7 +16,7 @@ namespace CertiFind
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VLogin());
+            Application.Run(new frmGerarRestaurarBackup());
         }
     }
 }

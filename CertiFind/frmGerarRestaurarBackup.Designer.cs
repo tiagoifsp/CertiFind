@@ -31,7 +31,7 @@
             this.dgvGerarRestaurarBackup = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.colNomeArquivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRestaurar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colRestaurar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGerarRestaurarBackup)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +71,6 @@
             // 
             this.colRestaurar.HeaderText = "Restaurar";
             this.colRestaurar.Name = "colRestaurar";
-            this.colRestaurar.Text = "Restaturar";
             // 
             // frmGerarRestaurarBackup
             // 
@@ -94,6 +93,6 @@
         private System.Windows.Forms.DataGridView dgvGerarRestaurarBackup;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNomeArquivo;
-        private System.Windows.Forms.DataGridViewButtonColumn colRestaurar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRestaurar;
     }
 }
