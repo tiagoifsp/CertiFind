@@ -24,5 +24,10 @@ namespace CertiFind
                 label2.Text = VLogin.usuarioAtual.Nome + " (" + VLogin.usuarioAtual.ID + ")";
             }
         }
+
+        private void criaçãoDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new VCriacaoUsuario().ShowDialog();
+        }
     }
 }

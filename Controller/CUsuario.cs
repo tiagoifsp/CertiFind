@@ -36,6 +36,18 @@ namespace Controller
             return DUsuario.Login(u);
         }
 
+        public static List<MUsuario> Pesquisar(MUsuario item)
+        {
+            List<MUsuario> retorno = null;
+
+            if (item != null && item.Nome != null && item.Nome.Length < 100 && item.Email != null && item.Email.Length < 100 & item.Senha != null)
+            {
+                retorno = DUsuario.Pesquisar(item);
+            }
+
+            return retorno;
+        }
+
         public static MUsuario Obter(MUsuario u)
         {
             //todo: verificar se ID foi inicializado
@@ -45,8 +57,55 @@ namespace Controller
 
         public static void Inserir(MUsuario u)
         {
-            
-            DUsuario.Inserir(u);
+            if(u == null)
+            {
+                throw new ExcecaoPadrao(Erros.ErroGeral);
+            }
+
+            if(u.Nome.Trim() == "")
+            {
+                throw new ExcecaoPadrao(Erros.NomeVazio);
+            }
+
+            if(u.Nome.Length < 100)
+            {
+                throw new ExcecaoPadrao(Erros.NomeInvalido);
+            }
+
+            if(u.Senha.Trim() == "")
+            {
+                throw new ExcecaoPadrao(Erros.SenhaVazio);
+            }
+
+            if(u.Email.Trim() == "")
+            {
+                throw new ExcecaoPadrao(Erros.EmailVazio);
+            }
+
+            if(u.Email.Length < 100)
+            {
+                throw new ExcecaoPadrao(Erros.EmailInvalido);
+            }
+
+            if(u.Situacao.Trim() == null)
+            {
+                throw new ExcecaoPadrao(Erros.SituacaoInvalida);
+            }
+
+            if(u.FKTipoUsuarioID.ToString().Trim() == null)
+            {
+                throw new ExcecaoPadrao(Erros.TipodeUsuarioInvalido);
+            }
+
+            try
+            {
+                DUsuario.Inserir(u);
+            }
+
+            catch
+            {
+                throw;
+            }
         }
     }
 }

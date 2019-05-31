@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VCriacaoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCriacaoUsuario.Designer.cs">
+      <DependentUpon>VCriacaoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="VLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VCriacaoUsuario.resx">
+      <DependentUpon>VCriacaoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VLogin.resx">
       <DependentUpon>VLogin.cs</DependentUpon>
     </EmbeddedResource>

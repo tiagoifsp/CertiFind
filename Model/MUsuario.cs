@@ -13,6 +13,6 @@ namespace Model
         public String Email { get; set; }
         public String Senha { get; set; }
         public String Situacao { get; set; }
-        public int FKTipoUsuarioID { get; set; }
+        public int? FKTipoUsuarioID { get; set; }
     }
 }

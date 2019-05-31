@@ -124,27 +124,33 @@ namespace DAL
                 {
                     comando.CommandText += "AND NOME LIKE %@NOME% ";
                     SqlParameter param = new SqlParameter("@NOME", SqlDbType.VarChar) { Value = u.Nome };
+                    param.Value = u.Nome;
                     comando.Parameters.Add(param);
+
                 }
 
                 if (!"".Equals(u.Email))
                 {
                     comando.CommandText += "AND EMAIL LIKE %@EMAIL% ";
                     SqlParameter param = new SqlParameter("@EMAIL", SqlDbType.VarChar) { Value = u.Email };
+                    param.Value = u.Email;
                     comando.Parameters.Add(param);
                 }
 
-                if (!"".Equals(u.Situacao))
+                if (u.Situacao != null && u.Situacao != "")
                 {
                     comando.CommandText += "AND SITUACAO = @SITUACAO ";
                     SqlParameter param = new SqlParameter("@SITUACAO", SqlDbType.Char) { Value = u.Situacao };
+                    param.Value = u.Situacao;
                     comando.Parameters.Add(param);
+                 
                 }
 
-                if (!"".Equals(u.FKTipoUsuarioID))
+                if (u.FKTipoUsuarioID != null)
                 {
                     comando.CommandText += "AND FKTIPOUSUARIOID = @FKTIPOUSUARIOID ";
                     SqlParameter param = new SqlParameter("@FKTIPOUSUARIOID ", SqlDbType.Int) { Value = u.FKTipoUsuarioID };
+                    param.Value = u.FKTipoUsuarioID;
                     comando.Parameters.Add(param);
                 }
 
@@ -154,10 +160,13 @@ namespace DAL
 
                 while (reader.Read())
                 {
+                    if (usuarios == null)
+                        usuarios = new List<MUsuario>();
+
                     usuario = new MUsuario
                     {
                         ID = (int)reader["ID"],
-                        Nome = reader["Nome"].ToString(),
+                        Nome = reader["NOME"].ToString(),
                         Situacao = reader["SITUACAO"].ToString(),
                         Email = reader["EMAIL"].ToString(),
                         FKTipoUsuarioID = (int)reader["FKTipoUsuarioID"]

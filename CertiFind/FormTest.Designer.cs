@@ -57,8 +57,9 @@
             // criaçãoDeUsuárioToolStripMenuItem
             // 
             this.criaçãoDeUsuárioToolStripMenuItem.Name = "criaçãoDeUsuárioToolStripMenuItem";
-            this.criaçãoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.criaçãoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.criaçãoDeUsuárioToolStripMenuItem.Text = "Criação de Usuário";
+            this.criaçãoDeUsuárioToolStripMenuItem.Click += new System.EventHandler(this.criaçãoDeUsuárioToolStripMenuItem_Click);
             // 
             // label1
             // 
