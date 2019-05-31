@@ -173,10 +173,6 @@
             this.txtSugestao.Size = new System.Drawing.Size(833, 618);
             this.txtSugestao.TabIndex = 0;
             // 
-            // mSugestaoBindingSource
-            // 
-            this.mSugestaoBindingSource.DataSource = typeof(Model.MSugestao);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
