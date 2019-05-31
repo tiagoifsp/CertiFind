@@ -41,11 +41,11 @@ namespace CertiFind
             }
             catch (ExcecaoPadrao ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch
             {
-                MessageBox.Show(Erros.ErroGeral);
+                MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -82,18 +82,17 @@ namespace CertiFind
                     {
                         CCampo.Excluir(item);
 
-                        MessageBox.Show("Tipo de dado excluído com sucesso.", "",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Tipo de dado excluído com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         btnPesquisar_Click(null, null);
                     }
                     catch (ExcecaoPadrao ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch
                     {
-                        MessageBox.Show(Erros.ErroGeral);
+                        MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

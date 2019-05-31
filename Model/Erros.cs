@@ -17,17 +17,17 @@ namespace Model
         public static string EmailInvalido = "O campo E-mail não é válido. ";
         public static string ErroFalhaConexaoSGBD = "Falha na conexão com o SGBD.";
 
-        //Tipo dado
-        public static string ErroTipoDadoNull = "Campo(s) inválido(s)";
-        public static string ErroTipoDadoNome = "Campo nome inválido";
-        public static string ErroTipoDadoDescricao = "Campo descrição inválido";
-        public static string ErroTipoDadoNomeDuplicado = "Campo nome já existe.";
-        public static string ErroTipoDadoChaveEstrangeira = "Impossível excluir. Tipo de dando sendo usado no cadastro de Campo.";
+        //Tipo de dado
+        public static string TipoDadoNull = "Campo(s) inválido(s)";
+        public static string TipoDadoNome = "Campo nome inválido";
+        public static string TipoDadoDescricao = "Campo descrição inválido";
+        public static string TipoDadoNomeDuplicado = "Campo nome já existe.";
+        public static string TipoDadoChaveEstrangeira = "Impossível excluir. Tipo de dando sendo usado no cadastro de Campo.";
 
         //Campo
-        public static string ErroCampoNull = "Campo(s) inválido(s)";
-        public static string ErroCampoNome = "Campo nome inválido";
-        public static string ErroCampoTipoDado = "Campo tipo de dado inválido";
-        public static string ErroCampoNomeDuplicado = "Campo nome já existe.";
+        public static string CampoNull = "Campo(s) inválido(s)";
+        public static string CampoNome = "Campo nome inválido";
+        public static string CampoTipoDado = "Campo tipo de dado inválido";
+        public static string CampoNomeDuplicado = "Campo nome já existe.";
     }
 }

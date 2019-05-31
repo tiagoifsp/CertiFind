@@ -35,7 +35,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -78,7 +78,7 @@
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Text = "Salvar";
-            this.toolTip1.SetToolTip(this.btnSalvar, "Salvar registro");
+            this.toolTip.SetToolTip(this.btnSalvar, "Salvar registro");
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -113,6 +113,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

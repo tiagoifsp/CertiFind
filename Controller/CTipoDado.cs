@@ -15,23 +15,23 @@ namespace Controller
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
+                throw new ExcecaoPadrao(Erros.TipoDadoNull);
             }
 
             if (item.Nome.Trim() == "" || item.Nome.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNome);
+                throw new ExcecaoPadrao(Erros.TipoDadoNome);
             }
 
             if (item.Descricao.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoDescricao);
+                throw new ExcecaoPadrao(Erros.TipoDadoDescricao);
             }
 
             List<MTipoDado> lista = Pesquisar(item);
             if (lista != null && lista.Count != 0)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNomeDuplicado);
+                throw new ExcecaoPadrao(Erros.TipoDadoNomeDuplicado);
             }
 
             try
@@ -75,23 +75,23 @@ namespace Controller
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
+                throw new ExcecaoPadrao(Erros.TipoDadoNull);
             }
 
             if (item.Nome.Trim() == "" || item.Nome.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNome);
+                throw new ExcecaoPadrao(Erros.TipoDadoNome);
             }
 
             if (item.Descricao.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoDescricao);
+                throw new ExcecaoPadrao(Erros.TipoDadoDescricao);
             }
 
             List<MTipoDado> lista = Pesquisar(item);
             if (lista != null && lista.Count != 0 && lista[0].ID != item.ID)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNomeDuplicado);
+                throw new ExcecaoPadrao(Erros.TipoDadoNomeDuplicado);
             }
 
             try
@@ -109,7 +109,7 @@ namespace Controller
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoNull);
+                throw new ExcecaoPadrao(Erros.TipoDadoNull);
             }
 
             MCampo pesquisa = new MCampo();
@@ -117,7 +117,7 @@ namespace Controller
             pesquisa.TipoDado = item.ID;
             if (CCampo.Pesquisar(pesquisa) != null)
             {
-                throw new ExcecaoPadrao(Erros.ErroTipoDadoChaveEstrangeira);
+                throw new ExcecaoPadrao(Erros.TipoDadoChaveEstrangeira);
             }
 
             try

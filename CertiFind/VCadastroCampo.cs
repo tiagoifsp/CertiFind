@@ -36,18 +36,22 @@ namespace CertiFind
                 {
                     item.ID = atual.ID;
                     CCampo.Editar(item);
-                    MessageBox.Show("Campo alterado com sucesso.");
+                    MessageBox.Show("Campo alterado com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     CCampo.Inserir(item);
-                    MessageBox.Show("Campo salvo com sucesso.");
+                    MessageBox.Show("Campo salvo com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.Close();
             }
-            catch (Exception ex)
+            catch (ExcecaoPadrao ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch
+            {
+                MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -82,9 +86,13 @@ namespace CertiFind
                     cboTipoDado.SelectedValue = atual.TipoDado.Value;
                 }
             }
-            catch (Exception ex)
+            catch (ExcecaoPadrao ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch
+            {
+                MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

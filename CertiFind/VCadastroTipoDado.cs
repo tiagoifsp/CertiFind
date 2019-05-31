@@ -36,22 +36,22 @@ namespace CertiFind
                 {
                     item.ID = atual.ID;
                     CTipoDado.Editar(item);
-                    MessageBox.Show("Tipo de dado alterado com sucesso.");
+                    MessageBox.Show("Tipo de dado alterado com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     CTipoDado.Inserir(item);
-                    MessageBox.Show("Tipo de dado salvo com sucesso.");
+                    MessageBox.Show("Tipo de dado salvo com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.Close();
             }
             catch (ExcecaoPadrao ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch
             {
-                MessageBox.Show(Erros.ErroGeral);
+                MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -76,11 +76,11 @@ namespace CertiFind
             }
             catch (ExcecaoPadrao ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch
             {
-                MessageBox.Show(Erros.ErroGeral);
+                MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

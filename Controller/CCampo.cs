@@ -15,17 +15,17 @@ namespace Controller
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.ErroCampoNull);
+                throw new ExcecaoPadrao(Erros.CampoNull);
             }
 
             if (item.Nome.Trim() == "" || item.Nome.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.ErroCampoNome);
+                throw new ExcecaoPadrao(Erros.CampoNome);
             }
 
             if (item.TipoDado == 0)
             {
-                throw new ExcecaoPadrao(Erros.ErroCampoTipoDado);
+                throw new ExcecaoPadrao(Erros.CampoTipoDado);
             }
 
             MCampo pesquisa = new MCampo();
@@ -35,7 +35,7 @@ namespace Controller
             List<MCampo> lista = Pesquisar(pesquisa);
             if (lista != null && lista.Count != 0)
             {
-                throw new ExcecaoPadrao(Erros.ErroCampoNomeDuplicado);
+                throw new ExcecaoPadrao(Erros.CampoNomeDuplicado);
             }
 
             try
@@ -79,17 +79,17 @@ namespace Controller
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.ErroCampoNull);
+                throw new ExcecaoPadrao(Erros.CampoNull);
             }
 
             if (item.Nome.Trim() == "" || item.Nome.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.ErroCampoNome);
+                throw new ExcecaoPadrao(Erros.CampoNome);
             }
 
             if (item.TipoDado == 0)
             {
-                throw new ExcecaoPadrao(Erros.ErroCampoTipoDado);
+                throw new ExcecaoPadrao(Erros.CampoTipoDado);
             }
 
             MCampo pesquisa = new MCampo();
@@ -99,7 +99,7 @@ namespace Controller
             List<MCampo> lista = Pesquisar(pesquisa);
             if (lista != null && lista.Count != 0 && lista[0].ID != item.ID)
             {
-                throw new ExcecaoPadrao(Erros.ErroCampoNomeDuplicado);
+                throw new ExcecaoPadrao(Erros.CampoNomeDuplicado);
             }
 
             try
@@ -117,7 +117,7 @@ namespace Controller
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.ErroCampoNull);
+                throw new ExcecaoPadrao(Erros.CampoNull);
             }
 
             try
