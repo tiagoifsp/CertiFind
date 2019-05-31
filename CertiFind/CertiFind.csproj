@@ -84,8 +84,6 @@
     <Compile Include="VLogin.Designer.cs">
       <DependentUpon>VLogin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
-      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
