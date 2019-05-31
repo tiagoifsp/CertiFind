@@ -25,6 +25,14 @@ namespace CertiFind
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (txtNome.Text.Trim() == "" || txtNome.Text.Length > 100)
+            {
+                errorProvider.SetError(txtNome, Erros.TipoDadoNome);
+            } else
+            {
+                errorProvider.SetError(txtNome, "");
+            }
+
             MTipoDado item = new MTipoDado();
 
             item.Nome = txtNome.Text.Trim();

@@ -42,7 +42,7 @@
             this.btnInserir = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnExcluir = new System.Windows.Forms.ToolStripButton();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mTipoDadoBindingSource)).BeginInit();
             this.tbBotoes.SuspendLayout();
@@ -69,7 +69,7 @@
             this.dgvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultado.Size = new System.Drawing.Size(367, 211);
             this.dgvResultado.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.dgvResultado, "Dados registrados");
+            this.toolTip.SetToolTip(this.dgvResultado, "Dados registrados");
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -106,7 +106,7 @@
             this.btnPesquisar.Size = new System.Drawing.Size(97, 23);
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
-            this.toolTip1.SetToolTip(this.btnPesquisar, "Pesquisar Tipo de Dados");
+            this.toolTip.SetToolTip(this.btnPesquisar, "Pesquisar Tipo de Dados");
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
@@ -210,6 +210,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource mTipoDadoBindingSource;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

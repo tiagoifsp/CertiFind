@@ -45,7 +45,7 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboTipoDado = new System.Windows.Forms.ComboBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mCampoBindingSource)).BeginInit();
@@ -115,7 +115,7 @@
             this.dgvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultado.Size = new System.Drawing.Size(464, 211);
             this.dgvResultado.TabIndex = 4;
-            this.toolTip1.SetToolTip(this.dgvResultado, "Dados registrados");
+            this.toolTip.SetToolTip(this.dgvResultado, "Dados registrados");
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -160,7 +160,7 @@
             this.btnPesquisar.Size = new System.Drawing.Size(97, 23);
             this.btnPesquisar.TabIndex = 3;
             this.btnPesquisar.Text = "Pesquisar";
-            this.toolTip1.SetToolTip(this.btnPesquisar, "Pesquisar registros");
+            this.toolTip.SetToolTip(this.btnPesquisar, "Pesquisar registros");
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
@@ -198,7 +198,7 @@
             this.cboTipoDado.Name = "cboTipoDado";
             this.cboTipoDado.Size = new System.Drawing.Size(121, 21);
             this.cboTipoDado.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.cboTipoDado, "Selecione o tipo de dados");
+            this.toolTip.SetToolTip(this.cboTipoDado, "Selecione o tipo de dados");
             this.cboTipoDado.ValueMember = "ID";
             // 
             // VPesquisaCampo
@@ -249,6 +249,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeTipoDadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource mCampoBindingSource;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

@@ -25,6 +25,22 @@ namespace CertiFind
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if(txtNome.Text.Trim() == "" || txtNome.Text.Length > 100)
+            {
+                errorProvider.SetError(txtNome, Erros.CampoNome);
+            } else
+            {
+                errorProvider.SetError(txtNome, "");
+            }
+
+            if (cboTipoDado.SelectedIndex == 0)
+            {
+                errorProvider.SetError(cboTipoDado, Erros.CampoTipoDado);
+            } else
+            {
+                errorProvider.SetError(cboTipoDado, "");
+            }
+
             MCampo item = new MCampo();
 
             item.Nome = txtNome.Text.Trim();

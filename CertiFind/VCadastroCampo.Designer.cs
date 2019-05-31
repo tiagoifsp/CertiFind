@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboTipoDado = new System.Windows.Forms.ComboBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -85,11 +87,15 @@
             this.toolTip.SetToolTip(this.cboTipoDado, "Selecione o tipo de dado");
             this.cboTipoDado.ValueMember = "ID";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // VCadastroCampo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 103);
+            this.ClientSize = new System.Drawing.Size(279, 103);
             this.Controls.Add(this.cboTipoDado);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtNome);
@@ -98,12 +104,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(277, 142);
+            this.MaximumSize = new System.Drawing.Size(295, 142);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(277, 142);
+            this.MinimumSize = new System.Drawing.Size(295, 142);
             this.Name = "VCadastroCampo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.VCadastroCampo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +124,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboTipoDado;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
