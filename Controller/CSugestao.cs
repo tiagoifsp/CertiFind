@@ -21,5 +21,10 @@ namespace Controller
                 throw new ExcecaoPadrao("Falha no envio");
             }
         }
+
+        public static List<MSugestao> Pesquisar()
+        {
+            return DSugestao.Pesquisar();
+        }
     }
 }

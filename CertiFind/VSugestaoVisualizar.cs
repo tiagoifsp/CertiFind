@@ -35,9 +35,8 @@ namespace CertiFind
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            dgvSugestoes.Columns.Clear();
-
-            dgvSugestoes.DataSource = CTipoSugestao.Pesquisar();
+            dgvSugestoes.DataSource = null;
+            dgvSugestoes.DataSource = CSugestao.Pesquisar();
         }
     }
 }

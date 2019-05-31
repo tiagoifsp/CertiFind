@@ -40,6 +40,10 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtSugestao = new System.Windows.Forms.TextBox();
             this.mSugestaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKTipoSugestaoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataEnvioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKUsuarioIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -101,12 +105,22 @@
             // 
             // dgvSugestoes
             // 
+            this.dgvSugestoes.AllowUserToAddRows = false;
+            this.dgvSugestoes.AllowUserToDeleteRows = false;
             this.dgvSugestoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSugestoes.AutoGenerateColumns = false;
             this.dgvSugestoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSugestoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.fKTipoSugestaoIDDataGridViewTextBoxColumn,
+            this.dataEnvioDataGridViewTextBoxColumn,
+            this.fKUsuarioIDDataGridViewTextBoxColumn});
+            this.dgvSugestoes.DataSource = this.mSugestaoBindingSource;
             this.dgvSugestoes.Location = new System.Drawing.Point(3, 65);
             this.dgvSugestoes.Name = "dgvSugestoes";
+            this.dgvSugestoes.ReadOnly = true;
             this.dgvSugestoes.Size = new System.Drawing.Size(481, 550);
             this.dgvSugestoes.TabIndex = 13;
             // 
@@ -163,6 +177,34 @@
             // 
             this.mSugestaoBindingSource.DataSource = typeof(Model.MSugestao);
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fKTipoSugestaoIDDataGridViewTextBoxColumn
+            // 
+            this.fKTipoSugestaoIDDataGridViewTextBoxColumn.DataPropertyName = "FKTipoSugestaoID";
+            this.fKTipoSugestaoIDDataGridViewTextBoxColumn.HeaderText = "FKTipoSugestaoID";
+            this.fKTipoSugestaoIDDataGridViewTextBoxColumn.Name = "fKTipoSugestaoIDDataGridViewTextBoxColumn";
+            this.fKTipoSugestaoIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataEnvioDataGridViewTextBoxColumn
+            // 
+            this.dataEnvioDataGridViewTextBoxColumn.DataPropertyName = "DataEnvio";
+            this.dataEnvioDataGridViewTextBoxColumn.HeaderText = "DataEnvio";
+            this.dataEnvioDataGridViewTextBoxColumn.Name = "dataEnvioDataGridViewTextBoxColumn";
+            this.dataEnvioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fKUsuarioIDDataGridViewTextBoxColumn
+            // 
+            this.fKUsuarioIDDataGridViewTextBoxColumn.DataPropertyName = "FKUsuarioID";
+            this.fKUsuarioIDDataGridViewTextBoxColumn.HeaderText = "FKUsuarioID";
+            this.fKUsuarioIDDataGridViewTextBoxColumn.Name = "fKUsuarioIDDataGridViewTextBoxColumn";
+            this.fKUsuarioIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // VSugestaoVisualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +239,10 @@
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtSugestao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fKTipoSugestaoIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataEnvioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fKUsuarioIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource mSugestaoBindingSource;
     }
 }

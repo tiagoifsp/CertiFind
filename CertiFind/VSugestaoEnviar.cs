@@ -31,7 +31,7 @@ namespace CertiFind
             {
                 if(mTipo.Nome == cboTipoLista.SelectedItem.ToString())
                 {
-                    sugestao.FKTipoSugestaoID = mTipo;
+                    sugestao.FKTipoSugestaoID = mTipo.ID;
                     break;
                 }
             }
@@ -39,7 +39,7 @@ namespace CertiFind
             sugestao.DataEnvio = DateTime.Now;
             if (rdoSim.Checked == true)
             {
-                sugestao.FKUsuarioID = VLogin.usuarioAtual;
+                sugestao.FKUsuarioID = VLogin.usuarioAtual.ID;
             }
             CSugestao.EnviarSugestao(sugestao);
             Close();

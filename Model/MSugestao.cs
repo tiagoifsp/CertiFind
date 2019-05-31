@@ -8,10 +8,10 @@ namespace Model
 {
     public class MSugestao
     {
-        public int ID { get; set; }
-        public MTipoSugestao FKTipoSugestaoID { get; set; }
+        public int? ID { get; set; }
+        public int? FKTipoSugestaoID { get; set; }
         public string Texto { get; set; }
         public DateTime DataEnvio { get; set; }
-        public MUsuario FKUsuarioID { get; set; }
+        public int? FKUsuarioID { get; set; }
     }
 }
