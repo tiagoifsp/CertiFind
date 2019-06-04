@@ -19,7 +19,7 @@ namespace CertiFind
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new frmGerarRestaurarBackup().ShowDialog();
+            new VGerarRestaurarBackup().ShowDialog();
         }
 
         private void FormTest_Load(object sender, EventArgs e)

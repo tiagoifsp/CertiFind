@@ -1,6 +1,6 @@
 ﻿namespace CertiFind
 {
-    partial class frmGerarRestaurarBackup
+    partial class VGerarRestaurarBackup
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VGerarRestaurarBackup));
             this.dgvGerarRestaurarBackup = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGerarBackup = new System.Windows.Forms.Button();
             this.colNomeArquivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRestaurar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRestaurar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGerarRestaurarBackup)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,15 +52,15 @@
             this.dgvGerarRestaurarBackup.TabIndex = 0;
             this.dgvGerarRestaurarBackup.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGerarRestaurarBackup_CellMouseClick);
             // 
-            // button1
+            // btnGerarBackup
             // 
-            this.button1.Location = new System.Drawing.Point(713, 91);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnGerarBackup.Location = new System.Drawing.Point(713, 12);
+            this.btnGerarBackup.Name = "btnGerarBackup";
+            this.btnGerarBackup.Size = new System.Drawing.Size(75, 51);
+            this.btnGerarBackup.TabIndex = 1;
+            this.btnGerarBackup.Text = "Gerar Backup";
+            this.btnGerarBackup.UseVisualStyleBackColor = true;
+            this.btnGerarBackup.Click += new System.EventHandler(this.button1_Click);
             // 
             // colNomeArquivo
             // 
@@ -69,15 +70,19 @@
             // 
             // colRestaurar
             // 
-            this.colRestaurar.HeaderText = "Restaurar";
+            this.colRestaurar.HeaderText = "";
+            this.colRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("colRestaurar.Image")));
             this.colRestaurar.Name = "colRestaurar";
+            this.colRestaurar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRestaurar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colRestaurar.Width = 50;
             // 
             // frmGerarRestaurarBackup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGerarBackup);
             this.Controls.Add(this.dgvGerarRestaurarBackup);
             this.Name = "frmGerarRestaurarBackup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -91,8 +96,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvGerarRestaurarBackup;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGerarBackup;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNomeArquivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRestaurar;
+        private System.Windows.Forms.DataGridViewImageColumn colRestaurar;
     }
 }

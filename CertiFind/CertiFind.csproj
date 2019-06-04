@@ -68,11 +68,11 @@
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGerarRestaurarBackup.cs">
+    <Compile Include="VGerarRestaurarBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGerarRestaurarBackup.Designer.cs">
-      <DependentUpon>frmGerarRestaurarBackup.cs</DependentUpon>
+    <Compile Include="VGerarRestaurarBackup.Designer.cs">
+      <DependentUpon>VGerarRestaurarBackup.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,8 +91,8 @@
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGerarRestaurarBackup.resx">
-      <DependentUpon>frmGerarRestaurarBackup.cs</DependentUpon>
+    <EmbeddedResource Include="VGerarRestaurarBackup.resx">
+      <DependentUpon>VGerarRestaurarBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
