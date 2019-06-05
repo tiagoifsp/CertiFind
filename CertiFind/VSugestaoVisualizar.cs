@@ -29,14 +29,40 @@ namespace CertiFind
 
             foreach (MTipoSugestao tipo in MTipos)
             {
-                cboTipo.Items.Add(tipo.Nome);
+                int t = 0;
+                cboTipo.Items.Insert(t, tipo.Nome);
+                t += 1;
             }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             dgvSugestoes.DataSource = null;
-            dgvSugestoes.DataSource = CSugestao.Pesquisar();
+            if(dtpDataInicial.Checked == false && dtpDataFinal.Checked == false)
+            {
+                MessageBox.Show("teste");
+                dgvSugestoes.DataSource = CSugestao.Pesquisar(Convert.ToInt32(cboTipo.SelectedIndex));
+            }
+            else if(dtpDataInicial.Checked == true && dtpDataFinal.Checked == true)
+            {
+                dgvSugestoes.DataSource = CSugestao.Pesquisar((int)cboTipo.SelectedValue, dtpDataInicial.Value.ToString("yyyy-MM-dd"), dtpDataFinal.Value.ToString("yyyy-MM-dd"));
+            }
+            else
+            {
+                if(dtpDataInicial.Checked == true)
+                {
+                    dgvSugestoes.DataSource = CSugestao.Pesquisar((int)cboTipo.SelectedValue, true, dtpDataInicial.Value);
+                }
+                else
+                {
+                    dgvSugestoes.DataSource = CSugestao.Pesquisar((int)cboTipo.SelectedValue, false, dtpDataFinal.Value);
+                }
+            }
+        }
+
+        private void dgvSugestoes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtSugestao.Text = CSugestao.Obter((int)dgvSugestoes.Rows[e.RowIndex].Cells[0].Value);
         }
     }
 }

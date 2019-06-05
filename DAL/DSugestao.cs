@@ -73,7 +73,7 @@ namespace DAL
             }
         }
 
-        public static List<MSugestao> Pesquisar()
+        public static List<MSugestao> Pesquisar(int tipo, String datainicial, String datafinal)
         {
             List<MSugestao> retorno = null;
 
@@ -83,9 +83,23 @@ namespace DAL
                 {
                     Connection = Conexao.Connection,
                     CommandText =
-                    "select s.ID, t.ID [TipoID], s.DataEnvio, s.FKTipoSugestaoID,  u.ID [FKUsuarioID] from TBSugestao s join TBTipoSugestao t on (t.ID = s.FKTipoSugestaoID) join TBUsuario u on (u.ID = s.FKUsuarioID)"
+                    "select ID, FKTipoSugestaoID, DataEnvio, FKUsuarioID from TBSugestao where FKTipoSugestaoID = @tipo and DataEnvio < @datafinal and DataEnvio > @datainicial"
                 };
-                
+
+                SqlParameter parameter;
+
+                parameter = new SqlParameter("@tipo", SqlDbType.Int);
+                parameter.Value = tipo;
+                command.Parameters.Add(parameter);
+
+                parameter = new SqlParameter("@datafinal", SqlDbType.DateTime);
+                parameter.Value = datafinal;
+                command.Parameters.Add(parameter);
+
+                parameter = new SqlParameter("@datainicial", SqlDbType.DateTime);
+                parameter.Value = datainicial;
+                command.Parameters.Add(parameter);
+
                 SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
@@ -110,9 +124,9 @@ namespace DAL
             return retorno;
         }
 
-        public static MSugestao Obter(MSugestao item)
+        public static List<MSugestao> Pesquisar(int tipo)
         {
-            MSugestao retorno = null;
+            List<MSugestao> retorno = null;
 
             if (Conexao.Abrir())
             {
@@ -120,23 +134,61 @@ namespace DAL
                 {
                     Connection = Conexao.Connection,
                     CommandText =
-                    "select s.Texto from TBSugestao s where s.ID = @id"
+                    "select ID, FKTipoSugestaoID, DataEnvio, FKUsuarioID from TBSugestao where FKTipoSugestaoID = @tipo"
+                };                    
+
+                SqlParameter parameter;
+
+                parameter = new SqlParameter("@tipo", SqlDbType.Int);
+                parameter.Value = tipo;
+                command.Parameters.Add(parameter);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (retorno == null)
+                        retorno = new List<MSugestao>();
+                    
+                    MSugestao sugestao = new MSugestao();
+
+                    sugestao.ID = (int)reader["ID"];
+                    sugestao.FKTipoSugestaoID = (int)reader["FKTipoSugestaoID"];
+                    sugestao.DataEnvio = (DateTime)reader["DataEnvio"];
+                    sugestao.FKUsuarioID = (int)reader["FKUsuarioID"];
+
+                    retorno.Add(sugestao);
+                }
+
+                reader.Close();
+                Conexao.Fechar();
+            }
+
+            return retorno;
+        }
+
+        public static string Obter(int id)
+        {
+            string retorno = "";
+
+            if (Conexao.Abrir())
+            {
+                SqlCommand command = new SqlCommand
+                {
+                    Connection = Conexao.Connection,
+                    CommandText =
+                    "select Texto from TBSugestao where ID = @id"
                 };
 
                 SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
-                param.Value = item.ID;
+                param.Value = id;
                 command.Parameters.Add(param);
 
                 SqlDataReader reader = command.ExecuteReader();
 
-
                 if (reader.Read())
                 {
-                    retorno = new MSugestao();
-
-                    retorno.ID = (int)reader["ID"];
-                    retorno.DataEnvio = (DateTime)reader["DataEnvio"];
-                    retorno.Texto = reader["Texto"].ToString();
+                    retorno = reader["Texto"].ToString();
                 }
 
                 reader.Close();
