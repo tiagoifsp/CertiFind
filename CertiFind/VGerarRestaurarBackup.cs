@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CertiFind
 {
     public partial class VGerarRestaurarBackup : Form
@@ -24,11 +25,13 @@ namespace CertiFind
 
         private void ListarBackup()
         {
+            dgvGerarRestaurarBackup.Rows.Clear();
+
             DirectoryInfo Dir = new DirectoryInfo(ConfigurationManager.ConnectionStrings["CaminhoBackup"].ConnectionString);
-            DirectoryInfo[] Files = Dir.GetDirectories("*", SearchOption.TopDirectoryOnly);
-            foreach (DirectoryInfo File in Files)
+            DirectoryInfo[] Diretorios = Dir.GetDirectories("*", SearchOption.TopDirectoryOnly);
+            foreach (DirectoryInfo Pasta in Diretorios)
             {
-                dgvGerarRestaurarBackup.Rows.Add(File.FullName,null);
+                dgvGerarRestaurarBackup.Rows.Add(Pasta.FullName,null);
             }              
         }
 
@@ -41,15 +44,15 @@ namespace CertiFind
         {
             if (e.ColumnIndex == 1)
             {
-                string caminho = ConfigurationManager.ConnectionStrings["CaminhoBackup"].ConnectionString + @"Backup_Manual_" + DateTime.Now.ToString("yyyy-MM-dd");
+                string caminho = dgvGerarRestaurarBackup.Rows[e.RowIndex].Cells[0].Value.ToString(); ;
                 String caminhoNovo = ConfigurationManager.ConnectionStrings["CaminhoArquivos"].ConnectionString;
 
-                bool teste = false;
+                bool Existe = false;
 
                 if (Directory.Exists(caminhoNovo))
-                    teste = true;
+                    Existe = true;
 
-                CriarPasta(caminho, caminhoNovo,teste);
+                CriarPasta(caminho, caminhoNovo, Existe);
 
                 CBackup.Restaurar(dgvGerarRestaurarBackup.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
@@ -57,40 +60,49 @@ namespace CertiFind
 
         private void CriarPasta(String caminho, String caminhoNovo, bool delete)
         {
-            if(delete)
-                System.IO.Directory.Delete(caminhoNovo, true);
-
-            System.IO.Directory.CreateDirectory(caminhoNovo);
-
-            if (System.IO.Directory.Exists(caminho))
+            try
             {
-                string[] files = System.IO.Directory.GetFiles(caminho);
-                
-                foreach (string s in files)
-                {
-                    string fileName = System.IO.Path.GetFileName(s);
-                    string destFile = System.IO.Path.Combine(caminhoNovo, fileName);
-                    System.IO.File.Copy(s, destFile, true);
-                }
+                if (delete)
+                    System.IO.Directory.Delete(caminhoNovo, true);
 
-                string[] directory = System.IO.Directory.GetDirectories(caminho);
-                foreach (string s in directory)
+                System.IO.Directory.CreateDirectory(caminhoNovo);
+
+                if (System.IO.Directory.Exists(caminho))
                 {
-                    DirectoryInfo infoArquivo = new DirectoryInfo(s);
-                    string destFile = System.IO.Path.Combine(caminhoNovo, infoArquivo.Name);
-                    System.IO.Directory.CreateDirectory(caminhoNovo);
-                    CriarPasta(System.IO.Path.Combine(caminho, infoArquivo.Name), destFile,false);
+                    string[] files = System.IO.Directory.GetFiles(caminho);
+
+                    foreach (string s in files)
+                    {
+                        string fileName = System.IO.Path.GetFileName(s);
+                        string destFile = System.IO.Path.Combine(caminhoNovo, fileName);
+                        if(fileName != "backup.bak")
+                            System.IO.File.Copy(s, destFile, true);
+                    }
+
+                    string[] directory = System.IO.Directory.GetDirectories(caminho);
+                    foreach (string s in directory)
+                    {
+                        DirectoryInfo infoArquivo = new DirectoryInfo(s);
+                        string destFile = System.IO.Path.Combine(caminhoNovo, infoArquivo.Name);
+                        System.IO.Directory.CreateDirectory(caminhoNovo);
+                        CriarPasta(System.IO.Path.Combine(caminho, infoArquivo.Name), destFile, false);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("O local do Backup não existe!");
                 }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Teste");
+                CLogs.Log(ex);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             CBackup.GeraBackup();
+            ListarBackup();
         }
     }
 }

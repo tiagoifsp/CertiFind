@@ -72,19 +72,20 @@
             // 
             this.colRestaurar.HeaderText = "";
             this.colRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("colRestaurar.Image")));
+            this.colRestaurar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.colRestaurar.Name = "colRestaurar";
             this.colRestaurar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colRestaurar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colRestaurar.Width = 50;
             // 
-            // frmGerarRestaurarBackup
+            // VGerarRestaurarBackup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnGerarBackup);
             this.Controls.Add(this.dgvGerarRestaurarBackup);
-            this.Name = "frmGerarRestaurarBackup";
+            this.Name = "VGerarRestaurarBackup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Backup";
             this.Load += new System.EventHandler(this.frmGerarRestaurarBackup_Load);
