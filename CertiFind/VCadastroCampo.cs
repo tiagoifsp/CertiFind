@@ -25,10 +25,14 @@ namespace CertiFind
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(txtNome.Text.Trim() == "" || txtNome.Text.Length > 100)
+            bool dadosValidos = true;
+
+            if (txtNome.Text.Trim() == "" || txtNome.Text.Length > 100)
             {
                 errorProvider.SetError(txtNome, Erros.CampoNome);
-            } else
+                dadosValidos = false;
+            }
+            else
             {
                 errorProvider.SetError(txtNome, "");
             }
@@ -36,38 +40,43 @@ namespace CertiFind
             if (cboTipoDado.SelectedIndex == 0)
             {
                 errorProvider.SetError(cboTipoDado, Erros.CampoTipoDado);
-            } else
+                dadosValidos = false;
+            }
+            else
             {
                 errorProvider.SetError(cboTipoDado, "");
             }
 
-            MCampo item = new MCampo();
+            if (dadosValidos)
+            {
+                MCampo item = new MCampo();
 
-            item.Nome = txtNome.Text.Trim();
-            item.TipoDado = int.Parse(cboTipoDado.SelectedValue.ToString());
+                item.Nome = txtNome.Text.Trim();
+                item.TipoDado = int.Parse(cboTipoDado.SelectedValue.ToString());
 
-            try
-            {
-                if (atual != null)
+                try
                 {
-                    item.ID = atual.ID;
-                    CCampo.Editar(item);
-                    MessageBox.Show("Campo alterado com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (atual != null)
+                    {
+                        item.ID = atual.ID;
+                        CCampo.Editar(item);
+                        MessageBox.Show("Campo alterado com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        CCampo.Inserir(item);
+                        MessageBox.Show("Campo salvo com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    this.Close();
                 }
-                else
+                catch (ExcecaoPadrao ex)
                 {
-                    CCampo.Inserir(item);
-                    MessageBox.Show("Campo salvo com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                this.Close();
-            }
-            catch (ExcecaoPadrao ex)
-            {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch
-            {
-                MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch
+                {
+                    MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

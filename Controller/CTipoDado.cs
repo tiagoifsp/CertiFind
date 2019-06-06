@@ -31,7 +31,13 @@ namespace Controller
             List<MTipoDado> lista = Pesquisar(item);
             if (lista != null && lista.Count != 0)
             {
-                throw new ExcecaoPadrao(Erros.TipoDadoNomeDuplicado);
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    if (lista[i].Nome == item.Nome)
+                    {
+                        throw new ExcecaoPadrao(Erros.TipoDadoNomeDuplicado);
+                    }
+                }
             }
 
             try
@@ -89,9 +95,15 @@ namespace Controller
             }
 
             List<MTipoDado> lista = Pesquisar(item);
-            if (lista != null && lista.Count != 0 && lista[0].ID != item.ID)
+            if (lista != null && lista.Count != 0)
             {
-                throw new ExcecaoPadrao(Erros.TipoDadoNomeDuplicado);
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    if (lista[i].Nome == item.Nome && lista[i].ID != item.ID)
+                    {
+                        throw new ExcecaoPadrao(Erros.TipoDadoNomeDuplicado);
+                    }
+                }
             }
 
             try
