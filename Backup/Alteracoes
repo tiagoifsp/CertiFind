@@ -1,13 +1,13 @@
-J· est„o no backup do banco:
+J√° est√£o no backup do banco:
 
---INSERT INTO TBTipoUsuario (NOME, DESCRICAO, SITUACAO) VALUES('ADMIN', 'Usu·rio administrador padr„o', 'A');--
+--INSERT INTO TBTipoUsuario (NOME, DESCRICAO, SITUACAO) VALUES('ADMIN', 'Usu√°rio administrador padr√£o', 'A');--
 --INSERT INTO TBUsuario (NOME, EMAIL, SENHA, SITUACAO, FKTipoUsuarioID) VALUES('admin', 'admin@admin.com', CONVERT(CHAR(64), HASHBYTES('SHA2_256', 'admin'), 2), 'A','1');
+--ALTER TABLE TBTipoDados
+--ADD Descricao varchar(100);
+--ALTER TABLE TBTipoDados
+--ADD UNIQUE (Nome);
+--ALTER TABLE TBCampo
+--ADD UNIQUE (Nome);
 
 A colocar no backup do banco:
 
-ALTER TABLE TBTipoDados
-ADD Descricao varchar(100);
-ALTER TABLE TBTipoDados
-ADD UNIQUE (Nome);
-ALTER TABLE TBCampo
-ADD UNIQUE (Nome);
