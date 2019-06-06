@@ -46,17 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormExemploInsercaoEdicao.cs">
+    <Compile Include="VCadastroCampo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormExemploInsercaoEdicao.Designer.cs">
-      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
+    <Compile Include="VCadastroCampo.Designer.cs">
+      <DependentUpon>VCadastroCampo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormExemploPesquisa.cs">
+    <Compile Include="VCadastroTipoDado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormExemploPesquisa.Designer.cs">
-      <DependentUpon>FormExemploPesquisa.cs</DependentUpon>
+    <Compile Include="VCadastroTipoDado.Designer.cs">
+      <DependentUpon>VCadastroTipoDado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPesquisaCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPesquisaCampo.Designer.cs">
+      <DependentUpon>VPesquisaCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPesquisaTipoDado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPesquisaTipoDado.Designer.cs">
+      <DependentUpon>VPesquisaTipoDado.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTest.cs">
       <SubType>Form</SubType>
@@ -72,27 +84,35 @@
     <Compile Include="VLogin.Designer.cs">
       <DependentUpon>VLogin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
-      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormExemploPesquisa.resx">
-      <DependentUpon>FormExemploPesquisa.cs</DependentUpon>
+    <EmbeddedResource Include="VCadastroCampo.resx">
+      <DependentUpon>VCadastroCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VCadastroTipoDado.resx">
+      <DependentUpon>VCadastroTipoDado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPesquisaCampo.resx">
+      <DependentUpon>VPesquisaCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPesquisaTipoDado.resx">
+      <DependentUpon>VPesquisaTipoDado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="VLogin.resx">
       <DependentUpon>VLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Model.MCampo.datasource" />
+    <None Include="Properties\DataSources\Model.MTipoDado.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,6 +135,11 @@
       <Project>{350da48d-daab-4585-86b0-923836031ae9}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\editar.png" />
+    <Content Include="Resources\inserir.png" />
+    <Content Include="Resources\remover.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
