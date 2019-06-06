@@ -21,7 +21,12 @@ namespace CertiFind
 
         private void VCadastroGrupoPesquisa_Load(object sender, EventArgs e)
         {
+            List<MUsuario> lider = new List<MUsuario>();
+            lider = CGrupoPesquisa.CarregaCombo();
 
+            cbxLider.DataSource = lider;
+            cbxLider.DisplayMember = "Nome";
+            cbxLider.ValueMember = "ID";
         }
 
         private void checkFinalizado_CheckedChanged(object sender, EventArgs e)
@@ -39,12 +44,17 @@ namespace CertiFind
             if(dateFim.Checked == true)
                 item.DataTermino = dateFim.Value;
 
-            item.FKUsuarioID = 3;
+            item.FKUsuarioID = (Int32)cbxLider.SelectedValue;
 
             CGrupoPesquisa.Inserir(item);
         }
 
         private void dateFim_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

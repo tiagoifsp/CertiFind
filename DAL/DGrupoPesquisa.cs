@@ -62,5 +62,45 @@ namespace DAL
                 Conexao.Fechar();
             }
         }
+
+        public static List<MUsuario> ObterUsuarioCombo()
+        {
+            bool conect = Conexao.Abrir();
+
+            if (!conect)
+            {
+                throw new Exception("Falha na conexão com o SGBD");
+            }
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = Conexao.Connection;
+
+            comando.CommandText = "" +
+                " SELECT ID, Nome " +
+                " FROM TBUsuario ";
+
+
+            SqlDataReader reader = comando.ExecuteReader();
+
+            List<MUsuario> retorno = null;
+
+            while (reader.Read())
+            {
+                if (retorno == null)
+                    retorno = new List<MUsuario>();
+
+                MUsuario user = new MUsuario();
+                user.ID = (Int32)reader["ID"];
+                user.Nome = reader["Nome"].ToString();
+
+                retorno.Add(user);
+            }
+
+            reader.Close();
+            Conexao.Fechar();
+
+            return retorno;
+        }
+
     }
 }
