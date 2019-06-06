@@ -24,23 +24,31 @@ namespace DAL
                     "SELECT ID, Nome, Descricao FROM TBTipoSugestao"
                 };
 
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                SqlDataReader reader = null;
+
+                try
                 {
-                    if (LTipo == null)
-                        LTipo = new List<MTipoSugestao>();
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        if (LTipo == null)
+                            LTipo = new List<MTipoSugestao>();
 
-                    MTipoSugestao tipoSugestao = new MTipoSugestao();
-                    tipoSugestao.ID = (int)reader["ID"];
-                    tipoSugestao.Nome = reader["Nome"].ToString();
-                    tipoSugestao.Descricao = reader["Descricao"].ToString();
+                        MTipoSugestao tipoSugestao = new MTipoSugestao();
+                        tipoSugestao.ID = (int)reader["ID"];
+                        tipoSugestao.Nome = reader["Nome"].ToString();
+                        tipoSugestao.Descricao = reader["Descricao"].ToString();
 
-                    LTipo.Add(tipoSugestao);
+                        LTipo.Add(tipoSugestao);
+                    }
                 }
+                finally
+                {
+                    if (reader != null)
+                        reader.Close();
 
-                reader.Close();
-                Conexao.Fechar();
-
+                    Conexao.Fechar();
+                }
             }
 
             return LTipo;

@@ -31,19 +31,19 @@ namespace Controller
             return DSugestao.Pesquisar(tipo);
         }
         /// <summary>
-        /// Realiza uma pesquisa que retorna uma lista de sugestões baseado em uma data final ou inicial
+        /// Realiza uma pesquisa que retorna uma lista de sugestões a partir de uma data final ou inicial
         /// </summary>
         /// <param name="opcao"></param>
         /// Parametro que define qual data utilizar, true para data inicial e false para data final
         /// <param name="date"></param>
         /// Parametro de data
         /// <returns></returns>
-        public static List<MSugestao> Pesquisar(int tipo, bool opcao, DateTime date)
+        public static List<MSugestao> Pesquisar(int tipo, bool opcao, string date)
         {
-            return DSugestao.Pesquisar(tipo);
+            return DSugestao.Pesquisar(tipo, opcao, date);
         }
         /// <summary>
-        /// Realiza uma pesquisa que retorna uma lista de sugestões baseado em duas datas
+        /// Realiza uma pesquisa que retorna uma lista de sugestões entre as duas datas especificadas
         /// </summary>
         /// <param name="datainicial"></param>
         /// Parametro data inicial

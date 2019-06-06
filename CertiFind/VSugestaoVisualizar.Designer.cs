@@ -34,22 +34,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSugestoes = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mSugestaoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dtpDataFinal = new System.Windows.Forms.DateTimePicker();
             this.dtpDataInicial = new System.Windows.Forms.DateTimePicker();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtSugestao = new System.Windows.Forms.TextBox();
+            this.mSugestaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSugestoes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mSugestaoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mSugestaoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -113,11 +113,11 @@
             this.dgvSugestoes.AutoGenerateColumns = false;
             this.dgvSugestoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSugestoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dgvSugestoes.DataSource = this.mSugestaoBindingSource1;
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.dgvSugestoes.DataSource = this.mSugestaoBindingSource;
             this.dgvSugestoes.Location = new System.Drawing.Point(3, 65);
             this.dgvSugestoes.Name = "dgvSugestoes";
             this.dgvSugestoes.ReadOnly = true;
@@ -125,38 +125,6 @@
             this.dgvSugestoes.Size = new System.Drawing.Size(481, 550);
             this.dgvSugestoes.TabIndex = 13;
             this.dgvSugestoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSugestoes_CellDoubleClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "FKTipoSugestaoID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "FKTipoSugestaoID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "DataEnvio";
-            this.dataGridViewTextBoxColumn3.HeaderText = "DataEnvio";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "FKUsuarioID";
-            this.dataGridViewTextBoxColumn4.HeaderText = "FKUsuarioID";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // mSugestaoBindingSource1
-            // 
-            this.mSugestaoBindingSource1.DataSource = typeof(Model.MSugestao);
             // 
             // dtpDataFinal
             // 
@@ -187,9 +155,11 @@
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(267, 21);
             this.cboTipo.TabIndex = 10;
+            this.cboTipo.SelectedIndexChanged += new System.EventHandler(this.cboTipo_SelectedIndexChanged);
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.Enabled = false;
             this.btnPesquisar.Location = new System.Drawing.Point(353, 12);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(132, 47);
@@ -208,6 +178,38 @@
             this.txtSugestao.Size = new System.Drawing.Size(833, 618);
             this.txtSugestao.TabIndex = 0;
             // 
+            // mSugestaoBindingSource
+            // 
+            this.mSugestaoBindingSource.DataSource = typeof(Model.MSugestao);
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "FKTipoSugestaoID";
+            this.dataGridViewTextBoxColumn6.HeaderText = "FKTipoSugestaoID";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "DataEnvio";
+            this.dataGridViewTextBoxColumn7.HeaderText = "DataEnvio";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "FKUsuarioID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "FKUsuarioID";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
             // VSugestaoVisualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,7 +227,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSugestoes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mSugestaoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mSugestaoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,6 +252,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.BindingSource mSugestaoBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.BindingSource mSugestaoBindingSource;
     }
 }

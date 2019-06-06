@@ -35,8 +35,15 @@ namespace DAL
                     parameter = new SqlParameter("@DataEnvio", SqlDbType.DateTime);
                     parameter.Value = sugestao.DataEnvio;
                     command.Parameters.Add(parameter);
+                    
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
 
-                    command.ExecuteNonQuery();
+                    }
                     Conexao.Fechar();
                 }
             }
@@ -67,10 +74,89 @@ namespace DAL
                     parameter.Value = sugestao.FKUsuarioID;
                     command.Parameters.Add(parameter);
 
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+
+                    }
                     Conexao.Fechar();
                 }
             }
+        }
+
+        public static List<MSugestao> Pesquisar(int tipo, bool opcao, string date)
+        {
+            List<MSugestao> retorno = null;
+
+            if (Conexao.Abrir())
+            {
+                SqlCommand command;
+                if(opcao == true)
+                {
+                    command = new SqlCommand
+                    {
+                        Connection = Conexao.Connection,
+                        CommandText =
+                    "select ID, FKTipoSugestaoID, DataEnvio, FKUsuarioID from TBSugestao where FKTipoSugestaoID = @tipo and DataEnvio >= @data"
+                    };
+                }
+                else
+                {
+                    command = new SqlCommand
+                    {
+                        Connection = Conexao.Connection,
+                        CommandText =
+                    "select ID, FKTipoSugestaoID, DataEnvio, FKUsuarioID from TBSugestao where FKTipoSugestaoID = @tipo and DataEnvio <= @data"
+                    };
+                }
+                
+
+                SqlParameter parameter;
+                SqlDataReader reader = null;
+                parameter = new SqlParameter("@tipo", SqlDbType.Int);
+                parameter.Value = tipo;
+                command.Parameters.Add(parameter);
+
+                parameter = new SqlParameter("@data", SqlDbType.DateTime);
+                parameter.Value = date;
+                command.Parameters.Add(parameter);
+
+                try
+                {
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        if (retorno == null)
+                            retorno = new List<MSugestao>();
+
+                        MSugestao sugestao = new MSugestao();
+
+                        sugestao.ID = (int)reader["ID"];
+                        sugestao.FKTipoSugestaoID = (int)reader["FKTipoSugestaoID"];
+                        sugestao.DataEnvio = (DateTime)reader["DataEnvio"];
+                        try
+                        {
+                            sugestao.FKUsuarioID = (int)reader["FKUsuarioID"];
+                        }
+                        catch { }
+
+                        retorno.Add(sugestao);
+                    }
+                }
+                finally
+                {
+                    if (reader != null)
+                        reader.Close();
+
+                    Conexao.Fechar();
+                }
+            }
+
+            return retorno;
         }
 
         public static List<MSugestao> Pesquisar(int tipo, String datainicial, String datafinal)
@@ -79,14 +165,16 @@ namespace DAL
 
             if (Conexao.Abrir())
             {
-                SqlCommand command = new SqlCommand
+                SqlCommand command;
+                SqlParameter parameter;
+                SqlDataReader reader = null;
+
+                command = new SqlCommand
                 {
                     Connection = Conexao.Connection,
                     CommandText =
-                    "select ID, FKTipoSugestaoID, DataEnvio, FKUsuarioID from TBSugestao where FKTipoSugestaoID = @tipo and DataEnvio < @datafinal and DataEnvio > @datainicial"
+                    "select ID, FKTipoSugestaoID, DataEnvio, FKUsuarioID from TBSugestao where (FKTipoSugestaoID = @tipo) and (DataEnvio < @datafinal) and (DataEnvio > @datainicial)"
                 };
-
-                SqlParameter parameter;
 
                 parameter = new SqlParameter("@tipo", SqlDbType.Int);
                 parameter.Value = tipo;
@@ -100,25 +188,36 @@ namespace DAL
                 parameter.Value = datainicial;
                 command.Parameters.Add(parameter);
 
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                try
                 {
-                    if (retorno == null)
-                        retorno = new List<MSugestao>();
+                    reader = command.ExecuteReader();
 
-                    MSugestao sugestao = new MSugestao();
+                    while (reader.Read())
+                    {
+                        if (retorno == null)
+                            retorno = new List<MSugestao>();
 
-                    sugestao.ID = (int)reader["ID"];
-                    sugestao.FKTipoSugestaoID = (int)reader["FKTipoSugestaoID"];
-                    sugestao.DataEnvio = (DateTime)reader["DataEnvio"];
-                    sugestao.FKUsuarioID = (int)reader["FKUsuarioID"];
+                        MSugestao sugestao = new MSugestao();
 
-                    retorno.Add(sugestao);
+                        sugestao.ID = (int)reader["ID"];
+                        sugestao.FKTipoSugestaoID = (int)reader["FKTipoSugestaoID"];
+                        sugestao.DataEnvio = (DateTime)reader["DataEnvio"];
+                        try
+                        {
+                            sugestao.FKUsuarioID = (int)reader["FKUsuarioID"];
+                        }
+                        catch { }
+
+                        retorno.Add(sugestao);
+                    }
                 }
+                finally
+                {
+                    if (reader != null)
+                        reader.Close();
 
-                reader.Close();
-                Conexao.Fechar();
+                    Conexao.Fechar();
+                }
             }
 
             return retorno;
@@ -143,25 +242,39 @@ namespace DAL
                 parameter.Value = tipo;
                 command.Parameters.Add(parameter);
 
-                SqlDataReader reader = command.ExecuteReader();
+                SqlDataReader reader = null;
 
-                while (reader.Read())
+                try
                 {
-                    if (retorno == null)
-                        retorno = new List<MSugestao>();
-                    
-                    MSugestao sugestao = new MSugestao();
+                    reader = command.ExecuteReader();
 
-                    sugestao.ID = (int)reader["ID"];
-                    sugestao.FKTipoSugestaoID = (int)reader["FKTipoSugestaoID"];
-                    sugestao.DataEnvio = (DateTime)reader["DataEnvio"];
-                    sugestao.FKUsuarioID = (int)reader["FKUsuarioID"];
+                    while (reader.Read())
+                    {
+                        if (retorno == null)
+                            retorno = new List<MSugestao>();
 
-                    retorno.Add(sugestao);
+                        MSugestao sugestao = new MSugestao();
+
+                        sugestao.ID = (int)reader["ID"];
+                        sugestao.FKTipoSugestaoID = (int)reader["FKTipoSugestaoID"];
+                        sugestao.DataEnvio = (DateTime)reader["DataEnvio"];
+                        try
+                        {
+                            sugestao.FKUsuarioID = (int)reader["FKUsuarioID"];
+                        }
+                        catch { }
+
+                        retorno.Add(sugestao);
+                    }
+
                 }
+                finally
+                {
+                    if(reader != null)
+                        reader.Close();
 
-                reader.Close();
-                Conexao.Fechar();
+                    Conexao.Fechar();
+                }
             }
 
             return retorno;
@@ -184,15 +297,24 @@ namespace DAL
                 param.Value = id;
                 command.Parameters.Add(param);
 
-                SqlDataReader reader = command.ExecuteReader();
+                SqlDataReader reader = null;
 
-                if (reader.Read())
+                try
                 {
-                    retorno = reader["Texto"].ToString();
-                }
+                    reader = command.ExecuteReader();
 
-                reader.Close();
-                Conexao.Fechar();
+                    if (reader.Read())
+                    {
+                        retorno = reader["Texto"].ToString();
+                    }
+                }
+                finally
+                {
+                    if (reader != null)
+                        reader.Close();
+
+                    Conexao.Fechar();
+                }
             }
 
             return retorno;
