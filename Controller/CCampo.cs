@@ -35,7 +35,13 @@ namespace Controller
             List<MCampo> lista = Pesquisar(pesquisa);
             if (lista != null && lista.Count != 0)
             {
-                throw new ExcecaoPadrao(Erros.CampoNomeDuplicado);
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    if (lista[i].Nome == item.Nome)
+                    {
+                        throw new ExcecaoPadrao(Erros.CampoNomeDuplicado);
+                    }
+                }
             }
 
             try
@@ -97,9 +103,18 @@ namespace Controller
             pesquisa.TipoDado = 0;
 
             List<MCampo> lista = Pesquisar(pesquisa);
-            if (lista != null && lista.Count != 0 && lista[0].ID != item.ID)
+            if (lista != null && lista.Count != 0)
             {
-                throw new ExcecaoPadrao(Erros.CampoNomeDuplicado);
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    if (lista[i].Nome == item.Nome)
+                    {
+                        if (lista[i].ID != item.ID)
+                        {
+                            throw new ExcecaoPadrao(Erros.CampoNomeDuplicado);
+                        }
+                    }
+                }
             }
 
             try
