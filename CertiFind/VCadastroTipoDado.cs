@@ -25,41 +25,48 @@ namespace CertiFind
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            bool dadosValidos = true;
+
             if (txtNome.Text.Trim() == "" || txtNome.Text.Length > 100)
             {
                 errorProvider.SetError(txtNome, Erros.TipoDadoNome);
-            } else
+                dadosValidos = false;
+            }
+            else
             {
                 errorProvider.SetError(txtNome, "");
             }
 
-            MTipoDado item = new MTipoDado();
+            if (dadosValidos)
+            {
+                MTipoDado item = new MTipoDado();
 
-            item.Nome = txtNome.Text.Trim();
-            item.Descricao = txtDescricao.Text.Trim();
+                item.Nome = txtNome.Text.Trim();
+                item.Descricao = txtDescricao.Text.Trim();
 
-            try
-            {
-                if (atual != null)
+                try
                 {
-                    item.ID = atual.ID;
-                    CTipoDado.Editar(item);
-                    MessageBox.Show("Tipo de dado alterado com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (atual != null)
+                    {
+                        item.ID = atual.ID;
+                        CTipoDado.Editar(item);
+                        MessageBox.Show("Tipo de dado alterado com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        CTipoDado.Inserir(item);
+                        MessageBox.Show("Tipo de dado salvo com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    this.Close();
                 }
-                else
+                catch (ExcecaoPadrao ex)
                 {
-                    CTipoDado.Inserir(item);
-                    MessageBox.Show("Tipo de dado salvo com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                this.Close();
-            }
-            catch (ExcecaoPadrao ex)
-            {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch
-            {
-                MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch
+                {
+                    MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
