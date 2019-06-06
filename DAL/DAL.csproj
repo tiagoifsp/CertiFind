@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DCampo.cs" />
+    <Compile Include="DTipoDado.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="DBackup.cs" />
     <Compile Include="DUsuario.cs" />

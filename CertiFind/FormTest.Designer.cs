@@ -34,6 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.btnVCadastroTipoDados = new System.Windows.Forms.Button();
+            this.btnVPesquisaTipoDados = new System.Windows.Forms.Button();
+            this.btnVPesquisaCampo = new System.Windows.Forms.Button();
+            this.btnVCadastroCampo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -79,21 +83,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "label2";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(538, 154);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 450);
+            this.Controls.Add(this.btnVPesquisaCampo);
+            this.Controls.Add(this.btnVCadastroCampo);
+            this.Controls.Add(this.btnVPesquisaTipoDados);
+            this.Controls.Add(this.btnVCadastroTipoDados);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -117,6 +115,5 @@
         private System.Windows.Forms.ToolStripMenuItem criaçãoDeUsuárioToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
     }
 }
