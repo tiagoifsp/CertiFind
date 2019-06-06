@@ -107,12 +107,9 @@ namespace Controller
             {
                 for (int i = 0; i < lista.Count; i++)
                 {
-                    if (lista[i].Nome == item.Nome)
+                    if (lista[i].Nome == item.Nome && lista[i].ID != item.ID)
                     {
-                        if (lista[i].ID != item.ID)
-                        {
-                            throw new ExcecaoPadrao(Erros.CampoNomeDuplicado);
-                        }
+                        throw new ExcecaoPadrao(Erros.CampoNomeDuplicado);
                     }
                 }
             }
