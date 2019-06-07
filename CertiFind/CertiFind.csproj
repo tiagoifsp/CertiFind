@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormExemploInsercaoEdicao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExemploInsercaoEdicao.Designer.cs">
+      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExemploPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExemploPesquisa.Designer.cs">
+      <DependentUpon>FormExemploPesquisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VLogin.Designer.cs">
+      <DependentUpon>VLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VStatus.Designer.cs">
+      <DependentUpon>VStatus.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
+      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExemploPesquisa.resx">
+      <DependentUpon>FormExemploPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +96,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VLogin.resx">
+      <DependentUpon>VLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VStatus.resx">
+      <DependentUpon>VStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
