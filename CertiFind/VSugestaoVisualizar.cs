@@ -15,6 +15,7 @@ namespace CertiFind
     public partial class VSugestaoVisualizar : Form
     {
         List<MTipoSugestao> MTipos = new List<MTipoSugestao>();
+        List<MSugestao> MSugestaos = new List<MSugestao>();
 
         public VSugestaoVisualizar()
         {
@@ -39,6 +40,7 @@ namespace CertiFind
             dgvSugestoes.DataSource = null;
             if(dtpDataInicial.Checked == false && dtpDataFinal.Checked == false)
             {
+                MSugestaos = CSugestao.Pesquisar((Convert.ToInt32(cboTipo.SelectedIndex) + 1));
                 dgvSugestoes.DataSource = CSugestao.Pesquisar((Convert.ToInt32(cboTipo.SelectedIndex) + 1));
             }
             else if(dtpDataInicial.Checked == true && dtpDataFinal.Checked == true)

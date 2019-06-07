@@ -100,7 +100,7 @@ namespace DAL
                     {
                         Connection = Conexao.Connection,
                         CommandText =
-                    "select ID, FKTipoSugestaoID, DataEnvio, FKUsuarioID from TBSugestao where FKTipoSugestaoID = @tipo and DataEnvio >= @data"
+                    "select s.ID[ID], s.FKTipoSugestaoID[FKTipoSugestaoID], s.DataEnvio[DataEnvio], s.FKUsuarioID[FKUsuarioID], u.Nome[NomeUsuario], ts.Nome[NomeTipo], s.Texto[Texto] from TBSugestao s join TBTipoSugestao ts on (ts.ID = s.FKTipoSugestaoID) join TBUsuario u on (u.ID = s.FKUsuarioID) where s.FKTipoSugestaoID = @tipo and s.DataEnvio >= @data"
                     };
                 }
                 else
@@ -109,7 +109,7 @@ namespace DAL
                     {
                         Connection = Conexao.Connection,
                         CommandText =
-                    "select ID, FKTipoSugestaoID, DataEnvio, FKUsuarioID from TBSugestao where FKTipoSugestaoID = @tipo and DataEnvio <= @data"
+                    "select s.ID[ID], s.FKTipoSugestaoID[FKTipoSugestaoID], s.DataEnvio[DataEnvio], s.FKUsuarioID[FKUsuarioID], u.Nome[NomeUsuario], ts.Nome[NomeTipo], s.Texto[Texto] from TBSugestao s join TBTipoSugestao ts on (ts.ID = s.FKTipoSugestaoID) join TBUsuario u on (u.ID = s.FKUsuarioID) where s.FKTipoSugestaoID = @tipo and s.DataEnvio <= @data"
                     };
                 }
                 
@@ -138,11 +138,18 @@ namespace DAL
                         sugestao.ID = (int)reader["ID"];
                         sugestao.FKTipoSugestaoID = (int)reader["FKTipoSugestaoID"];
                         sugestao.DataEnvio = (DateTime)reader["DataEnvio"];
+                        sugestao.NomeTipoSugestao = (string)reader["NomeTipo"];
+                        sugestao.Texto = (string)reader["Texto"];
                         try
                         {
                             sugestao.FKUsuarioID = (int)reader["FKUsuarioID"];
+                            sugestao.NomeUsuario = (string)reader["NomeUsuario"];
                         }
-                        catch { }
+                        catch
+                        {
+                            sugestao.FKUsuarioID = null;
+                            sugestao.NomeUsuario = "";
+                        }
 
                         retorno.Add(sugestao);
                     }
@@ -173,7 +180,7 @@ namespace DAL
                 {
                     Connection = Conexao.Connection,
                     CommandText =
-                    "select ID, FKTipoSugestaoID, DataEnvio, FKUsuarioID from TBSugestao where (FKTipoSugestaoID = @tipo) and (DataEnvio < @datafinal) and (DataEnvio > @datainicial)"
+                    "select s.ID[ID], s.FKTipoSugestaoID[FKTipoSugestaoID], s.DataEnvio[DataEnvio], s.FKUsuarioID[FKUsuarioID], u.Nome[NomeUsuario], ts.Nome[NomeTipo], s.Texto[Texto] from TBSugestao s join TBTipoSugestao ts on (ts.ID = s.FKTipoSugestaoID) join TBUsuario u on (u.ID = s.FKUsuarioID) where (s.FKTipoSugestaoID = @tipo) and (s.DataEnvio < @datafinal) and (s.DataEnvio > @datainicial)"
                 };
 
                 parameter = new SqlParameter("@tipo", SqlDbType.Int);
@@ -202,11 +209,18 @@ namespace DAL
                         sugestao.ID = (int)reader["ID"];
                         sugestao.FKTipoSugestaoID = (int)reader["FKTipoSugestaoID"];
                         sugestao.DataEnvio = (DateTime)reader["DataEnvio"];
+                        sugestao.NomeTipoSugestao = (string)reader["NomeTipo"];
+                        sugestao.Texto = (string)reader["Texto"];
                         try
                         {
                             sugestao.FKUsuarioID = (int)reader["FKUsuarioID"];
+                            sugestao.NomeUsuario = (string)reader["NomeUsuario"];
                         }
-                        catch { }
+                        catch
+                        {
+                            sugestao.FKUsuarioID = null;
+                            sugestao.NomeUsuario = "";
+                        }
 
                         retorno.Add(sugestao);
                     }
@@ -233,7 +247,7 @@ namespace DAL
                 {
                     Connection = Conexao.Connection,
                     CommandText =
-                    "select ID, FKTipoSugestaoID, DataEnvio, FKUsuarioID from TBSugestao where FKTipoSugestaoID = @tipo"
+                    "select s.ID[ID], s.FKTipoSugestaoID[FKTipoSugestaoID], s.DataEnvio[DataEnvio], s.FKUsuarioID[FKUsuarioID], u.Nome[NomeUsuario], ts.Nome[NomeTipo], s.Texto[Texto] from TBSugestao s join TBTipoSugestao ts on (ts.ID = s.FKTipoSugestaoID) join TBUsuario u on (u.ID = s.FKUsuarioID) where s.FKTipoSugestaoID = @tipo"
                 };                    
 
                 SqlParameter parameter;
@@ -258,11 +272,19 @@ namespace DAL
                         sugestao.ID = (int)reader["ID"];
                         sugestao.FKTipoSugestaoID = (int)reader["FKTipoSugestaoID"];
                         sugestao.DataEnvio = (DateTime)reader["DataEnvio"];
+                        sugestao.NomeTipoSugestao = (string)reader["NomeTipo"];
+                        sugestao.Texto = (string)reader["Texto"];
                         try
                         {
                             sugestao.FKUsuarioID = (int)reader["FKUsuarioID"];
+                            sugestao.NomeUsuario = (string)reader["NomeUsuario"];
                         }
-                        catch { }
+                        catch
+                        {
+                            sugestao.FKUsuarioID = null;
+                            sugestao.NomeUsuario = "";
+
+                        }
 
                         retorno.Add(sugestao);
                     }

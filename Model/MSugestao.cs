@@ -13,5 +13,8 @@ namespace Model
         public string Texto { get; set; }
         public DateTime DataEnvio { get; set; }
         public int? FKUsuarioID { get; set; }
+
+        public string NomeTipoSugestao { get; set; }
+        public string NomeUsuario { get; set; }
     }
 }

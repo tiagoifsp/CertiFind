@@ -34,16 +34,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSugestoes = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSugestaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtpDataFinal = new System.Windows.Forms.DateTimePicker();
             this.dtpDataInicial = new System.Windows.Forms.DateTimePicker();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtSugestao = new System.Windows.Forms.TextBox();
-            this.mSugestaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -107,6 +107,8 @@
             // 
             this.dgvSugestoes.AllowUserToAddRows = false;
             this.dgvSugestoes.AllowUserToDeleteRows = false;
+            this.dgvSugestoes.AllowUserToResizeColumns = false;
+            this.dgvSugestoes.AllowUserToResizeRows = false;
             this.dgvSugestoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,10 +123,43 @@
             this.dgvSugestoes.Location = new System.Drawing.Point(3, 65);
             this.dgvSugestoes.Name = "dgvSugestoes";
             this.dgvSugestoes.ReadOnly = true;
+            this.dgvSugestoes.RowHeadersVisible = false;
             this.dgvSugestoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSugestoes.Size = new System.Drawing.Size(481, 550);
             this.dgvSugestoes.TabIndex = 13;
             this.dgvSugestoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSugestoes_CellDoubleClick);
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "FKTipoSugestaoID";
+            this.dataGridViewTextBoxColumn6.HeaderText = "FKTipoSugestaoID";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "DataEnvio";
+            this.dataGridViewTextBoxColumn7.HeaderText = "DataEnvio";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "FKUsuarioID";
+            this.dataGridViewTextBoxColumn8.HeaderText = "FKUsuarioID";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // mSugestaoBindingSource
+            // 
+            this.mSugestaoBindingSource.DataSource = typeof(Model.MSugestao);
             // 
             // dtpDataFinal
             // 
@@ -177,38 +212,6 @@
             this.txtSugestao.Name = "txtSugestao";
             this.txtSugestao.Size = new System.Drawing.Size(833, 618);
             this.txtSugestao.TabIndex = 0;
-            // 
-            // mSugestaoBindingSource
-            // 
-            this.mSugestaoBindingSource.DataSource = typeof(Model.MSugestao);
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "FKTipoSugestaoID";
-            this.dataGridViewTextBoxColumn6.HeaderText = "FKTipoSugestaoID";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "DataEnvio";
-            this.dataGridViewTextBoxColumn7.HeaderText = "DataEnvio";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "FKUsuarioID";
-            this.dataGridViewTextBoxColumn8.HeaderText = "FKUsuarioID";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // VSugestaoVisualizar
             // 
