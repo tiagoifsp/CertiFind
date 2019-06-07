@@ -33,7 +33,8 @@ namespace CertiFind
                 DirectoryInfo[] Diretorios = Dir.GetDirectories("*", SearchOption.TopDirectoryOnly);
                 foreach (DirectoryInfo Pasta in Diretorios)
                 {
-                    dgvGerarRestaurarBackup.Rows.Add(Pasta.FullName, null);
+                    if((Pasta.FullName).Contains(ConfigurationManager.ConnectionStrings["CaminhoBackup"].ConnectionString + @"Backup"))
+                        dgvGerarRestaurarBackup.Rows.Add(Pasta.FullName, null);
                 }
             }
             else
@@ -113,7 +114,8 @@ namespace CertiFind
 
         private void btnGerarBackup_Click(object sender, EventArgs e)
         {
-            CBackup.GeraBackup();
+            if(CBackup.GeraBackup())
+                MessageBox.Show("Backup realizado com sucesso!");
             ListarBackup();
         }
     }
