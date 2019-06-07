@@ -31,11 +31,13 @@ namespace Model
         public static string CampoNomeDuplicado = "Campo nome já existe";
 
         //Tipo Atividade Campo
+        public static string AtividadeCampoNull = "Campo(s) inválido(s)";
         public static string AtividadeCampoCampo = "Campo campo inválido";
         public static string AtividadeCampoTipoAtividade = "Campo tipo de atividade inválido";
         public static string AtividadeCampoTamanho = "Campo tamanho inválido";
         public static string AtividadeCampoValorInicial = "Campo valor inicial inválido";
         public static string AtividadeCampoValorFinal = "Campo valor final inválido";
+        public static string AtividadeCampoDuplicado = "Campos duplicados";
 
     }
 }

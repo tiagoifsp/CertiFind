@@ -154,6 +154,7 @@
       <DependentUpon>VTipoDeAtividade.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Model.MCampo.datasource" />
+    <None Include="Properties\DataSources\Model.MTipoAtividadeCampo.datasource" />
     <None Include="Properties\DataSources\Model.MTipoDado.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

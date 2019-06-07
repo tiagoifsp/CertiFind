@@ -31,6 +31,11 @@ namespace DAL
             parametro.Value = item.TipoAtividadeID;
             comando.Parameters.Add(parametro);
 
+            if(item.Tamanho == null)
+            {
+                item.Tamanho = 0;
+            }
+
             parametro = new SqlParameter("@Tamanho", SqlDbType.Int);
             parametro.Value = item.Tamanho;
             comando.Parameters.Add(parametro);
@@ -66,11 +71,11 @@ namespace DAL
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 
-            comando.CommandText = "SELECT TA.Tamanho, TA.ValorInicial, TA.ValorFinal, TC.Nome, TT.Nome" +
+            comando.CommandText = "SELECT TA.ID, TA.Tamanho, TA.ValorInicial, TA.ValorFinal, TC.Nome AS CampoNome, TC.ID AS CampoID, TT.Nome AS TipoAtividadeNome, TT.ID AS TipoAtividadeID " +
                 "FROM TBTipoAtividadeCampo AS TA JOIN TBCampo AS TC ON TA.FKCampoID = TC.ID JOIN TBTipoAtividade " +
                 "AS TT ON TA.FKTipoAtividadeID = TT.ID WHERE 1 = 1";
 
-            if (item.CampoID != null)
+            if (item.CampoID != 0)
             {
                 comando.CommandText += " AND TA.FKCampoID = @FKCampoID";
 
@@ -79,7 +84,7 @@ namespace DAL
                 comando.Parameters.Add(parametro);
             }
 
-            if (item.TipoAtividadeID != null)
+            if (item.TipoAtividadeID != 0)
             {
                 comando.CommandText += " AND TA.FKTipoAtividadeID = @FKTipoAtividadeID";
 
@@ -88,7 +93,7 @@ namespace DAL
                 comando.Parameters.Add(parametro);
             }
 
-            if (item.Tamanho != null)
+            if (item.Tamanho != 0)
             {
                 comando.CommandText += " AND TA.Tamanho = @Tamanho";
 
@@ -129,9 +134,11 @@ namespace DAL
 
                     MTipoAtividadeCampo tipoAtividadeCampo = new MTipoAtividadeCampo();
                     tipoAtividadeCampo.ID = int.Parse(reader["ID"].ToString());
-                    tipoAtividadeCampo.CampoID = int.Parse(reader["FKCampoID"].ToString());
-                    tipoAtividadeCampo.TipoAtividadeID = int.Parse(reader["FKTipoAtividadeID"].ToString());
-                    tipoAtividadeCampo.Tamanho = int.Parse(reader["NomeTipoDado"].ToString());
+                    tipoAtividadeCampo.CampoID = int.Parse(reader["CampoID"].ToString());
+                    tipoAtividadeCampo.TipoAtividadeID = int.Parse(reader["TipoAtividadeID"].ToString());
+                    tipoAtividadeCampo.CampoNome = reader["CampoNome"].ToString();
+                    tipoAtividadeCampo.TipoAtividadeNome = reader["TipoAtividadeNome"].ToString();
+                    tipoAtividadeCampo.Tamanho = int.Parse(reader["Tamanho"].ToString());
                     tipoAtividadeCampo.ValorInicial = reader["ValorInicial"].ToString();
                     tipoAtividadeCampo.ValorFinal = reader["ValorFinal"].ToString();
 

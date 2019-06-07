@@ -89,12 +89,12 @@ namespace CertiFind
                     {
                         item.ID = atual.ID;
                         CTipoAtividadeCampo.Editar(item);
-                        MessageBox.Show("Campo alterado com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Relacionamento alterado com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         CTipoAtividadeCampo.Inserir(item);
-                        MessageBox.Show("Campo salvo com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Relacionamento salvo com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     this.Close();
                 }
@@ -114,11 +114,11 @@ namespace CertiFind
         {
             if (atual != null)
             {
-                this.Text = "Editar campo";
+                this.Text = "Editar relacionamento";
             }
             else
             {
-                this.Text = "Inserir campo";
+                this.Text = "Inserir relacionamento";
             }
 
             //Preencher combobox com tipo de atividade
@@ -153,6 +153,7 @@ namespace CertiFind
                 if (atual != null)
                 {
                     cboCampo.SelectedValue = atual.CampoID.Value;
+                    cboTipoAtividade.SelectedValue = atual.TipoAtividadeID.Value;
                 }
             }
             catch (ExcecaoPadrao ex)
@@ -311,7 +312,6 @@ namespace CertiFind
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
     }

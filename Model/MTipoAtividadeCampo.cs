@@ -15,5 +15,7 @@ namespace Model
         public int? Tamanho { get; set; }
         public string ValorInicial { get; set; }
         public string ValorFinal { get; set; }
+        public string CampoNome { get; set; }
+        public string TipoAtividadeNome { get; set; }
     }
 }
