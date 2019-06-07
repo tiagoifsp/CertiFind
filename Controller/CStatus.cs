@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 //using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using Model;
 
 namespace Controller
 {  //ALTERAÇÕES. "STATIC para PARTIAL".
@@ -54,14 +55,24 @@ namespace Controller
             return i;
         }
 
-       public static long[] Pastas()
+        public static long[] Pastas()
         {
             long[] teste = new long[2];
 
             teste = GetDirectorySize("C:\\TESTE\\");
             return teste;
-            //MessageBox.Show(teste[0].ToString() + " Bytes");
-            //MessageBox.Show(teste[1].ToString() + " Arquivos");
         }
+
+        public static string Banco()
+        {
+          
+
+            string n = DStatus.Obter().NomeBanco.ToString();
+            
+            return n;
+
+        }
+
+
     }
     }

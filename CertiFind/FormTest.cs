@@ -25,6 +25,8 @@ namespace CertiFind
                 label2.Text = VLogin.usuarioAtual.Nome + " (" + VLogin.usuarioAtual.ID + ")";
             }
             timer1.Start();
+
+            lblBase.Text = CStatus.Banco();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -39,6 +41,8 @@ namespace CertiFind
 
             lblBytes.Text = (CStatus.Pastas()[0].ToString() + " Bytes");
             lblQtdArq.Text = (CStatus.Pastas()[1].ToString() + " Arquivos");
+
+            
 
         }
     }

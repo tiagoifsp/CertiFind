@@ -8,6 +8,6 @@ namespace Model
 {
     public class MStatus
     {
-       
+        public String NomeBanco { get; set; }
     }
 }

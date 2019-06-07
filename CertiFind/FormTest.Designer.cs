@@ -43,8 +43,8 @@
             this.lblQtdArq = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblBase = new System.Windows.Forms.Label();
+            this.lblMbBase = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             // criaçãoDeUsuárioToolStripMenuItem
             // 
             this.criaçãoDeUsuárioToolStripMenuItem.Name = "criaçãoDeUsuárioToolStripMenuItem";
-            this.criaçãoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.criaçãoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.criaçãoDeUsuárioToolStripMenuItem.Text = "Criação de Usuário";
             // 
             // label1
@@ -167,31 +167,31 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "MB da base";
             // 
-            // label7
+            // lblBase
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(195, 83);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(10, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "-";
+            this.lblBase.AutoSize = true;
+            this.lblBase.Location = new System.Drawing.Point(195, 83);
+            this.lblBase.Name = "lblBase";
+            this.lblBase.Size = new System.Drawing.Size(10, 13);
+            this.lblBase.TabIndex = 9;
+            this.lblBase.Text = "-";
             // 
-            // label8
+            // lblMbBase
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(195, 106);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(10, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "-";
+            this.lblMbBase.AutoSize = true;
+            this.lblMbBase.Location = new System.Drawing.Point(195, 106);
+            this.lblMbBase.Name = "lblMbBase";
+            this.lblMbBase.Size = new System.Drawing.Size(10, 13);
+            this.lblMbBase.TabIndex = 10;
+            this.lblMbBase.Text = "-";
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(310, 238);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblMbBase);
+            this.Controls.Add(this.lblBase);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblQtdArq);
@@ -231,7 +231,7 @@
         private System.Windows.Forms.Label lblQtdArq;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblBase;
+        private System.Windows.Forms.Label lblMbBase;
     }
 }
