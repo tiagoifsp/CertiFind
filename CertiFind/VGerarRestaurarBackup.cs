@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Model;
 
 namespace CertiFind
 {
@@ -27,12 +27,19 @@ namespace CertiFind
         {
             dgvGerarRestaurarBackup.Rows.Clear();
 
-            DirectoryInfo Dir = new DirectoryInfo(ConfigurationManager.ConnectionStrings["CaminhoBackup"].ConnectionString);
-            DirectoryInfo[] Diretorios = Dir.GetDirectories("*", SearchOption.TopDirectoryOnly);
-            foreach (DirectoryInfo Pasta in Diretorios)
+            if (Directory.Exists(ConfigurationManager.ConnectionStrings["CaminhoBackup"].ConnectionString))
             {
-                dgvGerarRestaurarBackup.Rows.Add(Pasta.FullName,null);
-            }              
+                DirectoryInfo Dir = new DirectoryInfo(ConfigurationManager.ConnectionStrings["CaminhoBackup"].ConnectionString);
+                DirectoryInfo[] Diretorios = Dir.GetDirectories("*", SearchOption.TopDirectoryOnly);
+                foreach (DirectoryInfo Pasta in Diretorios)
+                {
+                    dgvGerarRestaurarBackup.Rows.Add(Pasta.FullName, null);
+                }
+            }
+            else
+            {
+                MessageBox.Show(Erros.CaminhoBackupNoaExiste, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void frmGerarRestaurarBackup_Load(object sender, EventArgs e)
@@ -44,17 +51,22 @@ namespace CertiFind
         {
             if (e.ColumnIndex == 1)
             {
-                string caminho = dgvGerarRestaurarBackup.Rows[e.RowIndex].Cells[0].Value.ToString(); ;
-                String caminhoNovo = ConfigurationManager.ConnectionStrings["CaminhoArquivos"].ConnectionString;
+                DialogResult result = MessageBox.Show("Tem certeza que deseja fazer a restauração do banco?", "Confirmação de Restauração", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                bool Existe = false;
+                if (result == DialogResult.OK)
+                {
+                    string caminho = dgvGerarRestaurarBackup.Rows[e.RowIndex].Cells[0].Value.ToString(); ;
+                    String caminhoNovo = ConfigurationManager.ConnectionStrings["CaminhoArquivos"].ConnectionString;
 
-                if (Directory.Exists(caminhoNovo))
-                    Existe = true;
+                    bool Existe = false;
 
-                CriarPasta(caminho, caminhoNovo, Existe);
+                    if (Directory.Exists(caminhoNovo))
+                        Existe = true;
 
-                CBackup.Restaurar(dgvGerarRestaurarBackup.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    CriarPasta(caminho, caminhoNovo, Existe);
+
+                    CBackup.Restaurar(dgvGerarRestaurarBackup.Rows[e.RowIndex].Cells[0].Value.ToString());
+                }
             }
         }
 
@@ -90,16 +102,16 @@ namespace CertiFind
                 }
                 else
                 {
-                    MessageBox.Show("O local do Backup não existe!");
+                    MessageBox.Show(Erros.CaminhoBackupNoaExiste, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch(Exception ex)
             {
-                CLogs.Log(ex);
+                CLogs.Log(ex, VLogin.usuarioAtual);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGerarBackup_Click(object sender, EventArgs e)
         {
             CBackup.GeraBackup();
             ListarBackup();

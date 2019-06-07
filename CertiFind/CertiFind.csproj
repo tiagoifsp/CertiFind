@@ -104,6 +104,9 @@
     <EmbeddedResource Include="VCadastroTipoDado.resx">
       <DependentUpon>VCadastroTipoDado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VGerarRestaurarBackup.resx">
+      <DependentUpon>VGerarRestaurarBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaCampo.resx">
       <DependentUpon>VPesquisaCampo.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +152,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Data-Database-Restore.ico" />
     <Content Include="Resources\editar.png" />
     <Content Include="Resources\inserir.png" />
     <Content Include="Resources\remover.png" />

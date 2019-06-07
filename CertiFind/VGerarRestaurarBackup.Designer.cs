@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VGerarRestaurarBackup));
             this.dgvGerarRestaurarBackup = new System.Windows.Forms.DataGridView();
             this.btnGerarBackup = new System.Windows.Forms.Button();
             this.colNomeArquivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +59,7 @@
             this.btnGerarBackup.TabIndex = 1;
             this.btnGerarBackup.Text = "Gerar Backup";
             this.btnGerarBackup.UseVisualStyleBackColor = true;
-            this.btnGerarBackup.Click += new System.EventHandler(this.button1_Click);
+            this.btnGerarBackup.Click += new System.EventHandler(this.btnGerarBackup_Click);
             // 
             // colNomeArquivo
             // 
@@ -71,7 +70,7 @@
             // colRestaurar
             // 
             this.colRestaurar.HeaderText = "";
-            this.colRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("colRestaurar.Image")));
+            this.colRestaurar.Image = global::CertiFind.Properties.Resources.Data_Database_Restore;
             this.colRestaurar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.colRestaurar.Name = "colRestaurar";
             this.colRestaurar.Resizable = System.Windows.Forms.DataGridViewTriState.True;

@@ -29,5 +29,9 @@ namespace Model
         public static string CampoNome = "Campo nome inválido";
         public static string CampoTipoDado = "Campo tipo de dado inválido";
         public static string CampoNomeDuplicado = "Campo nome já existe.";
+
+        //Backup
+        public static string CaminhoBackupNoaExiste = "O caminho para a pasta do Backup não existe.";
+
     }
 }

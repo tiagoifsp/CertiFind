@@ -16,12 +16,7 @@ namespace CertiFind
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new VGerarRestaurarBackup().ShowDialog();
-        }
-
+        
         private void FormTest_Load(object sender, EventArgs e)
         {
             if(VLogin.usuarioAtual != null)
@@ -51,6 +46,12 @@ namespace CertiFind
         private void btnVPesquisaCampo_Click(object sender, EventArgs e)
         {
             VPesquisaCampo form = new VPesquisaCampo();
+            form.ShowDialog();
+        }
+
+        private void btnGerarRestaurarBackup_Click(object sender, EventArgs e)
+        {
+            VGerarRestaurarBackup form = new VGerarRestaurarBackup();
             form.ShowDialog();
         }
     }
