@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@
             this.cmbSituacao = new System.Windows.Forms.ComboBox();
             this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.mTipoUsuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.mTipoUsuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -109,7 +112,12 @@
             // 
             // cmbSituacao
             // 
+            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSituacao.FormattingEnabled = true;
+            this.cmbSituacao.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo",
+            "Pendente"});
             this.cmbSituacao.Location = new System.Drawing.Point(146, 91);
             this.cmbSituacao.Name = "cmbSituacao";
             this.cmbSituacao.Size = new System.Drawing.Size(147, 21);
@@ -117,6 +125,10 @@
             // 
             // cmbTipoUsuario
             // 
+            this.cmbTipoUsuario.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mTipoUsuarioBindingSource, "ID", true));
+            this.cmbTipoUsuario.DataSource = this.mTipoUsuarioBindingSource;
+            this.cmbTipoUsuario.DisplayMember = "Nome";
+            this.cmbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoUsuario.FormattingEnabled = true;
             this.cmbTipoUsuario.Location = new System.Drawing.Point(146, 117);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
@@ -132,6 +144,10 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // mTipoUsuarioBindingSource
+            // 
+            this.mTipoUsuarioBindingSource.DataSource = typeof(Model.MTipoUsuario);
             // 
             // VCriacaoUsuario
             // 
@@ -151,6 +167,7 @@
             this.Controls.Add(this.label1);
             this.Name = "VCriacaoUsuario";
             this.Text = "Criação de Usuário";
+            ((System.ComponentModel.ISupportInitialize)(this.mTipoUsuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +186,6 @@
         private System.Windows.Forms.ComboBox cmbSituacao;
         private System.Windows.Forms.ComboBox cmbTipoUsuario;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.BindingSource mTipoUsuarioBindingSource;
     }
 }

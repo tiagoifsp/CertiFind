@@ -33,6 +33,7 @@
             this.criaçãoDeUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tipoDeUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.criaçãoDeUsuárioToolStripMenuItem});
+            this.criaçãoDeUsuárioToolStripMenuItem,
+            this.tipoDeUsuárioToolStripMenuItem});
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
             this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.usuárioToolStripMenuItem.Text = "Usuário";
@@ -79,6 +81,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "label2";
             // 
+            // tipoDeUsuárioToolStripMenuItem
+            // 
+            this.tipoDeUsuárioToolStripMenuItem.Name = "tipoDeUsuárioToolStripMenuItem";
+            this.tipoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDeUsuárioToolStripMenuItem.Text = "Tipo de Usuário";
+            this.tipoDeUsuárioToolStripMenuItem.Click += new System.EventHandler(this.tipoDeUsuárioToolStripMenuItem_Click);
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,5 +115,6 @@
         private System.Windows.Forms.ToolStripMenuItem criaçãoDeUsuárioToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem tipoDeUsuárioToolStripMenuItem;
     }
 }

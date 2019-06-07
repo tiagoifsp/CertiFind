@@ -20,5 +20,6 @@ namespace Model
         public static string NomeVazio = "O campo nome não pode estar vazio.";
         public static string SituacaoInvalida = "Nenhum valor de Situação selecionado.";
         public static string TipodeUsuarioInvalido = "Nenhum valor de Tipo de Usuário selecionado.";
+        public static string DescricaoVazia = " O Campo Descrição esta vazio!";
     }
 }

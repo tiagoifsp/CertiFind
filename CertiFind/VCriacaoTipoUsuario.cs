@@ -7,37 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Model;
 using Controller;
+using Model;
 
 namespace CertiFind
 {
-    public partial class VCriacaoUsuario : Form
+    public partial class VCriacaoTipoUsuario : Form
     {
-        public VCriacaoUsuario()
+        public VCriacaoTipoUsuario()
         {
             InitializeComponent();
 
             MTipoUsuario item = new MTipoUsuario();
-                 
-            cmbTipoUsuario.DataSource = CTipoUsuario.PesquisaLista(item);
+            item.Nome = "";
+            item.Descricao = "";
+            item.Situacao = "";
+
+          
         }
 
-     
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            String nome = cmbSituacao.Text.Substring(0,1);
 
-            //todo: validação da entrada
-            MUsuario item = new MUsuario();
+            MTipoUsuario item = new MTipoUsuario();
 
             item.Nome = txtNome.Text;
-            item.Email = txtEmail.Text;
-            item.Senha = txtSenha.Text;
-            item.Situacao = cmbSituacao.SelectedText;
+            item.Descricao = txtDesc.Text;
+            item.Situacao = nome;
 
             try
             {
-                CUsuario.Inserir(item);
+                CTipoUsuario.Inserir(item);
                 MessageBox.Show("Dados salvos com sucesso!");
                 Limpar();
             }
@@ -51,9 +52,10 @@ namespace CertiFind
         private void Limpar()
         {
             txtNome.Text = ("");
-            txtEmail.Text = ("");
-            txtSenha.Text = ("");
+            txtDesc.Text = ("");
             cmbSituacao.SelectedText = ("");
         }
+
+
     }
 }

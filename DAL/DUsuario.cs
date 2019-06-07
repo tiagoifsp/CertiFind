@@ -185,8 +185,9 @@ namespace DAL
             if (u == null)
                 throw new ArgumentNullException(nameof(u));
 
-            if(Conexao.Abrir())
-            {
+            try {
+                Conexao.Abrir();
+            
                 SqlCommand comando = new SqlCommand
                 {
                     CommandText = "" +
@@ -215,6 +216,10 @@ namespace DAL
 
                 if (0 < comando.ExecuteNonQuery())
                     throw new Exception(Erros.ErroGeral);
+            }
+            catch
+            {
+                throw new Exception(Erros.ErroGeral);
             }
         }
 
