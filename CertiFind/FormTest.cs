@@ -48,5 +48,30 @@ namespace CertiFind
             VPesquisaCampo form = new VPesquisaCampo();
             form.ShowDialog();
         }
+
+
+        private void btnVPesquisaTipoAtividade_Click(object sender, EventArgs e)
+        {
+            VPesquisaTipoAtividade form = new VPesquisaTipoAtividade();
+            form.ShowDialog();
+        }
+
+        private void btnVCadastroTipoAtividadeCampo_Click(object sender, EventArgs e)
+        {
+            VCadastroTipoAtividadeCampo form = new VCadastroTipoAtividadeCampo(null);
+            form.ShowDialog();
+        }
+
+        private void btnVPesquisaTipoAtividadeCampo_Click(object sender, EventArgs e)
+        {
+            VPesquisaTipoAtividadeCampo form = new VPesquisaTipoAtividadeCampo();
+            form.ShowDialog();
+        }
+
+        private void btnVCadastroTipoAtividade_Click_1(object sender, EventArgs e)
+        {
+            VCadastroTipoAtividade form = new VCadastroTipoAtividade(null);
+            form.ShowDialog();
+        }
     }
 }
