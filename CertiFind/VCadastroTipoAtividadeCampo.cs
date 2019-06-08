@@ -27,6 +27,8 @@ namespace CertiFind
         private ErrorProvider errorProvider;
         private IContainer components;
         private TextBox txtTamanho;
+
+
         MTipoAtividadeCampo atual = null;
 
         public VCadastroTipoAtividadeCampo(MTipoAtividadeCampo item)

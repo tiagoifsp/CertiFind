@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MCampo.cs" />
+    <Compile Include="MCertificado.cs" />
     <Compile Include="MTipoAtividade.cs" />
     <Compile Include="MTipoAtividadeCampo.cs" />
     <Compile Include="MTipoDado.cs" />

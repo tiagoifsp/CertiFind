@@ -73,5 +73,17 @@ namespace CertiFind
             VCadastroTipoAtividade form = new VCadastroTipoAtividade(null);
             form.ShowDialog();
         }
+
+        private void btnCadastroCertificado_Click(object sender, EventArgs e)
+        {
+            VCadastroCertificado form = new VCadastroCertificado(null);
+            form.ShowDialog();
+        }
+
+        private void btnPesquisaCertificado_Click(object sender, EventArgs e)
+        {
+            VPesquisaCertificado form = new VPesquisaCertificado();
+            form.ShowDialog();
+        }
     }
 }

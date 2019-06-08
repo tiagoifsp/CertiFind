@@ -41,6 +41,8 @@
             this.btnVPesquisaTipoAtividade = new System.Windows.Forms.Button();
             this.btnVCadastroTipoAtividadeCampo = new System.Windows.Forms.Button();
             this.btnVPesquisaTipoAtividadeCampo = new System.Windows.Forms.Button();
+            this.btnPesquisaCertificado = new System.Windows.Forms.Button();
+            this.btnCadastroCertificado = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,11 +168,33 @@
             this.btnVPesquisaTipoAtividadeCampo.UseVisualStyleBackColor = true;
             this.btnVPesquisaTipoAtividadeCampo.Click += new System.EventHandler(this.btnVPesquisaTipoAtividadeCampo_Click);
             // 
+            // btnPesquisaCertificado
+            // 
+            this.btnPesquisaCertificado.Location = new System.Drawing.Point(16, 304);
+            this.btnPesquisaCertificado.Name = "btnPesquisaCertificado";
+            this.btnPesquisaCertificado.Size = new System.Drawing.Size(143, 23);
+            this.btnPesquisaCertificado.TabIndex = 10;
+            this.btnPesquisaCertificado.Text = "VPesquisaCertificado";
+            this.btnPesquisaCertificado.UseVisualStyleBackColor = true;
+            this.btnPesquisaCertificado.Click += new System.EventHandler(this.btnPesquisaCertificado_Click);
+            // 
+            // btnCadastroCertificado
+            // 
+            this.btnCadastroCertificado.Location = new System.Drawing.Point(16, 275);
+            this.btnCadastroCertificado.Name = "btnCadastroCertificado";
+            this.btnCadastroCertificado.Size = new System.Drawing.Size(143, 23);
+            this.btnCadastroCertificado.TabIndex = 9;
+            this.btnCadastroCertificado.Text = "VCadastroCertificado";
+            this.btnCadastroCertificado.UseVisualStyleBackColor = true;
+            this.btnCadastroCertificado.Click += new System.EventHandler(this.btnCadastroCertificado_Click);
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 450);
+            this.Controls.Add(this.btnPesquisaCertificado);
+            this.Controls.Add(this.btnCadastroCertificado);
             this.Controls.Add(this.btnVPesquisaTipoAtividadeCampo);
             this.Controls.Add(this.btnVCadastroTipoAtividadeCampo);
             this.Controls.Add(this.btnVPesquisaTipoAtividade);
@@ -209,5 +233,7 @@
         private System.Windows.Forms.Button btnVPesquisaTipoAtividade;
         private System.Windows.Forms.Button btnVCadastroTipoAtividadeCampo;
         private System.Windows.Forms.Button btnVPesquisaTipoAtividadeCampo;
+        private System.Windows.Forms.Button btnPesquisaCertificado;
+        private System.Windows.Forms.Button btnCadastroCertificado;
     }
 }

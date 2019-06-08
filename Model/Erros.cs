@@ -46,5 +46,10 @@ namespace Model
         public static string AtividadeCampoValorFinal = "Campo valor final inválido";
         public static string AtividadeCampoDuplicado = "Campos duplicados";
 
+        //Cerificado
+        public static string CertificadoCampoNull = "Campo(s) inválido(s)";
+        public static string CertificadoCampoTipoAtividade = "Campo tipo de atividade inválido";
+        public static string CertificadoCampoUsuario = "Campo usuário inválido";
+
     }
 }
