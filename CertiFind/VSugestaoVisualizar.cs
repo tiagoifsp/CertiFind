@@ -15,7 +15,7 @@ namespace CertiFind
     public partial class VSugestaoVisualizar : Form
     {
         List<MTipoSugestao> MTipos = new List<MTipoSugestao>();
-        List<MSugestao> MSugestaos = new List<MSugestao>();
+        List<MSugestao> MSugestaos;
 
         public VSugestaoVisualizar()
         {
@@ -40,21 +40,25 @@ namespace CertiFind
             dgvSugestoes.DataSource = null;
             if(dtpDataInicial.Checked == false && dtpDataFinal.Checked == false)
             {
+                MSugestaos = new List<MSugestao>();
                 MSugestaos = CSugestao.Pesquisar((Convert.ToInt32(cboTipo.SelectedIndex) + 1));
-                dgvSugestoes.DataSource = CSugestao.Pesquisar((Convert.ToInt32(cboTipo.SelectedIndex) + 1));
+                dgvSugestoes.DataSource = MSugestaos;
             }
             else if(dtpDataInicial.Checked == true && dtpDataFinal.Checked == true)
             {
+                MSugestaos = new List<MSugestao>();
                 dgvSugestoes.DataSource = CSugestao.Pesquisar((Convert.ToInt32(cboTipo.SelectedIndex) + 1), dtpDataInicial.Value.ToString("yyyy-MM-dd"), dtpDataFinal.Value.ToString("yyyy-MM-dd"));
             }
             else
             {
                 if(dtpDataInicial.Checked == true)
                 {
+                    MSugestaos = new List<MSugestao>();
                     dgvSugestoes.DataSource = CSugestao.Pesquisar((Convert.ToInt32(cboTipo.SelectedIndex) + 1), true, dtpDataInicial.Value.ToString("yyyy-MM-dd"));
                 }
                 else
                 {
+                    MSugestaos = new List<MSugestao>();
                     dgvSugestoes.DataSource = CSugestao.Pesquisar((Convert.ToInt32(cboTipo.SelectedIndex) + 1), false, dtpDataFinal.Value.ToString("yyyy-MM-dd"));
                 }
             }
