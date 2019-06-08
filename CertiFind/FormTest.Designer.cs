@@ -31,9 +31,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.criaçãoDeUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDeUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tipoDeUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pesquisaDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             // 
             this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.criaçãoDeUsuárioToolStripMenuItem,
-            this.tipoDeUsuárioToolStripMenuItem});
+            this.tipoDeUsuárioToolStripMenuItem,
+            this.pesquisaDeUsuarioToolStripMenuItem});
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
             this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.usuárioToolStripMenuItem.Text = "Usuário";
@@ -62,6 +64,13 @@
             this.criaçãoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.criaçãoDeUsuárioToolStripMenuItem.Text = "Criação de Usuário";
             this.criaçãoDeUsuárioToolStripMenuItem.Click += new System.EventHandler(this.criaçãoDeUsuárioToolStripMenuItem_Click);
+            // 
+            // tipoDeUsuárioToolStripMenuItem
+            // 
+            this.tipoDeUsuárioToolStripMenuItem.Name = "tipoDeUsuárioToolStripMenuItem";
+            this.tipoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDeUsuárioToolStripMenuItem.Text = "Tipo de Usuário";
+            this.tipoDeUsuárioToolStripMenuItem.Click += new System.EventHandler(this.tipoDeUsuárioToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -81,12 +90,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "label2";
             // 
-            // tipoDeUsuárioToolStripMenuItem
+            // pesquisaDeUsuarioToolStripMenuItem
             // 
-            this.tipoDeUsuárioToolStripMenuItem.Name = "tipoDeUsuárioToolStripMenuItem";
-            this.tipoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.tipoDeUsuárioToolStripMenuItem.Text = "Tipo de Usuário";
-            this.tipoDeUsuárioToolStripMenuItem.Click += new System.EventHandler(this.tipoDeUsuárioToolStripMenuItem_Click);
+            this.pesquisaDeUsuarioToolStripMenuItem.Name = "pesquisaDeUsuarioToolStripMenuItem";
+            this.pesquisaDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pesquisaDeUsuarioToolStripMenuItem.Text = "Pesquisa de Usuario";
+            this.pesquisaDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.PesquisaDeUsuarioToolStripMenuItem_Click);
             // 
             // FormTest
             // 
@@ -116,5 +125,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem tipoDeUsuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pesquisaDeUsuarioToolStripMenuItem;
     }
 }

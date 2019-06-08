@@ -30,7 +30,7 @@ namespace CertiFind
 
             if ((!rg.IsMatch(txtEmail.Text)))
             {
-                MessageBox.Show("Campo E-mail vazio");
+                errorProvider1.SetError(txtEmail,"Campo E-mail vazio");
                 txtEmail.Focus();
 
                 //todo: trocar pra errorProvider
@@ -38,7 +38,7 @@ namespace CertiFind
             
             if (txtSenha.Text.Trim() == "")
             {
-                MessageBox.Show("Campo Senha vazio");
+                errorProvider1.SetError(txtSenha,"Campo Senha vazio");
                 txtSenha.Focus();
 
                 //todo: trocar pra errorProvider

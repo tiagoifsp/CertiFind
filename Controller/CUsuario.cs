@@ -38,13 +38,9 @@ namespace Controller
 
         public static List<MUsuario> Pesquisar(MUsuario item)
         {
-            List<MUsuario> retorno = null;
-
-            if (item != null && item.Nome != null && item.Nome.Length < 100 && item.Email != null && item.Email.Length < 100 & item.Senha != null)
-            {
+            List<MUsuario> retorno = null;        
                 retorno = DUsuario.Pesquisar(item);
-            }
-
+            
             return retorno;
         }
 
@@ -106,6 +102,9 @@ namespace Controller
             {
                 throw;
             }
+
+
+
         }
     }
 }

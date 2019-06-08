@@ -62,6 +62,22 @@ namespace Controller
             }
         }
 
+        public static void Atualizar(MTipoUsuario item)
+        {
+            if (item == null)
+            {
+                throw new Exception("Objeto Tipo de Usuario inválido");
+            }
+            try
+            {
+                DTipoUsuario.Atualizar(item);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
 
 
     }

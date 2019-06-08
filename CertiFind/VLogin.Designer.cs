@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gboxLogin = new System.Windows.Forms.GroupBox();
             this.lbRecuperarSenha = new System.Windows.Forms.Label();
             this.lbMessage = new System.Windows.Forms.Label();
@@ -36,7 +37,9 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lbSenha = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gboxLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gboxLogin
@@ -98,6 +101,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(217, 26);
             this.txtSenha.TabIndex = 3;
+            this.txtSenha.Text = "admin";
             this.txtSenha.WordWrap = false;
             // 
             // txtEmail
@@ -108,6 +112,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(217, 26);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.Text = "admin@admin.com";
             // 
             // lbSenha
             // 
@@ -131,6 +136,10 @@
             this.lbEmail.Text = "Email:";
             this.lbEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // VLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -145,6 +154,7 @@
             this.Load += new System.EventHandler(this.VLogin_Load);
             this.gboxLogin.ResumeLayout(false);
             this.gboxLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,5 +169,6 @@
         private System.Windows.Forms.Label lbMessage;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lbRecuperarSenha;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

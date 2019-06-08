@@ -39,9 +39,11 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.cmbSituacao = new System.Windows.Forms.ComboBox();
             this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.mTipoUsuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mTipoUsuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -134,6 +136,11 @@
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
             this.cmbTipoUsuario.Size = new System.Drawing.Size(147, 21);
             this.cmbTipoUsuario.TabIndex = 10;
+            this.cmbTipoUsuario.ValueMember = "ID";
+            // 
+            // mTipoUsuarioBindingSource
+            // 
+            this.mTipoUsuarioBindingSource.DataSource = typeof(Model.MTipoUsuario);
             // 
             // btnSalvar
             // 
@@ -145,9 +152,9 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // mTipoUsuarioBindingSource
+            // errorProvider1
             // 
-            this.mTipoUsuarioBindingSource.DataSource = typeof(Model.MTipoUsuario);
+            this.errorProvider1.ContainerControl = this;
             // 
             // VCriacaoUsuario
             // 
@@ -168,6 +175,7 @@
             this.Name = "VCriacaoUsuario";
             this.Text = "Criação de Usuário";
             ((System.ComponentModel.ISupportInitialize)(this.mTipoUsuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +195,6 @@
         private System.Windows.Forms.ComboBox cmbTipoUsuario;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.BindingSource mTipoUsuarioBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

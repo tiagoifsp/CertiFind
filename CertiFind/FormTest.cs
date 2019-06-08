@@ -34,5 +34,10 @@ namespace CertiFind
         {
             new VCriacaoTipoUsuario().ShowDialog();
         }
+
+        private void PesquisaDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new VPesquisaUsuario().ShowDialog();
+        }
     }
 }

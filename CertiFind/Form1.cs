@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CertiFind
 {
-    public partial class FormExemploPesquisa : Form
+    public partial class Form1 : Form
     {
-        public FormExemploPesquisa()
+        public Form1()
         {
             InitializeComponent();
         }

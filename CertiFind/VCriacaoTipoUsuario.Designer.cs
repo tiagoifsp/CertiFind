@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,6 +36,8 @@
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.cmbSituacao = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,6 +104,10 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // VCriacaoTipoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,6 +122,7 @@
             this.Controls.Add(this.label1);
             this.Name = "VCriacaoTipoUsuario";
             this.Text = "Tipo de Usuario";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +137,6 @@
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.ComboBox cmbSituacao;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

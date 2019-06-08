@@ -99,14 +99,9 @@ namespace DAL
         public static List<MUsuario> Pesquisar(MUsuario u)
         {
             List<MUsuario> usuarios = null;
-
-            if (u == null)
-            {
-                throw new ArgumentNullException(Erros.ErroGeral);
-            }
-
-            if(Conexao.Abrir())
-            {
+            try { 
+            Conexao.Abrir();
+            
                 SqlCommand comando = new SqlCommand
                 {
                     CommandText = "SELECT ID, NOME, EMAIL, SITUACAO, FKTipoUsuarioID FROM TBUsuario WHERE 1=1 ",
@@ -120,24 +115,16 @@ namespace DAL
                 //    comando.Parameters.Add(param);
                 //}
 
-                if (!"".Equals(u.Nome))
+                if (u.Nome !="")
                 {
-                    comando.CommandText += "AND NOME LIKE %@NOME% ";
+                    comando.CommandText += "AND NOME LIKE  @NOME ";
                     SqlParameter param = new SqlParameter("@NOME", SqlDbType.VarChar) { Value = u.Nome };
                     param.Value = u.Nome;
                     comando.Parameters.Add(param);
 
                 }
 
-                if (!"".Equals(u.Email))
-                {
-                    comando.CommandText += "AND EMAIL LIKE %@EMAIL% ";
-                    SqlParameter param = new SqlParameter("@EMAIL", SqlDbType.VarChar) { Value = u.Email };
-                    param.Value = u.Email;
-                    comando.Parameters.Add(param);
-                }
-
-                if (u.Situacao != null && u.Situacao != "")
+                if (u.Situacao != "")
                 {
                     comando.CommandText += "AND SITUACAO = @SITUACAO ";
                     SqlParameter param = new SqlParameter("@SITUACAO", SqlDbType.Char) { Value = u.Situacao };
@@ -146,24 +133,15 @@ namespace DAL
                  
                 }
 
-                if (u.FKTipoUsuarioID != null)
-                {
-                    comando.CommandText += "AND FKTIPOUSUARIOID = @FKTIPOUSUARIOID ";
-                    SqlParameter param = new SqlParameter("@FKTIPOUSUARIOID ", SqlDbType.Int) { Value = u.FKTipoUsuarioID };
-                    param.Value = u.FKTipoUsuarioID;
-                    comando.Parameters.Add(param);
-                }
-
                 SqlDataReader reader = comando.ExecuteReader();
 
-                MUsuario usuario;
 
                 while (reader.Read())
                 {
                     if (usuarios == null)
                         usuarios = new List<MUsuario>();
 
-                    usuario = new MUsuario
+                  MUsuario  usuario = new MUsuario
                     {
                         ID = (int)reader["ID"],
                         Nome = reader["NOME"].ToString(),
@@ -174,6 +152,12 @@ namespace DAL
 
                     usuarios.Add(usuario);
                 }
+                reader.Close();
+            }
+            catch
+            {
+                Conexao.Fechar();
+                
             }
 
             return usuarios;
