@@ -132,6 +132,16 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.CampoNull);
             }
 
+            MTipoAtividadeCampo pesquisa = new MTipoAtividadeCampo();
+            pesquisa.CampoID = item.ID;
+            pesquisa.TipoAtividadeID = 0;
+            pesquisa.ValorInicial = "";
+            pesquisa.ValorFinal = "";
+            if (CTipoAtividadeCampo.Pesquisar(pesquisa) != null)
+            {
+                throw new ExcecaoPadrao(Erros.CampoChaveEstrangeira);
+            }
+
             try
             {
                 DCampo.Excluir(item);

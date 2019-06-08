@@ -53,14 +53,17 @@ namespace CertiFind
         //btn Editar
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            MTipoAtividade item = new MTipoAtividade();
+            if (dgvResultado.SelectedRows != null && dgvResultado.SelectedRows.Count > 0)
+            {
+                MTipoAtividade item = new MTipoAtividade();
 
-            item.ID = int.Parse(dgvResultado.SelectedRows[0].Cells["iDDataGridViewTextBoxColumn"].Value.ToString());
+                item.ID = int.Parse(dgvResultado.SelectedRows[0].Cells["iDDataGridViewTextBoxColumn"].Value.ToString());
 
-            Form form = new VCadastroTipoAtividade(item);
-            form.ShowDialog();
+                Form form = new VCadastroTipoAtividade(item);
+                form.ShowDialog();
 
-            btnPesquisar_Click(null, null);
+                btnPesquisar_Click(null, null);
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

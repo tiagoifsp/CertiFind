@@ -15,18 +15,27 @@ namespace Controller
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.TipoDadoNull);
+                throw new ExcecaoPadrao(Erros.AtividadeNull);
             }
 
             if (item.Nome.Trim() == "" || item.Nome.Length > 100)
             {
-                throw new ExcecaoPadrao(Erros.TipoDadoNome);
+                throw new ExcecaoPadrao(Erros.AtividadeNome);
             }
 
-            List<MTipoAtividade> lista = PesquisarInserir(item);
+            MTipoAtividade pesquisa = new MTipoAtividade();
+            pesquisa.Nome = item.Nome;
+
+            List<MTipoAtividade> lista = Pesquisar(pesquisa);
             if (lista != null && lista.Count != 0)
             {
-                throw new ExcecaoPadrao(Erros.TipoDadoNomeDuplicado);
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    if (lista[i].Nome == item.Nome)
+                    {
+                        throw new ExcecaoPadrao(Erros.AtividadeNomeDuplicado);
+                    }
+                }
             }
 
             try
@@ -91,10 +100,19 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.TipoDadoNome);
             }
 
-            List<MTipoAtividade> lista = Pesquisar(item);
-            if (lista != null && lista.Count != 0 && lista[0].ID != item.ID)
+            MTipoAtividade pesquisa = new MTipoAtividade();
+            pesquisa.Nome = item.Nome;
+
+            List<MTipoAtividade> lista = Pesquisar(pesquisa);
+            if (lista != null && lista.Count != 0)
             {
-                throw new ExcecaoPadrao(Erros.TipoDadoNomeDuplicado);
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    if (lista[i].Nome == item.Nome && lista[i].ID != item.ID)
+                    {
+                        throw new ExcecaoPadrao(Erros.AtividadeNomeDuplicado);
+                    }
+                }
             }
 
             try
@@ -113,6 +131,16 @@ namespace Controller
             if (item == null)
             {
                 throw new ExcecaoPadrao(Erros.TipoDadoNull);
+            }
+
+            MTipoAtividadeCampo pesquisa = new MTipoAtividadeCampo();
+            pesquisa.CampoID = 0;
+            pesquisa.TipoAtividadeID = item.ID;
+            pesquisa.ValorInicial = "";
+            pesquisa.ValorFinal = "";
+            if (CTipoAtividadeCampo.Pesquisar(pesquisa) != null)
+            {
+                throw new ExcecaoPadrao(Erros.AtividadeChaveEstrangeira);
             }
 
             try

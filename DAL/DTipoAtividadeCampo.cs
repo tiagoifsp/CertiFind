@@ -31,11 +31,6 @@ namespace DAL
             parametro.Value = item.TipoAtividadeID;
             comando.Parameters.Add(parametro);
 
-            if(item.Tamanho == null)
-            {
-                item.Tamanho = 0;
-            }
-
             parametro = new SqlParameter("@Tamanho", SqlDbType.Int);
             parametro.Value = item.Tamanho;
             comando.Parameters.Add(parametro);
@@ -93,7 +88,7 @@ namespace DAL
                 comando.Parameters.Add(parametro);
             }
 
-            if (item.Tamanho != 0)
+            if (item.Tamanho != null)
             {
                 comando.CommandText += " AND TA.Tamanho = @Tamanho";
 
@@ -166,7 +161,7 @@ namespace DAL
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 
-            comando.CommandText = "UPDATE TBTipoAtividadeCampo SET ID = @ID, FKCampoID = @FKCampoID, " +
+            comando.CommandText = "UPDATE TBTipoAtividadeCampo SET FKCampoID = @FKCampoID, " +
                 "FKTipoAtividadeID = @FKTipoAtividadeID, Tamanho = @Tamanho, ValorInicial = @ValorInicial, " +
                 "ValorFinal = @ValorFinal WHERE ID = @ID";
 
@@ -187,7 +182,7 @@ namespace DAL
             comando.Parameters.Add(parametro);
 
             parametro = new SqlParameter("@ValorInicial", SqlDbType.VarChar);
-            parametro.Value = item.ValorFinal;
+            parametro.Value = item.ValorInicial;
             comando.Parameters.Add(parametro);
 
             parametro = new SqlParameter("@ValorFinal", SqlDbType.VarChar);
@@ -237,7 +232,7 @@ namespace DAL
                     retorno.ID = int.Parse(reader["ID"].ToString());
                     retorno.CampoID = int.Parse(reader["FKCampoID"].ToString());
                     retorno.TipoAtividadeID = int.Parse(reader["FKTipoAtividadeID"].ToString());
-                    retorno.Tamanho = int.Parse(reader["NomeTipoDado"].ToString());
+                    retorno.Tamanho = int.Parse(reader["Tamanho"].ToString());
                     retorno.ValorInicial = reader["ValorInicial"].ToString();
                     retorno.ValorFinal = reader["ValorFinal"].ToString();
                 }

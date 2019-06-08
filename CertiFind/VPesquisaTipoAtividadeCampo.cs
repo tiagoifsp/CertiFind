@@ -24,7 +24,17 @@ namespace CertiFind
             MTipoAtividadeCampo item = new MTipoAtividadeCampo();
             item.CampoID = int.Parse(cboCampo.SelectedValue.ToString());
             item.TipoAtividadeID = int.Parse(cboTipoAtividade.SelectedValue.ToString());
-            item.Tamanho = int.Parse(txtTamanho.Text.Trim());
+
+            try
+            {
+                item.Tamanho = int.Parse(txtTamanho.Text.ToString());
+            }
+            catch
+            {
+                item.Tamanho = null;
+                txtTamanho.Text = "";
+            }
+
             item.ValorFinal = txtValorFinal.Text.Trim();
             item.ValorInicial = txtValorInicial.Text.Trim();
             
@@ -72,6 +82,63 @@ namespace CertiFind
             listaCampo.Insert(0, itemCampo);
 
             cboCampo.DataSource = listaCampo;
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            Form form = new VCadastroTipoAtividadeCampo(null);
+            form.ShowDialog();
+
+            btnPesquisar_Click(null, null);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvResultado.SelectedRows != null && dgvResultado.SelectedRows.Count > 0)
+            {
+                MTipoAtividadeCampo item = new MTipoAtividadeCampo();
+
+                item.ID = int.Parse(dgvResultado.SelectedRows[0].Cells["iDDataGridViewTextBoxColumn"].Value.ToString());
+
+                Form form = new VCadastroTipoAtividadeCampo(item);
+                form.ShowDialog();
+
+                btnPesquisar_Click(null, null);
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (dgvResultado.SelectedRows != null && dgvResultado.SelectedRows.Count > 0)
+            {
+                DialogResult modal = MessageBox.Show("Deseja excluir este relacionamento?", "",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+
+                if (modal == DialogResult.Yes)
+                {
+                    MTipoAtividadeCampo item = new MTipoAtividadeCampo();
+
+                    item.ID = int.Parse(dgvResultado.SelectedRows[0].Cells["iDDataGridViewTextBoxColumn"].Value.ToString());
+
+                    try
+                    {
+                        CTipoAtividadeCampo.Excluir(item);
+
+                        MessageBox.Show("Relacionamento excluído com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        btnPesquisar_Click(null, null);
+                    }
+                    catch (ExcecaoPadrao ex)
+                    {
+                        MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch
+                    {
+                        MessageBox.Show(Erros.ErroGeral, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

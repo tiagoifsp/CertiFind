@@ -23,6 +23,11 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.AtividadeCampoCampo);
             }
 
+            if (item.Tamanho == -1)
+            {
+                throw new ExcecaoPadrao(Erros.AtividadeCampoTamanho);
+            }
+
             if (item.TipoAtividadeID == 0)
             {
                 throw new ExcecaoPadrao(Erros.AtividadeCampoTipoAtividade);
@@ -36,22 +41,6 @@ namespace Controller
             if (item.ValorFinal.Length > 100)
             {
                 throw new ExcecaoPadrao(Erros.AtividadeCampoValorFinal);
-            }
-
-            MTipoAtividadeCampo pesquisa = new MTipoAtividadeCampo();
-            pesquisa.CampoID = item.CampoID;
-            pesquisa.TipoAtividadeID = item.TipoAtividadeID;
-
-            List<MTipoAtividadeCampo> lista = Pesquisar(pesquisa);
-            if (lista != null && lista.Count != 0)
-            {
-                for (int i = 0; i < lista.Count; i++)
-                {
-                    if (lista[i].CampoID == item.CampoID && lista[i].TipoAtividadeID == item.TipoAtividadeID)
-                    {
-                        throw new ExcecaoPadrao(Erros.AtividadeCampoDuplicado);
-                    }
-                }
             }
 
             try
@@ -95,33 +84,33 @@ namespace Controller
         {
             if (item == null)
             {
-                throw new ExcecaoPadrao(Erros.CampoNull);
+                throw new ExcecaoPadrao(Erros.AtividadeCampoNull);
             }
 
-            if (item.Tamanho == 0)
+            if (item.CampoID == 0)
+            {
+                throw new ExcecaoPadrao(Erros.AtividadeCampoCampo);
+            }
+
+            if (item.Tamanho == -1)
             {
                 throw new ExcecaoPadrao(Erros.AtividadeCampoTamanho);
             }
 
-            if (item.ValorInicial.Trim() == "" || item.ValorInicial.Length > 100)
+            if (item.TipoAtividadeID == 0)
+            {
+                throw new ExcecaoPadrao(Erros.AtividadeCampoTipoAtividade);
+            }
+
+            if (item.ValorInicial.Length > 100)
             {
                 throw new ExcecaoPadrao(Erros.AtividadeCampoValorInicial);
             }
 
-            if (item.ValorFinal.Trim() == "" || item.ValorFinal.Length > 100)
+            if (item.ValorFinal.Length > 100)
             {
                 throw new ExcecaoPadrao(Erros.AtividadeCampoValorFinal);
             }
-
-            //MTipoAtividadeCampo pesquisa = new MTipoAtividadeCampo();
-            //pesquisa.Nome = item.Nome;
-            //pesquisa.TipoDado = 0;
-
-            //List<MTipoAtividadeCampo> lista = Pesquisar(pesquisa);
-            //if (lista != null && lista.Count != 0 && lista[0].ID != item.ID)
-            //{
-            //    throw new ExcecaoPadrao(Erros.CampoNomeDuplicado);
-            //}
 
             try
             {

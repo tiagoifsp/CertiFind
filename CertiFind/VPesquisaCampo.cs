@@ -82,7 +82,7 @@ namespace CertiFind
                     {
                         CCampo.Excluir(item);
 
-                        MessageBox.Show("Tipo de dado excluído com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Campo excluído com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         btnPesquisar_Click(null, null);
                     }

@@ -34,8 +34,8 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnExcluir = new System.Windows.Forms.ToolStripButton();
             this.dgvResultado = new System.Windows.Forms.DataGridView();
+            this.mTipoAtividadeCampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtTamanho = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.cboCampo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtValorFinal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.mTipoAtividadeCampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtTamanho = new System.Windows.Forms.TextBox();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.campoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoAtividadeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +79,7 @@
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(23, 22);
             this.btnInserir.Text = "Inserir";
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnEditar
             // 
@@ -88,6 +89,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(23, 22);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -97,6 +99,7 @@
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(23, 22);
             this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // dgvResultado
             // 
@@ -125,6 +128,10 @@
             this.dgvResultado.Size = new System.Drawing.Size(496, 236);
             this.dgvResultado.TabIndex = 7;
             // 
+            // mTipoAtividadeCampoBindingSource
+            // 
+            this.mTipoAtividadeCampoBindingSource.DataSource = typeof(Model.MTipoAtividadeCampo);
+            // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(409, 55);
@@ -134,13 +141,6 @@
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // txtTamanho
-            // 
-            this.txtTamanho.Location = new System.Drawing.Point(458, 29);
-            this.txtTamanho.Name = "txtTamanho";
-            this.txtTamanho.Size = new System.Drawing.Size(53, 20);
-            this.txtTamanho.TabIndex = 3;
             // 
             // lblNome
             // 
@@ -223,9 +223,12 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Valor Final";
             // 
-            // mTipoAtividadeCampoBindingSource
+            // txtTamanho
             // 
-            this.mTipoAtividadeCampoBindingSource.DataSource = typeof(Model.MTipoAtividadeCampo);
+            this.txtTamanho.Location = new System.Drawing.Point(458, 29);
+            this.txtTamanho.Name = "txtTamanho";
+            this.txtTamanho.Size = new System.Drawing.Size(53, 20);
+            this.txtTamanho.TabIndex = 3;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -254,14 +257,14 @@
             // campoNomeDataGridViewTextBoxColumn
             // 
             this.campoNomeDataGridViewTextBoxColumn.DataPropertyName = "CampoNome";
-            this.campoNomeDataGridViewTextBoxColumn.HeaderText = "CampoNome";
+            this.campoNomeDataGridViewTextBoxColumn.HeaderText = "Campo";
             this.campoNomeDataGridViewTextBoxColumn.Name = "campoNomeDataGridViewTextBoxColumn";
             this.campoNomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tipoAtividadeNomeDataGridViewTextBoxColumn
             // 
             this.tipoAtividadeNomeDataGridViewTextBoxColumn.DataPropertyName = "TipoAtividadeNome";
-            this.tipoAtividadeNomeDataGridViewTextBoxColumn.HeaderText = "TipoAtividadeNome";
+            this.tipoAtividadeNomeDataGridViewTextBoxColumn.HeaderText = "Atividade";
             this.tipoAtividadeNomeDataGridViewTextBoxColumn.Name = "tipoAtividadeNomeDataGridViewTextBoxColumn";
             this.tipoAtividadeNomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -275,14 +278,14 @@
             // valorInicialDataGridViewTextBoxColumn
             // 
             this.valorInicialDataGridViewTextBoxColumn.DataPropertyName = "ValorInicial";
-            this.valorInicialDataGridViewTextBoxColumn.HeaderText = "ValorInicial";
+            this.valorInicialDataGridViewTextBoxColumn.HeaderText = "Valor inicial";
             this.valorInicialDataGridViewTextBoxColumn.Name = "valorInicialDataGridViewTextBoxColumn";
             this.valorInicialDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // valorFinalDataGridViewTextBoxColumn
             // 
             this.valorFinalDataGridViewTextBoxColumn.DataPropertyName = "ValorFinal";
-            this.valorFinalDataGridViewTextBoxColumn.HeaderText = "ValorFinal";
+            this.valorFinalDataGridViewTextBoxColumn.HeaderText = "Valor final";
             this.valorFinalDataGridViewTextBoxColumn.Name = "valorFinalDataGridViewTextBoxColumn";
             this.valorFinalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -330,7 +333,6 @@
         private System.Windows.Forms.ToolStripButton btnExcluir;
         private System.Windows.Forms.DataGridView dgvResultado;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.TextBox txtTamanho;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.ComboBox cboCampo;
         private System.Windows.Forms.Label label1;
@@ -341,6 +343,7 @@
         private System.Windows.Forms.TextBox txtValorFinal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.BindingSource mTipoAtividadeCampoBindingSource;
+        private System.Windows.Forms.TextBox txtTamanho;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn campoIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoAtividadeIDDataGridViewTextBoxColumn;

@@ -19,7 +19,6 @@ namespace CertiFind
         private ComboBox cboTipoAtividade;
         private Label label2;
         private Label label3;
-        private TextBox txtTamanho;
         private TextBox txtValorInicial;
         private Label label4;
         private TextBox txtValorFinal;
@@ -27,6 +26,7 @@ namespace CertiFind
         private Button btnSalvar;
         private ErrorProvider errorProvider;
         private IContainer components;
+        private TextBox txtTamanho;
         MTipoAtividadeCampo atual = null;
 
         public VCadastroTipoAtividadeCampo(MTipoAtividadeCampo item)
@@ -60,6 +60,16 @@ namespace CertiFind
                 errorProvider.SetError(cboTipoAtividade, "");
             }
 
+            if (txtTamanho.Text == "")
+            {
+                errorProvider.SetError(txtTamanho, Erros.AtividadeCampoTamanho);
+                dadosValidos = false;
+            }
+            else
+            {
+                errorProvider.SetError(txtTamanho, "");
+            }
+
             if (dadosValidos)
             {
                 MTipoAtividadeCampo item = new MTipoAtividadeCampo();
@@ -67,18 +77,17 @@ namespace CertiFind
                 item.CampoID = int.Parse(cboCampo.SelectedValue.ToString());
                 item.TipoAtividadeID = int.Parse(cboTipoAtividade.SelectedValue.ToString());
 
-                if (txtTamanho.Text != "")
+                try
                 {
-                    try
-                    {
-                        item.Tamanho = int.Parse(txtTamanho.Text.ToString());
-                    }
-                    catch
-                    {
-                        MessageBox.Show(Erros.AtividadeCampoTamanho, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
+                    item.Tamanho = int.Parse(txtTamanho.Text.ToString());
                 }
+                catch
+                {
+                    item.Tamanho = -1;
+                }
+
+                if (txtTamanho.Text.Trim() == "")
+                    item.Tamanho = -1;
 
                 item.ValorInicial = txtValorInicial.Text.Trim();
                 item.ValorFinal = txtValorFinal.Text.Trim();
@@ -154,6 +163,9 @@ namespace CertiFind
                 {
                     cboCampo.SelectedValue = atual.CampoID.Value;
                     cboTipoAtividade.SelectedValue = atual.TipoAtividadeID.Value;
+                    txtTamanho.Text = atual.Tamanho.ToString();
+                    txtValorFinal.Text = atual.ValorFinal.ToString();
+                    txtValorInicial.Text = atual.ValorInicial.ToString();
                 }
             }
             catch (ExcecaoPadrao ex)
@@ -174,13 +186,13 @@ namespace CertiFind
             this.cboTipoAtividade = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTamanho = new System.Windows.Forms.TextBox();
             this.txtValorInicial = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtValorFinal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtTamanho = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,13 +245,6 @@ namespace CertiFind
             this.label3.TabIndex = 4;
             this.label3.Text = "Tamanho";
             // 
-            // txtTamanho
-            // 
-            this.txtTamanho.Location = new System.Drawing.Point(120, 84);
-            this.txtTamanho.Name = "txtTamanho";
-            this.txtTamanho.Size = new System.Drawing.Size(184, 20);
-            this.txtTamanho.TabIndex = 5;
-            // 
             // txtValorInicial
             // 
             this.txtValorInicial.Location = new System.Drawing.Point(120, 120);
@@ -287,6 +292,13 @@ namespace CertiFind
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // txtTamanho
+            // 
+            this.txtTamanho.Location = new System.Drawing.Point(120, 84);
+            this.txtTamanho.Name = "txtTamanho";
+            this.txtTamanho.Size = new System.Drawing.Size(184, 20);
+            this.txtTamanho.TabIndex = 5;
+            // 
             // VCadastroTipoAtividadeCampo
             // 
             this.ClientSize = new System.Drawing.Size(335, 225);
@@ -312,6 +324,7 @@ namespace CertiFind
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
     }
