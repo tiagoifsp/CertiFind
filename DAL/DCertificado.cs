@@ -22,7 +22,7 @@ namespace DAL
             comando.Connection = Conexao.Connection;
 
             comando.CommandText = "INSERT INTO TBCertificado(FKTipoAtividade, FKUsuarioID) " +
-                "VALUES (@FKTipoAtividade, @FKUsuarioID, @Tamanho)";
+                "VALUES (@FKTipoAtividade, @FKUsuarioID)";
 
             SqlParameter parametro = new SqlParameter("@FKTipoAtividade", SqlDbType.Int);
             parametro.Value = item.TipoAtividadeID;
@@ -55,7 +55,8 @@ namespace DAL
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 
-            comando.CommandText = "SELECT TA.Nome, TU.Nome FROM TBCertificado AS TC JOIN TBTipoAtividade AS TA " +
+            comando.CommandText = "SELECT TC.ID AS [CertificadoID], TU.ID AS [UsuarioID], TA.ID AS [AtividadeID], " +
+                "TA.Nome AS [NomeAtividade] , TU.Nome AS [NomeUsuario] FROM TBCertificado AS TC JOIN TBTipoAtividade AS TA " +
                 "ON TC.FKTipoAtividade = TA.ID JOIN TBUsuario AS TU ON TC.FKUsuarioID = TU.ID WHERE 1 = 1";
 
             if (item.TipoAtividadeID != 0)
@@ -89,9 +90,12 @@ namespace DAL
                         retorno = new List<MCertificado>();
 
                     MCertificado certificado = new MCertificado();
-                    certificado.ID = int.Parse(reader["ID"].ToString());
-                    certificado.TipoAtividadeID = int.Parse(reader["TipoAtividadeID"].ToString());
+
+                    certificado.ID = int.Parse(reader["CertificadoID"].ToString());
+                    certificado.TipoAtividadeID = int.Parse(reader["AtividadeID"].ToString());
                     certificado.UsuarioID = int.Parse(reader["UsuarioID"].ToString());
+                    certificado.NomeAtividade = reader["NomeAtividade"].ToString();
+                    certificado.NomeUsuario = reader["NomeUsuario"].ToString();
 
                     retorno.Add(certificado);
                 }
@@ -173,7 +177,7 @@ namespace DAL
 
                     retorno.ID = int.Parse(reader["ID"].ToString());
                     retorno.TipoAtividadeID = int.Parse(reader["FKTipoAtividade"].ToString());
-                    retorno.UsuarioID = int.Parse(reader["FKUsuarioID"].ToString());                    
+                    retorno.UsuarioID = int.Parse(reader["FKUsuarioID"].ToString());
                 }
             }
             catch
@@ -217,7 +221,5 @@ namespace DAL
                 Conexao.Fechar();
             }
         }
-
-
     }
 }

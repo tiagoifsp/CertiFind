@@ -12,5 +12,7 @@ namespace Model
         public int ID { get; set; }
         public int? TipoAtividadeID { get; set; }
         public int? UsuarioID { get; set; }
+        public string NomeAtividade { get; set; }
+        public string NomeUsuario { get; set; }
     }
 }

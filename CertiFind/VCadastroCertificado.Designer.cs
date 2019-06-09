@@ -62,10 +62,10 @@
             // 
             this.cboUsuario.DisplayMember = "Nome";
             this.cboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUsuario.Enabled = false;
             this.cboUsuario.FormattingEnabled = true;
             this.cboUsuario.Items.AddRange(new object[] {
-            "admin"});
+            "[Escolha]",
+            "1"});
             this.cboUsuario.Location = new System.Drawing.Point(142, 57);
             this.cboUsuario.Name = "cboUsuario";
             this.cboUsuario.Size = new System.Drawing.Size(184, 21);

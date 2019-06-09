@@ -2,6 +2,8 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +25,7 @@ namespace Controller
                 throw new ExcecaoPadrao(Erros.CertificadoCampoTipoAtividade);
             }
 
-            if (item.UsuarioID == 0)
+            if (item.UsuarioID == -1)
             {
                 throw new ExcecaoPadrao(Erros.CertificadoCampoUsuario);
             }
@@ -43,7 +45,7 @@ namespace Controller
         {
             List<MCertificado> retorno = null;
 
-            if (item.TipoAtividadeID.Value != -1 && item.UsuarioID.Value != -1)
+            if (item.UsuarioID != -1)
             {
                 retorno = DCertificado.Pesquisar(item);
             }
@@ -109,6 +111,5 @@ namespace Controller
                 throw;
             }
         }
-
     }
 }

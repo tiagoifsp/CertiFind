@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CertiFind
 {
@@ -52,7 +53,15 @@ namespace CertiFind
             {
                 MCertificado item = new MCertificado();
 
-                item.UsuarioID = int.Parse(cboUsuario.SelectedValue.ToString());
+                try
+                {
+                    item.UsuarioID = int.Parse(cboUsuario.SelectedValue.ToString());
+                }
+                catch
+                {
+                    item.UsuarioID = -1;
+                }
+                             
                 item.TipoAtividadeID = int.Parse(cboTipoAtividade.SelectedValue.ToString());
 
                 try
@@ -105,18 +114,19 @@ namespace CertiFind
 
             cboTipoAtividade.DataSource = lista;
 
-            //Preencher combobox com usuário
-            MUsuario itemCampo = new MUsuario();
-            itemCampo.Nome = "";
-            List<MUsuario> listaCampo = CUsuario.PesquisarInserir(itemCampo);
+            //CARREGANDO COMBOBOX MANUALMENTE POIS A DAL E CONTROLLER DE USUÁRIOS NÃO TEM PESQUISA IMPLEMENTADA
+            List<MUsuario> UsuariosCBO = new List<MUsuario>();
+            MUsuario primeiro = new MUsuario();
+            MUsuario admin = new MUsuario();
+            primeiro.Nome = "[Escolha]";
+            primeiro.ID = 0;
+            UsuariosCBO.Add(primeiro);
+            admin.Nome = "admin";
+            admin.ID = 1;
+            UsuariosCBO.Add(admin);
 
-            if (listaCampo == null)
-                listaCampo = new List<MUsuario>();
+            cboUsuario.DataSource = UsuariosCBO;
 
-            itemCampo.Nome = "[Escolha]";
-            listaCampo.Insert(0, itemCampo);
-
-            cboUsuario.DataSource = listaCampo;
 
             try
             {
@@ -136,5 +146,7 @@ namespace CertiFind
             }
 
         }
+
+      
     }
 }

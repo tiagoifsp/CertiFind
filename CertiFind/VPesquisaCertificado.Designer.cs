@@ -38,10 +38,15 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnExcluir = new System.Windows.Forms.ToolStripButton();
             this.dgvResultado = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoAtividadeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mCertificadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mCertificadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +110,7 @@
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(23, 22);
             this.btnInserir.Text = "Inserir";
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnEditar
             // 
@@ -114,6 +120,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(23, 22);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -123,6 +130,7 @@
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(23, 22);
             this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // dgvResultado
             // 
@@ -130,7 +138,13 @@
             this.dgvResultado.AllowUserToDeleteRows = false;
             this.dgvResultado.AllowUserToResizeColumns = false;
             this.dgvResultado.AllowUserToResizeRows = false;
+            this.dgvResultado.AutoGenerateColumns = false;
             this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.tipoAtividadeIDDataGridViewTextBoxColumn,
+            this.usuarioIDDataGridViewTextBoxColumn});
+            this.dgvResultado.DataSource = this.mCertificadoBindingSource;
             this.dgvResultado.Location = new System.Drawing.Point(8, 68);
             this.dgvResultado.MultiSelect = false;
             this.dgvResultado.Name = "dgvResultado";
@@ -139,6 +153,34 @@
             this.dgvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultado.Size = new System.Drawing.Size(496, 248);
             this.dgvResultado.TabIndex = 4;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tipoAtividadeIDDataGridViewTextBoxColumn
+            // 
+            this.tipoAtividadeIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tipoAtividadeIDDataGridViewTextBoxColumn.DataPropertyName = "NomeAtividade";
+            this.tipoAtividadeIDDataGridViewTextBoxColumn.HeaderText = "Tipo Atividade";
+            this.tipoAtividadeIDDataGridViewTextBoxColumn.Name = "tipoAtividadeIDDataGridViewTextBoxColumn";
+            this.tipoAtividadeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usuarioIDDataGridViewTextBoxColumn
+            // 
+            this.usuarioIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.usuarioIDDataGridViewTextBoxColumn.DataPropertyName = "NomeUsuario";
+            this.usuarioIDDataGridViewTextBoxColumn.HeaderText = "Usuário";
+            this.usuarioIDDataGridViewTextBoxColumn.Name = "usuarioIDDataGridViewTextBoxColumn";
+            this.usuarioIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mCertificadoBindingSource
+            // 
+            this.mCertificadoBindingSource.DataSource = typeof(Model.MCertificado);
             // 
             // btnPesquisar
             // 
@@ -174,9 +216,12 @@
             this.MinimumSize = new System.Drawing.Size(527, 360);
             this.Name = "VPesquisaCertificado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Certificados";
+            this.Load += new System.EventHandler(this.VPesquisaCertificado_Load);
             this.tbBotoes.ResumeLayout(false);
             this.tbBotoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mCertificadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,5 +241,9 @@
         private System.Windows.Forms.DataGridView dgvResultado;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.BindingSource mCertificadoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoAtividadeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioIDDataGridViewTextBoxColumn;
     }
 }
