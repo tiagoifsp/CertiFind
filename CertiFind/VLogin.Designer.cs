@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gboxLogin = new System.Windows.Forms.GroupBox();
-            this.lbRecuperarSenha = new System.Windows.Forms.Label();
-            this.lbMessage = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -44,8 +42,6 @@
             // 
             // gboxLogin
             // 
-            this.gboxLogin.Controls.Add(this.lbRecuperarSenha);
-            this.gboxLogin.Controls.Add(this.lbMessage);
             this.gboxLogin.Controls.Add(this.btnLogin);
             this.gboxLogin.Controls.Add(this.txtSenha);
             this.gboxLogin.Controls.Add(this.txtEmail);
@@ -59,32 +55,11 @@
             this.gboxLogin.TabIndex = 0;
             this.gboxLogin.TabStop = false;
             // 
-            // lbRecuperarSenha
-            // 
-            this.lbRecuperarSenha.AutoSize = true;
-            this.lbRecuperarSenha.BackColor = System.Drawing.SystemColors.Control;
-            this.lbRecuperarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRecuperarSenha.ForeColor = System.Drawing.Color.Red;
-            this.lbRecuperarSenha.Location = new System.Drawing.Point(78, 221);
-            this.lbRecuperarSenha.Name = "lbRecuperarSenha";
-            this.lbRecuperarSenha.Size = new System.Drawing.Size(0, 20);
-            this.lbRecuperarSenha.TabIndex = 6;
-            // 
-            // lbMessage
-            // 
-            this.lbMessage.AutoSize = true;
-            this.lbMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMessage.ForeColor = System.Drawing.Color.Red;
-            this.lbMessage.Location = new System.Drawing.Point(85, 180);
-            this.lbMessage.Name = "lbMessage";
-            this.lbMessage.Size = new System.Drawing.Size(0, 20);
-            this.lbMessage.TabIndex = 5;
-            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.Control;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(75, 119);
+            this.btnLogin.Location = new System.Drawing.Point(101, 133);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(217, 31);
             this.btnLogin.TabIndex = 4;
@@ -101,7 +76,6 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(217, 26);
             this.txtSenha.TabIndex = 3;
-            this.txtSenha.Text = "admin";
             this.txtSenha.WordWrap = false;
             // 
             // txtEmail
@@ -112,7 +86,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(217, 26);
             this.txtEmail.TabIndex = 2;
-            this.txtEmail.Text = "admin@admin.com";
             // 
             // lbSenha
             // 
@@ -147,7 +120,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 326);
             this.Controls.Add(this.gboxLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "VLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -166,9 +141,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lbSenha;
         private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.Label lbMessage;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label lbRecuperarSenha;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -15,6 +15,8 @@ namespace CertiFind
         public FormTest()
         {
             InitializeComponent();
+
+
         }
 
         private void FormTest_Load(object sender, EventArgs e)
@@ -22,6 +24,12 @@ namespace CertiFind
             if(VLogin.usuarioAtual != null)
             {
                 label2.Text = VLogin.usuarioAtual.Nome + " (" + VLogin.usuarioAtual.ID + ")";
+                if( VLogin.usuarioAtual.FKTipoUsuarioID == 2)
+                {
+                    usuárioToolStripMenuItem.Enabled= false;
+                    
+                    
+                }
             }
         }
 
@@ -38,6 +46,16 @@ namespace CertiFind
         private void PesquisaDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new VPesquisaUsuario().ShowDialog();
+        }
+
+        private void SairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void RecuperarSenhaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new VRecuperarSenha().ShowDialog();
         }
     }
 }

@@ -109,6 +109,7 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(146, 64);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(147, 20);
             this.txtSenha.TabIndex = 8;
             // 
@@ -172,7 +173,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "VCriacaoUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Criação de Usuário";
             ((System.ComponentModel.ISupportInitialize)(this.mTipoUsuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

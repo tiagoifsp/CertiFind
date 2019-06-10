@@ -44,51 +44,49 @@ namespace Controller
             return retorno;
         }
 
-        public static MUsuario Obter(MUsuario u)
+        public static MUsuario Obter(MUsuario Item)
         {
-            //todo: verificar se ID foi inicializado
-
-            return DUsuario.Obter(u);
+                return DUsuario.Obter(Item);
         }
 
         public static void Inserir(MUsuario u)
         {
-            if(u == null)
+            if (u == null)
             {
                 throw new ExcecaoPadrao(Erros.ErroGeral);
             }
 
-            if(u.Nome.Trim() == "")
+            if (u.Nome.Trim() == "")
             {
                 throw new ExcecaoPadrao(Erros.NomeVazio);
             }
 
-            if(u.Nome.Length < 100)
+            if (u.Nome.Length > 100)
             {
                 throw new ExcecaoPadrao(Erros.NomeInvalido);
             }
 
-            if(u.Senha.Trim() == "")
+            if (u.Senha.Trim() == "")
             {
                 throw new ExcecaoPadrao(Erros.SenhaVazio);
             }
 
-            if(u.Email.Trim() == "")
+            if (u.Email.Trim() == "")
             {
                 throw new ExcecaoPadrao(Erros.EmailVazio);
             }
 
-            if(u.Email.Length < 100)
+            if (u.Email.Length > 100)
             {
                 throw new ExcecaoPadrao(Erros.EmailInvalido);
             }
 
-            if(u.Situacao.Trim() == null)
+            if (u.Situacao.Trim() == null)
             {
                 throw new ExcecaoPadrao(Erros.SituacaoInvalida);
             }
 
-            if(u.FKTipoUsuarioID.ToString().Trim() == null)
+            if (u.FKTipoUsuarioID.ToString().Trim() == null)
             {
                 throw new ExcecaoPadrao(Erros.TipodeUsuarioInvalido);
             }
@@ -103,7 +101,34 @@ namespace Controller
                 throw;
             }
 
+        }
+            public static void Excluir(MUsuario u)
+            {
+                if (u == null)
+                {
+                    throw new ExcecaoPadrao(Erros.ErroGeral);
+                }
+                if(u.Nome.Trim()== null)
+            {
+                throw new ExcecaoPadrao(Erros.NomeInvalido);
+            }
+            try
+            {
+                DUsuario.Remover(u);
+            }catch
+            {
+                throw;
+            }
 
+
+        }
+        public static void Atualizar(MUsuario u)
+        {
+            if(u == null)
+            {
+                throw new Exception(Erros.ErroGeral);
+            }
+            try { DUsuario.Atualizar(u); } catch {throw; }
 
         }
     }

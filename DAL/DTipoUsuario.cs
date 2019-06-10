@@ -198,9 +198,9 @@ namespace DAL
             {
                 throw new ArgumentNullException(Erros.ErroGeral);
             }
-
-            if (Conexao.Abrir())
-            {
+            try { 
+            Conexao.Abrir();
+            
                 SqlCommand comando = new SqlCommand
                 {
                     CommandText = "SELECT ID, NOME, Descricao, SITUACAO FROM TBTipoUsuario WHERE 1=1 ",
@@ -227,6 +227,10 @@ namespace DAL
 
                     usuarios.Add(usuario);
                 }
+            }
+            catch
+            {
+                Conexao.Fechar();
             }
 
             return usuarios;

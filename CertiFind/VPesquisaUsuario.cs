@@ -39,8 +39,8 @@ namespace CertiFind
         //precisa arrumar
         private void Excluir()
         {
-            if (dataGridView1.SelectedRows != null &&
-                dataGridView1.SelectedRows.Count > 0)
+            if (dgvPesquisa.SelectedRows != null &&
+                dgvPesquisa.SelectedRows.Count > 0)
             {
                 DialogResult r = MessageBox.Show("Deseja excluir esta pessoa?", "",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
@@ -54,13 +54,13 @@ namespace CertiFind
                     //    Cells["cPFDataGridViewTextBoxColumn"].Value.ToString();
 
                     //forma 2
-                    MPessoa item = (MPessoa)dataGridView1.SelectedRows[0].
+                    MUsuario item = (MUsuario)dgvPesquisa.SelectedRows[0].
                        DataBoundItem;
 
                     bool sucesso = false;
                     try
                     {
-                        CPessoa.Excluir(item);
+                        CUsuario.Excluir(item);
                         sucesso = true;
                     }
                     catch
@@ -78,39 +78,47 @@ namespace CertiFind
                         //btnPesquisar_Click(null, null);
 
                         //Forma 2
-                        List<MPessoa> lista = (List<MPessoa>)dataGridView1.DataSource;
+                        List<MUsuario> lista = (List<MUsuario>)dgvPesquisa.DataSource;
                         lista.Remove(item);
 
-                        dataGridView1.DataSource = null;
-                        dataGridView1.DataSource = lista;
+                        dgvPesquisa.DataSource = null;
+                        dgvPesquisa.DataSource = lista;
                     }
                 }
             }
         }
-        //precisa arrumar
-        private void Editar()
+
+        private void ExcluirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows != null &&
-               dataGridView1.SelectedRows.Count > 0)
-            {
-                MPessoa item = new MPessoa();
-                item.CPF = dataGridView1.SelectedRows[0].
-                    Cells["cPFDataGridViewTextBoxColumn"].Value.ToString();
-
-                VPessoaEditar v = new VPessoaEditar(item);
-                v.ShowDialog();
-
-                if (v.Atualizou)
-                {
-                    //atualiza o grid
-                    //forma 1
-                    //atualiza a lista sem ir no banco
-
-                    //forma 2
-                    btnPesquisar_Click(null, null);
-                }
-            }
+            Excluir();
         }
+        //precisa arrumar
+         private void Editar()
+          {
+              if (dgvPesquisa.SelectedRows != null &&
+                 dgvPesquisa.SelectedRows.Count > 0)
+              {
+                  MUsuario item = new MUsuario();
+                  item.ID = (int)dgvPesquisa.SelectedRows[0].Cells["ID"].Value;
 
+                  VEdicaoUsuario v = new VEdicaoUsuario(item);
+                  v.ShowDialog();
+
+                  if (v.Atualizou)
+                  {
+                      //atualiza o grid
+                      //forma 1
+                      //atualiza a lista sem ir no banco
+
+                      //forma 2
+                      BtnPesquisar_Click(null, null);
+                  }
+              }
+          }
+
+        private void EditarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Editar();
+        }
     }
 }

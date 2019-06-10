@@ -33,7 +33,7 @@ namespace CertiFind
                 errorProvider1.SetError(txtEmail,"Campo E-mail vazio");
                 txtEmail.Focus();
 
-                //todo: trocar pra errorProvider
+                
             }
             
             if (txtSenha.Text.Trim() == "")
@@ -41,7 +41,7 @@ namespace CertiFind
                 errorProvider1.SetError(txtSenha,"Campo Senha vazio");
                 txtSenha.Focus();
 
-                //todo: trocar pra errorProvider
+            
             }
 
             MUsuario u = new MUsuario
@@ -63,7 +63,7 @@ namespace CertiFind
                 }
                 else
                 {
-                    MessageBox.Show("Usuário/senha inválido. Alterar esta mensagem");
+                   errorProvider1.SetError(txtEmail,"Usuário/senha inválido. Alterar esta mensagem");
                     //lbMessage.Text = "Usuario ou senha inválidos";
                     //lbRecuperarSenha.Text = "Clique aqui para recuperar senha";
                 }

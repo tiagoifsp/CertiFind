@@ -17,9 +17,9 @@ namespace DAL
             }
 
             MUsuario retorno = null;
-
-            if (Conexao.Abrir())
-            {
+            try { 
+            Conexao.Abrir();
+            
                 SqlCommand command = new SqlCommand
                 {
                     Connection = Conexao.Connection,
@@ -28,8 +28,7 @@ namespace DAL
                     "ID, EMAIL, SENHA " +
                     "FROM " +
                     "TBUSUARIO " +
-                    "WHERE " +
-                    "EMAIL = @EMAIL AND SITUACAO = 'A' "
+                    "WHERE EMAIL = @EMAIL AND SITUACAO = 'A' "
                 };
 
                 SqlParameter param = new SqlParameter("@EMAIL", SqlDbType.VarChar)
@@ -49,6 +48,10 @@ namespace DAL
                 }
 
                 reader.Close();
+             
+            }
+            catch
+            {
                 Conexao.Fechar();
             }
 
@@ -64,8 +67,10 @@ namespace DAL
 
             MUsuario retorno = null;
 
-            if (Conexao.Abrir())
-            {
+            try
+            { 
+            Conexao.Abrir();
+            
                 SqlCommand command = new SqlCommand
                 {
                     Connection = Conexao.Connection,
@@ -77,8 +82,10 @@ namespace DAL
                 command.Parameters.Add(param);
 
                 SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
+                try
                 {
+                    reader.Read();
+
                     retorno = new MUsuario
                     {
                         ID = (int)reader["ID"],
@@ -88,8 +95,14 @@ namespace DAL
                         FKTipoUsuarioID = (int)reader["FKTipoUsuarioID"]
                     };
                 }
-
-                reader.Close();
+                catch
+                {
+                    reader.Close();
+                }
+            }
+            catch
+            {
+                
                 Conexao.Fechar();
             }
 
@@ -104,7 +117,7 @@ namespace DAL
             
                 SqlCommand comando = new SqlCommand
                 {
-                    CommandText = "SELECT ID, NOME, EMAIL, SITUACAO, FKTipoUsuarioID FROM TBUsuario WHERE 1=1 ",
+                    CommandText = "SELECT ID, NOME, EMAIL, SITUACAO, FKTipoUsuarioID FROM TBUsuario  ",
                     Connection = Conexao.Connection
                 };
 
@@ -177,16 +190,12 @@ namespace DAL
                     CommandText = "" +
                     "INSERT INTO " +
                     "TBUSUARIO " +
-                    "(ID, NOME, EMAIL, SENHA, SITUACAO, FKTIPOUSUARIOID) " +
                     "VALUES " +
-                    "(@ID, @NOME, @EMAIL, @SENHA, @SITUACAO, @FKTIPOUSUARIOID) ",
-                    Connection = Conexao.Connection,
+                    "(@NOME, @EMAIL,CONVERT(CHAR(64), HASHBYTES('SHA2_256', '@SENHA'), 2), @SITUACAO, @FKTIPOUSUARIOID)",
+                    Connection = Conexao.Connection
                 };
-                                
-                SqlParameter param = new SqlParameter("@ID", SqlDbType.Int) { Value = u.ID };
-                comando.Parameters.Add(param);
 
-                param = new SqlParameter("@NOME", SqlDbType.VarChar) { Value = u.Nome };
+                SqlParameter param = new SqlParameter("@NOME", SqlDbType.VarChar) { Value = u.Nome };
                 comando.Parameters.Add(param);
                 
                 param = new SqlParameter("@EMAIL", SqlDbType.VarChar) { Value = u.Email };
@@ -197,35 +206,43 @@ namespace DAL
 
                 param = new SqlParameter("@FKTIPOUSUARIOID ", SqlDbType.Int) { Value = u.FKTipoUsuarioID };
                 comando.Parameters.Add(param);
+
+                param = new SqlParameter("@SENHA ", SqlDbType.Int) { Value = u.Senha};
+                comando.Parameters.Add(param);
+
 
                 if (0 < comando.ExecuteNonQuery())
                     throw new Exception(Erros.ErroGeral);
             }
             catch
             {
-                throw new Exception(Erros.ErroGeral);
+                Conexao.Fechar();
             }
         }
+
 
         public static void Atualizar(MUsuario u)
         {
             if (u == null)
                 throw new ArgumentNullException(nameof(u));
 
-            if (Conexao.Abrir())
-            {
+
+            try
+            { 
+
+                     Conexao.Abrir();
+            
                 SqlCommand comando = new SqlCommand
                 {
                     CommandText = "" +
                     "UPDATE TBUSUARIO " +
                     "SET" +
-                    "(ID, NOME, EMAIL, SENHA, SITUACAO, FKTIPOUSUARIOID) " +
-                    "VALUES " +
-                    "(@ID, @NOME, @EMAIL,  @SENHA, @SITUACAO, @FKTIPOUSUARIOID) WHERE ID = @ID",
+                    "NOME = @NOME , EMAIL = @EMAIL, SITUACAO = @SITUACAO, FKTIPOUSUARIOID = @FKTIPOUSUARIOID, Senha = @SENHA WHERE ID = @ID",
                     Connection = Conexao.Connection,
                 };
 
-                SqlParameter param = new SqlParameter("@ID", SqlDbType.Int) { Value = u.ID };
+                SqlParameter param = new SqlParameter("@ID", SqlDbType.Int);
+                param.Value = u.ID;
                 comando.Parameters.Add(param);
 
                 param = new SqlParameter("@NOME", SqlDbType.VarChar) { Value = u.Nome };
@@ -240,9 +257,16 @@ namespace DAL
                 param = new SqlParameter("@FKTIPOUSUARIOID ", SqlDbType.Int) { Value = u.FKTipoUsuarioID };
                 comando.Parameters.Add(param);
 
-                if(0 < comando.ExecuteNonQuery())
+                param = new SqlParameter("@SENHA", SqlDbType.VarChar) { Value = u.Senha };
+                comando.Parameters.Add(param);
+
+                if (0 < comando.ExecuteNonQuery())
                     throw new Exception(Erros.ErroGeral);
-                
+
+            }
+            catch
+            {
+                Conexao.Fechar();
             }
         }
 
@@ -251,8 +275,9 @@ namespace DAL
             if (u == null)
                 throw new ArgumentNullException(nameof(u));
 
-            if (Conexao.Abrir())
-            {
+            try {
+                Conexao.Abrir();
+            
                 SqlCommand comando = new SqlCommand
                 {
                     CommandText = "DELETE FROM TBUSUARIO WHERE ID = @ID",
@@ -264,6 +289,10 @@ namespace DAL
 
                 if (0 < comando.ExecuteNonQuery())
                     throw new Exception(Erros.ErroGeral);
+            }
+            catch
+            {
+                Conexao.Fechar();
             }
         }
     }
