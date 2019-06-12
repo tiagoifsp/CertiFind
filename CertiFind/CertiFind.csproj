@@ -62,7 +62,7 @@
     </Compile>
     <Compile Include="VPesquisaUsuario.Designer.cs">
       <DependentUpon>VPesquisaUsuario.cs</DependentUpon>
-
+    </Compile>
     <Compile Include="VCadastroCampo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,7 +165,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaUsuario.resx">
       <DependentUpon>VPesquisaUsuario.cs</DependentUpon>
-
+    </EmbeddedResource>
 
     <Compile Include="VSugestaoVisualizar.cs">
       <SubType>Form</SubType>
