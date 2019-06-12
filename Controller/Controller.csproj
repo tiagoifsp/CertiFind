@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
 
+    <Compile Include="CTipoUsuario.cs" />
+
+
     <Compile Include="CTipoSugestao.cs" />
 
 
@@ -52,6 +55,7 @@
     <Compile Include="CCertificado.cs" />
     <Compile Include="CTipoAtividade.cs" />
     <Compile Include="CTipoAtividadeCampo.cs" />
+
 
 
     <Compile Include="CUsuario.cs" />

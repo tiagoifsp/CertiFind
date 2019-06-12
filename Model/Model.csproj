@@ -48,9 +48,13 @@
     <Compile Include="MTipoDado.cs" />
     <Compile Include="Erros.cs" />
 
+    <Compile Include="MTipoUsuario.cs" />
+
+
     <Compile Include="MTipoSugestao.cs" />
 
     <Compile Include="MGrupoPesquisa.cs" />
+
 
     <Compile Include="MUsuario.cs" />
     <Compile Include="MSugestao.cs" />

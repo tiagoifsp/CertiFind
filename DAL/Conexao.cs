@@ -23,7 +23,7 @@ namespace DAL
             bool retorno = false;
 
             if (Connection != null && Connection.State != System.Data.ConnectionState.Closed)
-                return false;
+                 return false;
 
             if (Connection == null)
             {
