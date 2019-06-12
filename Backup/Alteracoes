@@ -8,8 +8,5 @@ Já estão no backup do banco:
 --ADD UNIQUE (Nome);
 --ALTER TABLE TBCampo
 --ADD UNIQUE (Nome);
-
-A colocar no backup do banco:
-
-exec sp_rename 'TBTipoAtividadeCampo.FKTipoAtivodadeID', 'FKTipoAtividadeID', 'column'
---TBTipoAtividadeCampo.ID não possuí a propriedade IDENTITY. Devido a complexidade de fazer via SQL, que não permite alterar tal propriedade sem excluir a tabela, espero que a alteração possa ser feita via SSMS. 
+--exec sp_rename 'TBTipoAtividadeCampo.FKTipoAtivodadeID', 'FKTipoAtividadeID', 'column'
+--Feito: TBTipoAtividadeCampo.ID não possuí a propriedade IDENTITY. Devido a complexidade de fazer via SQL, que não permite alterar tal propriedade sem excluir a tabela, espero que a alteração possa ser feita via SSMS. 
