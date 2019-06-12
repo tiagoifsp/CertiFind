@@ -41,8 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MCampo.cs" />
+    <Compile Include="MCertificado.cs" />
+    <Compile Include="MTipoAtividade.cs" />
+    <Compile Include="MTipoAtividadeCampo.cs" />
+    <Compile Include="MTipoDado.cs" />
     <Compile Include="Erros.cs" />
+
     <Compile Include="MTipoSugestao.cs" />
+
+    <Compile Include="MGrupoPesquisa.cs" />
+
     <Compile Include="MUsuario.cs" />
     <Compile Include="MSugestao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -2,6 +2,14 @@ Já estão no backup do banco:
 
 --INSERT INTO TBTipoUsuario (NOME, DESCRICAO, SITUACAO) VALUES('ADMIN', 'Usuário administrador padrão', 'A');--
 --INSERT INTO TBUsuario (NOME, EMAIL, SENHA, SITUACAO, FKTipoUsuarioID) VALUES('admin', 'admin@admin.com', CONVERT(CHAR(64), HASHBYTES('SHA2_256', 'admin'), 2), 'A','1');
+--ALTER TABLE TBTipoDados
+--ADD Descricao varchar(100);
+--ALTER TABLE TBTipoDados
+--ADD UNIQUE (Nome);
+--ALTER TABLE TBCampo
+--ADD UNIQUE (Nome);
 
 A colocar no backup do banco:
 
+exec sp_rename 'TBTipoAtividadeCampo.FKTipoAtivodadeID', 'FKTipoAtividadeID', 'column'
+--TBTipoAtividadeCampo.ID não possuí a propriedade IDENTITY. Devido a complexidade de fazer via SQL, que não permite alterar tal propriedade sem excluir a tabela, espero que a alteração possa ser feita via SSMS. 
