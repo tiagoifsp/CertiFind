@@ -42,5 +42,7 @@ namespace Controller
 
             return DUsuario.Obter(u);
         }
+
+
     }
 }

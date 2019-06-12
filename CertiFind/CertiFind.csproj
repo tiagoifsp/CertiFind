@@ -56,6 +56,21 @@
     <Compile Include="VCadastroCampo.Designer.cs">
       <DependentUpon>VCadastroCampo.cs</DependentUpon>
     </Compile>
+    <Compile Include="VCadastroCertificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCadastroCertificado.Designer.cs">
+      <DependentUpon>VCadastroCertificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VCadastroTipoAtividade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCadastroTipoAtividade.Designer.cs">
+      <DependentUpon>VCadastroTipoAtividade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VCadastroTipoAtividadeCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VCadastroTipoDado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +82,24 @@
     </Compile>
     <Compile Include="VPesquisaCampo.Designer.cs">
       <DependentUpon>VPesquisaCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPesquisaCertificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPesquisaCertificado.Designer.cs">
+      <DependentUpon>VPesquisaCertificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPesquisaTipoAtividade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPesquisaTipoAtividade.Designer.cs">
+      <DependentUpon>VPesquisaTipoAtividade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPesquisaTipoAtividadeCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPesquisaTipoAtividadeCampo.designer.cs">
+      <DependentUpon>VPesquisaTipoAtividadeCampo.cs</DependentUpon>
     </Compile>
     <Compile Include="VPesquisaTipoDado.cs">
       <SubType>Form</SubType>
@@ -94,12 +127,35 @@
     <Compile Include="VLogin.Designer.cs">
       <DependentUpon>VLogin.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="VCadastroGrupoPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCadastroGrupoPesquisa.Designer.cs">
+      <DependentUpon>VCadastroGrupoPesquisa.cs</DependentUpon>
+    </Compile>
+
+    <Compile Include="VTipoDeAtividade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VTipoDeAtividade.designer.cs">
+      <DependentUpon>VTipoDeAtividade.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="VCadastroCampo.resx">
       <DependentUpon>VCadastroCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VCadastroCertificado.resx">
+      <DependentUpon>VCadastroCertificado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VCadastroTipoAtividade.resx">
+      <DependentUpon>VCadastroTipoAtividade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VCadastroTipoAtividadeCampo.resx">
+      <DependentUpon>VCadastroTipoAtividadeCampo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VCadastroTipoDado.resx">
       <DependentUpon>VCadastroTipoDado.cs</DependentUpon>
@@ -109,6 +165,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaCampo.resx">
       <DependentUpon>VPesquisaCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPesquisaCertificado.resx">
+      <DependentUpon>VPesquisaCertificado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPesquisaTipoAtividade.resx">
+      <DependentUpon>VPesquisaTipoAtividade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPesquisaTipoAtividadeCampo.resx">
+      <DependentUpon>VPesquisaTipoAtividadeCampo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaTipoDado.resx">
       <DependentUpon>VPesquisaTipoDado.cs</DependentUpon>
@@ -124,8 +189,19 @@
     <EmbeddedResource Include="VLogin.resx">
       <DependentUpon>VLogin.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="VCadastroGrupoPesquisa.resx">
+      <DependentUpon>VCadastroGrupoPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="VTipoDeAtividade.resx">
+      <DependentUpon>VTipoDeAtividade.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\Model.MCampo.datasource" />
+    <None Include="Properties\DataSources\Model.MCertificado.datasource" />
+    <None Include="Properties\DataSources\Model.MTipoAtividadeCampo.datasource" />
     <None Include="Properties\DataSources\Model.MTipoDado.datasource" />
+
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

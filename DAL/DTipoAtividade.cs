@@ -1,7 +1,6 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public static class DCampo
+    public static class DTipoAtividade
     {
         //INSERIR
-        public static void Inserir(MCampo item)
+        public static void Inserir(MTipoAtividade item)
         {
             if (!Conexao.Abrir())
                 throw new Exception();
@@ -21,14 +20,10 @@ namespace DAL
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 
-            comando.CommandText = "INSERT INTO TBCampo(Nome, FKTipoDadosID) VALUES(@Nome, @FKTipoDadosID)";
+            comando.CommandText = "INSERT INTO TBTipoAtividade(Nome) VALUES(@Nome)";
 
             SqlParameter parametro = new SqlParameter("@Nome", SqlDbType.VarChar);
             parametro.Value = item.Nome;
-            comando.Parameters.Add(parametro);
-
-            parametro = new SqlParameter("@FKTipoDadosID", SqlDbType.Int);
-            parametro.Value = item.TipoDado;
             comando.Parameters.Add(parametro);
 
             try
@@ -46,7 +41,7 @@ namespace DAL
         }
 
         //PESQUISAR
-        public static List<MCampo> Pesquisar(MCampo item)
+        public static List<MTipoAtividade> Pesquisar(MTipoAtividade item)
         {
             if (!Conexao.Abrir())
                 throw new Exception();
@@ -54,45 +49,34 @@ namespace DAL
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 
-            comando.CommandText = "SELECT C.ID, C.Nome, TD.Nome AS NomeTipoDado, C.FKTipoDadosID FROM TBCampo AS C JOIN TBTipoDados AS TD ON C.FKTipoDadosID = TD.ID WHERE 1=1";
+            comando.CommandText = "SELECT ID, Nome FROM TBTipoAtividade WHERE 1=1";
 
             if (item.Nome.Trim() != "")
             {
-                comando.CommandText += " AND C.Nome LIKE @Nome";
+                comando.CommandText += " AND Nome LIKE @Nome";
 
                 SqlParameter parametro = new SqlParameter("@Nome", SqlDbType.VarChar);
                 parametro.Value = "%" + item.Nome + "%";
                 comando.Parameters.Add(parametro);
             }
 
-            if (item.TipoDado != 0)
-            {
-                comando.CommandText += " AND C.FKTipoDadosID = @FKTipoDadosID";
-
-                SqlParameter parametro = new SqlParameter("@FKTipoDadosID", SqlDbType.Int);
-                parametro.Value = item.TipoDado;
-                comando.Parameters.Add(parametro);
-            }
-
-            comando.CommandText += " ORDER BY C.Nome ASC";
+            comando.CommandText += " ORDER BY Nome ASC";
 
             SqlDataReader reader = comando.ExecuteReader();
-            List<MCampo> retorno = null;
+            List<MTipoAtividade> retorno = null;
 
             try
             {
                 while (reader.Read())
                 {
                     if (retorno == null)
-                        retorno = new List<MCampo>();
+                        retorno = new List<MTipoAtividade>();
 
-                    MCampo campo = new MCampo();
-                    campo.ID = int.Parse(reader["ID"].ToString());
-                    campo.Nome = reader["Nome"].ToString();
-                    campo.TipoDado = int.Parse(reader["FKTipoDadosID"].ToString());
-                    campo.NomeTipoDado = reader["NomeTipoDado"].ToString();
+                    MTipoAtividade tipoAtividade = new MTipoAtividade();
+                    tipoAtividade.ID = int.Parse(reader["ID"].ToString());
+                    tipoAtividade.Nome = reader["Nome"].ToString();
 
-                    retorno.Add(campo);
+                    retorno.Add(tipoAtividade);
                 }
             }
             catch
@@ -109,7 +93,7 @@ namespace DAL
         }
 
         //PESQUISAR PARA INSERIR
-        public static List<MCampo> PesquisarInserir(MCampo item)
+        public static List<MTipoAtividade> PesquisarInserir(MTipoAtividade item)
         {
             if (!Conexao.Abrir())
                 throw new Exception();
@@ -117,45 +101,34 @@ namespace DAL
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 
-            comando.CommandText = "SELECT C.ID, C.Nome, TD.Nome AS NomeTipoDado, C.FKTipoDadosID FROM TBCampo AS C JOIN TBTipoDados AS TD ON C.FKTipoDadosID = TD.ID WHERE 1=1";
+            comando.CommandText = "SELECT ID, Nome FROM TBTipoAtividade WHERE 1=1";
 
             if (item.Nome.Trim() != "")
             {
-                comando.CommandText += " AND C.Nome = @Nome";
+                comando.CommandText += " AND Nome = @Nome";
 
                 SqlParameter parametro = new SqlParameter("@Nome", SqlDbType.VarChar);
                 parametro.Value = item.Nome;
                 comando.Parameters.Add(parametro);
             }
 
-            if (item.TipoDado != 0)
-            {
-                comando.CommandText += " AND C.FKTipoDadosID = @FKTipoDadosID";
-
-                SqlParameter parametro = new SqlParameter("@FKTipoDadosID", SqlDbType.Int);
-                parametro.Value = item.TipoDado;
-                comando.Parameters.Add(parametro);
-            }
-
-            comando.CommandText += " ORDER BY C.Nome ASC";
+            comando.CommandText += " ORDER BY Nome ASC";
 
             SqlDataReader reader = comando.ExecuteReader();
-            List<MCampo> retorno = null;
+            List<MTipoAtividade> retorno = null;
 
             try
             {
                 while (reader.Read())
                 {
                     if (retorno == null)
-                        retorno = new List<MCampo>();
+                        retorno = new List<MTipoAtividade>();
 
-                    MCampo campo = new MCampo();
-                    campo.ID = int.Parse(reader["ID"].ToString());
-                    campo.Nome = reader["Nome"].ToString();
-                    campo.TipoDado = int.Parse(reader["FKTipoDadosID"].ToString());
-                    campo.NomeTipoDado = reader["NomeTipoDado"].ToString();
+                    MTipoAtividade tipoAtividade = new MTipoAtividade();
+                    tipoAtividade.ID = int.Parse(reader["ID"].ToString());
+                    tipoAtividade.Nome = reader["Nome"].ToString();
 
-                    retorno.Add(campo);
+                    retorno.Add(tipoAtividade);
                 }
             }
             catch
@@ -172,7 +145,7 @@ namespace DAL
         }
 
         //OBTER
-        public static MCampo Obter(MCampo item)
+        public static MTipoAtividade Obter(MTipoAtividade item)
         {
             if (!Conexao.Abrir())
                 throw new Exception();
@@ -180,7 +153,7 @@ namespace DAL
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 
-            comando.CommandText = "SELECT ID, Nome, FKTipoDadosID FROM TBCampo WHERE ID = @ID";
+            comando.CommandText = "SELECT ID, Nome FROM TBTipoAtividade WHERE ID = @ID";
 
             SqlParameter parametro = new SqlParameter("@ID", SqlDbType.Int);
             parametro.Value = item.ID;
@@ -188,17 +161,16 @@ namespace DAL
 
             SqlDataReader reader = comando.ExecuteReader();
 
-            MCampo retorno = null;
+            MTipoAtividade retorno = null;
 
             try
             {
                 if (reader.Read())
                 {
-                    retorno = new MCampo();
+                    retorno = new MTipoAtividade();
 
                     retorno.ID = int.Parse(reader["ID"].ToString());
                     retorno.Nome = reader["Nome"].ToString();
-                    retorno.TipoDado = int.Parse(reader["FKTipoDadosID"].ToString());
                 }
             }
             catch
@@ -215,7 +187,7 @@ namespace DAL
         }
 
         //EDITAR
-        public static void Editar(MCampo item)
+        public static void Editar(MTipoAtividade item)
         {
             if (!Conexao.Abrir())
                 throw new Exception();
@@ -223,7 +195,7 @@ namespace DAL
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 
-            comando.CommandText = "UPDATE TBCampo SET Nome = @Nome, FKTipoDadosID = @FKTipoDadosID WHERE ID = @ID";
+            comando.CommandText = "UPDATE TBTipoAtividade SET Nome = @Nome WHERE ID = @ID";
 
             SqlParameter parametro = new SqlParameter("@ID", SqlDbType.Int);
             parametro.Value = item.ID;
@@ -231,10 +203,6 @@ namespace DAL
 
             parametro = new SqlParameter("@Nome", SqlDbType.VarChar);
             parametro.Value = item.Nome;
-            comando.Parameters.Add(parametro);
-
-            parametro = new SqlParameter("@FKTipoDadosID", SqlDbType.Int);
-            parametro.Value = item.TipoDado;
             comando.Parameters.Add(parametro);
 
             try
@@ -252,7 +220,7 @@ namespace DAL
         }
 
         //EXCLUIR
-        public static void Excluir(MCampo item)
+        public static void Excluir(MTipoAtividade item)
         {
             if (!Conexao.Abrir())
                 throw new Exception();
@@ -260,7 +228,7 @@ namespace DAL
             SqlCommand comando = new SqlCommand();
             comando.Connection = Conexao.Connection;
 
-            comando.CommandText = "DELETE FROM TBCampo WHERE ID = @ID";
+            comando.CommandText = "DELETE FROM TBTipoAtividade WHERE ID = @ID";
 
             SqlParameter parametro = new SqlParameter("@ID", SqlDbType.Int);
             parametro.Value = item.ID;
@@ -279,5 +247,7 @@ namespace DAL
                 Conexao.Fechar();
             }
         }
+
+
     }
 }

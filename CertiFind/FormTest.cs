@@ -16,7 +16,18 @@ namespace CertiFind
         {
             InitializeComponent();
         }
+//<<<<<<< RF23
         
+//=======
+
+        private void btncadastrogp_Click(object sender, EventArgs e)
+        {
+            VCadastroGrupoPesquisa vgp = new VCadastroGrupoPesquisa();
+
+            vgp.Show();
+        }
+
+//>>>>>>> master
         private void FormTest_Load(object sender, EventArgs e)
         {
             if(VLogin.usuarioAtual != null)
@@ -49,9 +60,46 @@ namespace CertiFind
             form.ShowDialog();
         }
 
+//<<<<<<< RF23
         private void btnGerarRestaurarBackup_Click(object sender, EventArgs e)
         {
             VGerarRestaurarBackup form = new VGerarRestaurarBackup();
+//=======
+
+        private void btnVPesquisaTipoAtividade_Click(object sender, EventArgs e)
+        {
+            VPesquisaTipoAtividade form = new VPesquisaTipoAtividade();
+            form.ShowDialog();
+        }
+
+        private void btnVCadastroTipoAtividadeCampo_Click(object sender, EventArgs e)
+        {
+            VCadastroTipoAtividadeCampo form = new VCadastroTipoAtividadeCampo(null);
+            form.ShowDialog();
+        }
+
+        private void btnVPesquisaTipoAtividadeCampo_Click(object sender, EventArgs e)
+        {
+            VPesquisaTipoAtividadeCampo form = new VPesquisaTipoAtividadeCampo();
+            form.ShowDialog();
+        }
+
+        private void btnVCadastroTipoAtividade_Click_1(object sender, EventArgs e)
+        {
+            VCadastroTipoAtividade form = new VCadastroTipoAtividade(null);
+            form.ShowDialog();
+        }
+
+        private void btnCadastroCertificado_Click(object sender, EventArgs e)
+        {
+            VCadastroCertificado form = new VCadastroCertificado(null);
+            form.ShowDialog();
+        }
+
+        private void btnPesquisaCertificado_Click(object sender, EventArgs e)
+        {
+            VPesquisaCertificado form = new VPesquisaCertificado();
+//>>>>>>> master
             form.ShowDialog();
         }
     }
