@@ -76,6 +76,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(217, 26);
             this.txtSenha.TabIndex = 3;
+            this.txtSenha.Text = "admin";
             this.txtSenha.WordWrap = false;
             // 
             // txtEmail
@@ -86,6 +87,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(217, 26);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.Text = "admin@admin.com";
             // 
             // lbSenha
             // 

@@ -19,6 +19,15 @@ namespace CertiFind
 
         }
 
+
+        private void btncadastrogp_Click(object sender, EventArgs e)
+        {
+            VCadastroGrupoPesquisa vgp = new VCadastroGrupoPesquisa();
+
+            vgp.Show();
+        }
+
+
         private void FormTest_Load(object sender, EventArgs e)
         {
             if(VLogin.usuarioAtual != null)
@@ -32,6 +41,7 @@ namespace CertiFind
                 }
             }
         }
+
 
         private void criaçãoDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -57,5 +67,87 @@ namespace CertiFind
         {
             new VRecuperarSenha().ShowDialog();
         }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VSugestaoEnviar sugestao = new VSugestaoEnviar();
+            sugestao.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new VSugestaoVisualizar().ShowDialog();
+        }
+
+
+        private void btnVCadastroTipoDados_Click(object sender, EventArgs e)
+        {
+            VCadastroTipoDado form = new VCadastroTipoDado(null);
+            form.ShowDialog();
+        }
+
+        private void btnVPesquisaTipoDados_Click(object sender, EventArgs e)
+        {
+            VPesquisaTipoDado form = new VPesquisaTipoDado();
+            form.ShowDialog();
+        }
+
+        private void btnVCadastroCampo_Click(object sender, EventArgs e)
+        {
+            VCadastroCampo form = new VCadastroCampo(null);
+            form.ShowDialog();
+        }
+
+        private void btnVPesquisaCampo_Click(object sender, EventArgs e)
+        {
+            VPesquisaCampo form = new VPesquisaCampo();
+            form.ShowDialog();
+        }
+
+
+        private void btnGerarRestaurarBackup_Click(object sender, EventArgs e)
+        {
+            VGerarRestaurarBackup form = new VGerarRestaurarBackup();
+        }
+
+
+        private void btnVPesquisaTipoAtividade_Click(object sender, EventArgs e)
+        {
+            VPesquisaTipoAtividade form = new VPesquisaTipoAtividade();
+            form.ShowDialog();
+        }
+
+        private void btnVCadastroTipoAtividadeCampo_Click(object sender, EventArgs e)
+        {
+            VCadastroTipoAtividadeCampo form = new VCadastroTipoAtividadeCampo(null);
+            form.ShowDialog();
+        }
+
+        private void btnVPesquisaTipoAtividadeCampo_Click(object sender, EventArgs e)
+        {
+            VPesquisaTipoAtividadeCampo form = new VPesquisaTipoAtividadeCampo();
+            form.ShowDialog();
+        }
+
+        private void btnVCadastroTipoAtividade_Click_1(object sender, EventArgs e)
+        {
+            VCadastroTipoAtividade form = new VCadastroTipoAtividade(null);
+            form.ShowDialog();
+        }
+
+        private void btnCadastroCertificado_Click(object sender, EventArgs e)
+        {
+            VCadastroCertificado form = new VCadastroCertificado(null);
+            form.ShowDialog();
+        }
+
+        private void btnPesquisaCertificado_Click(object sender, EventArgs e)
+        {
+            VPesquisaCertificado form = new VPesquisaCertificado();
+
+            form.ShowDialog();
+        }
+
     }
 }

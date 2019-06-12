@@ -42,9 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DCampo.cs" />
+    <Compile Include="DCertificado.cs" />
+    <Compile Include="DTipoAtividade.cs" />
+    <Compile Include="DTipoAtividadeCampo.cs" />
+    <Compile Include="DTipoDado.cs" />
     <Compile Include="Conexao.cs" />
+
     <Compile Include="DTipoUsuario.cs" />
+
+
+    <Compile Include="DTipoSugestao.cs" />
+
+    <Compile Include="DSugestao.cs" />
+
+
     <Compile Include="DUsuario.cs" />
+    <Compile Include="DGrupoPesquisa.cs" />
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

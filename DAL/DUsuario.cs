@@ -8,7 +8,6 @@ namespace DAL
 {
     public static class DUsuario
     {
-
         public static MUsuario Login(MUsuario u)
         {
             if(u == null)
