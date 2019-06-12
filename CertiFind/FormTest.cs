@@ -17,6 +17,13 @@ namespace CertiFind
             InitializeComponent();
         }
 
+        private void btncadastrogp_Click(object sender, EventArgs e)
+        {
+            VCadastroGrupoPesquisa vgp = new VCadastroGrupoPesquisa();
+
+            vgp.Show();
+        }
+
         private void FormTest_Load(object sender, EventArgs e)
         {
             if(VLogin.usuarioAtual != null)

@@ -49,6 +49,7 @@
     <Compile Include="DTipoDado.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="DUsuario.cs" />
+    <Compile Include="DGrupoPesquisa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -47,7 +47,11 @@
     <Compile Include="CUsuario.cs" />
     <Compile Include="CCampo.cs" />
     <Compile Include="ExcecaoPadrao.cs" />
+
+    <Compile Include="CGrupoPesquisa.cs" />
+
     <Compile Include="CTipoDado.cs" />
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

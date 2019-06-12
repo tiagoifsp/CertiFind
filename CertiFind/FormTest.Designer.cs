@@ -44,6 +44,7 @@
             this.btnPesquisaCertificado = new System.Windows.Forms.Button();
             this.btnCadastroCertificado = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.btncadastrogp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -88,6 +89,17 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "label2";
             // 
+//<<<<<<< RF16-
+            // btncadastrogp
+            // 
+            this.btncadastrogp.Location = new System.Drawing.Point(184, 197);
+            this.btncadastrogp.Name = "btncadastrogp";
+            this.btncadastrogp.Size = new System.Drawing.Size(171, 23);
+            this.btncadastrogp.TabIndex = 1;
+            this.btncadastrogp.Text = "cadastro grupo pesquisa";
+            this.btncadastrogp.UseVisualStyleBackColor = true;
+            this.btncadastrogp.Click += new System.EventHandler(this.btncadastrogp_Click);
+//=======
             // btnVCadastroTipoDados
             // 
             this.btnVCadastroTipoDados.Location = new System.Drawing.Point(16, 43);
@@ -187,6 +199,7 @@
             this.btnCadastroCertificado.Text = "VCadastroCertificado";
             this.btnCadastroCertificado.UseVisualStyleBackColor = true;
             this.btnCadastroCertificado.Click += new System.EventHandler(this.btnCadastroCertificado_Click);
+//>>>>>>> master
             // 
             // FormTest
             // 
@@ -204,6 +217,7 @@
             this.Controls.Add(this.btnVPesquisaTipoDados);
             this.Controls.Add(this.btnVCadastroTipoDados);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.btncadastrogp);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -224,6 +238,7 @@
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem criaçãoDeUsuárioToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btncadastrogp;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnVCadastroTipoDados;
         private System.Windows.Forms.Button btnVPesquisaTipoDados;

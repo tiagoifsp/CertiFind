@@ -117,6 +117,16 @@
     <Compile Include="VLogin.Designer.cs">
       <DependentUpon>VLogin.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="VCadastroGrupoPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCadastroGrupoPesquisa.Designer.cs">
+      <DependentUpon>VCadastroGrupoPesquisa.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
+      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
+
     <Compile Include="VTipoDeAtividade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +178,11 @@
     <EmbeddedResource Include="VLogin.resx">
       <DependentUpon>VLogin.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="VCadastroGrupoPesquisa.resx">
+      <DependentUpon>VCadastroGrupoPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="VTipoDeAtividade.resx">
       <DependentUpon>VTipoDeAtividade.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +190,7 @@
     <None Include="Properties\DataSources\Model.MCertificado.datasource" />
     <None Include="Properties\DataSources\Model.MTipoAtividadeCampo.datasource" />
     <None Include="Properties\DataSources\Model.MTipoDado.datasource" />
+
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -47,6 +47,7 @@
     <Compile Include="MTipoAtividadeCampo.cs" />
     <Compile Include="MTipoDado.cs" />
     <Compile Include="Erros.cs" />
+    <Compile Include="MGrupoPesquisa.cs" />
     <Compile Include="MUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
