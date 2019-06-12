@@ -270,7 +270,7 @@
         private System.Windows.Forms.Button btnVCadastroCampo;
 //<<<<<<< RF23
         private System.Windows.Forms.Button btnGerarRestaurarBackup;
-        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label21;
 //=======
         private System.Windows.Forms.Button btnVCadastroTipoAtividade;
         private System.Windows.Forms.Button btnVPesquisaTipoAtividade;

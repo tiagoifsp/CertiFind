@@ -60,10 +60,11 @@ namespace CertiFind
             form.ShowDialog();
         }
 
-//<<<<<<< RF23
+        //<<<<<<< RF23
         private void btnGerarRestaurarBackup_Click(object sender, EventArgs e)
         {
             VGerarRestaurarBackup form = new VGerarRestaurarBackup();
+        }
 //=======
 
         private void btnVPesquisaTipoAtividade_Click(object sender, EventArgs e)

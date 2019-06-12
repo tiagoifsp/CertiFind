@@ -39,7 +39,7 @@ namespace Model
         public static string CaminhoBackupNoaExiste = "O caminho para a pasta do Backup não existe.";
 
 
-        public static string CampoNomeDuplicado = "Campo nome já existe";
+        public static string CampoNomeDuplicado2 = "Campo nome já existe";
         public static string CampoChaveEstrangeira = "Impossível excluir. Campo sendo usado no cadastro de Relacionamento";
 
         //Atividade
