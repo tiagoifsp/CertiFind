@@ -128,6 +128,14 @@
       <DependentUpon>VLogin.cs</DependentUpon>
     </Compile>
 
+    <Compile Include="VSugestaoVisualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VSugestaoVisualizar.Designer.cs">
+      <DependentUpon>VSugestaoVisualizar.cs</DependentUpon>
+    </Compile>
+
+
     <Compile Include="VCadastroGrupoPesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +173,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaCampo.resx">
       <DependentUpon>VPesquisaCampo.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaCertificado.resx">
       <DependentUpon>VPesquisaCertificado.cs</DependentUpon>
@@ -178,6 +187,12 @@
     <EmbeddedResource Include="VPesquisaTipoDado.resx">
       <DependentUpon>VPesquisaTipoDado.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="VSugestaoEnviar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VSugestaoEnviar.Designer.cs">
+      <DependentUpon>VSugestaoEnviar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +205,15 @@
       <DependentUpon>VLogin.cs</DependentUpon>
     </EmbeddedResource>
 
+    <EmbeddedResource Include="VSugestaoEnviar.resx">
+      <DependentUpon>VSugestaoEnviar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VSugestaoVisualizar.resx">
+      <DependentUpon>VSugestaoVisualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Model.MSugestao.datasource" />
+
+
     <EmbeddedResource Include="VCadastroGrupoPesquisa.resx">
       <DependentUpon>VCadastroGrupoPesquisa.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +225,7 @@
     <None Include="Properties\DataSources\Model.MCertificado.datasource" />
     <None Include="Properties\DataSources\Model.MTipoAtividadeCampo.datasource" />
     <None Include="Properties\DataSources\Model.MTipoDado.datasource" />
+
 
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -221,6 +246,10 @@
     <ProjectReference Include="..\Controller\Controller.csproj">
       <Project>{ec476687-4af9-45ac-9c09-2474c7040fd1}</Project>
       <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{9925FA26-EE1E-4984-AD38-6D02FA739760}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{350da48d-daab-4585-86b0-923836031ae9}</Project>

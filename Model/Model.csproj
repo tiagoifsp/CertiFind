@@ -47,8 +47,13 @@
     <Compile Include="MTipoAtividadeCampo.cs" />
     <Compile Include="MTipoDado.cs" />
     <Compile Include="Erros.cs" />
+
+    <Compile Include="MTipoSugestao.cs" />
+
     <Compile Include="MGrupoPesquisa.cs" />
+
     <Compile Include="MUsuario.cs" />
+    <Compile Include="MSugestao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
