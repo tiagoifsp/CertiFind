@@ -124,8 +124,6 @@
     <Compile Include="VCadastroGrupoPesquisa.Designer.cs">
       <DependentUpon>VCadastroGrupoPesquisa.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
-      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
 
     <Compile Include="VTipoDeAtividade.cs">
       <SubType>Form</SubType>
