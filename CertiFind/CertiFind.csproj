@@ -50,12 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="VEdicaoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VEdicaoUsuario.Designer.cs">
       <DependentUpon>VEdicaoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VLogin.Designer.cs">
+      <DependentUpon>VLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="VPesquisaUsuario.cs">
       <SubType>Form</SubType>
@@ -119,19 +124,6 @@
     </Compile>
     <Compile Include="VPesquisaTipoDado.Designer.cs">
       <DependentUpon>VPesquisaTipoDado.cs</DependentUpon>
-
-    </Compile>
-    <Compile Include="FormExemploInsercaoEdicao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormExemploInsercaoEdicao.Designer.cs">
-      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormExemploPesquisa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormExemploPesquisa.Designer.cs">
-      <DependentUpon>FormExemploPesquisa.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTest.cs">
       <SubType>Form</SubType>
@@ -159,12 +151,6 @@
     <Compile Include="VCriacaoUsuario.Designer.cs">
       <DependentUpon>VCriacaoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="VLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VLogin.Designer.cs">
-      <DependentUpon>VLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="VGrupoEditar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,7 +163,6 @@
     <Compile Include="VGrupoPesquisar.Designer.cs">
       <DependentUpon>VGrupoPesquisar.cs</DependentUpon>
     </Compile>
-
     <Compile Include="VRecuperarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,46 +171,34 @@
     </Compile>
     <EmbeddedResource Include="VEdicaoUsuario.resx">
       <DependentUpon>VEdicaoUsuario.cs</DependentUpon>
-    <Compile Include="VLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VLogin.Designer.cs">
-      <DependentUpon>VLogin.cs</DependentUpon>
-    </Compile>
+    </EmbeddedResource>
     <Compile Include="VStatus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VStatus.Designer.cs">
       <DependentUpon>VStatus.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
-      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormExemploPesquisa.resx">
-      <DependentUpon>FormExemploPesquisa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VLogin.resx">
+      <DependentUpon>VLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaUsuario.resx">
       <DependentUpon>VPesquisaUsuario.cs</DependentUpon>
     </EmbeddedResource>
-
     <Compile Include="VSugestaoVisualizar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VSugestaoVisualizar.Designer.cs">
       <DependentUpon>VSugestaoVisualizar.cs</DependentUpon>
     </Compile>
-
-
     <Compile Include="VCadastroGrupoPesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VCadastroGrupoPesquisa.Designer.cs">
       <DependentUpon>VCadastroGrupoPesquisa.cs</DependentUpon>
     </Compile>
-
     <Compile Include="VTipoDeAtividade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,7 +220,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VCadastroTipoAtividadeCampo.resx">
       <DependentUpon>VCadastroTipoAtividadeCampo.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="VCadastroTipoDado.resx">
       <DependentUpon>VCadastroTipoDado.cs</DependentUpon>
@@ -257,7 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaCampo.resx">
       <DependentUpon>VPesquisaCampo.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaCertificado.resx">
       <DependentUpon>VPesquisaCertificado.cs</DependentUpon>
@@ -277,9 +248,6 @@
     <Compile Include="VSugestaoEnviar.Designer.cs">
       <DependentUpon>VSugestaoEnviar.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormTest.resx">
-      <DependentUpon>FormTest.cs</DependentUpon>
-    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -291,17 +259,11 @@
     <EmbeddedResource Include="VCriacaoUsuario.resx">
       <DependentUpon>VCriacaoUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VLogin.resx">
-      <DependentUpon>VLogin.cs</DependentUpon>
-    </EmbeddedResource>
-
     <EmbeddedResource Include="VRecuperarSenha.resx">
       <DependentUpon>VRecuperarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Model.MTipoUsuario.datasource" />
     <None Include="Properties\DataSources\Model.MUsuario.datasource" />
-
-
     <EmbeddedResource Include="VSugestaoEnviar.resx">
       <DependentUpon>VSugestaoEnviar.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,12 +271,9 @@
       <DependentUpon>VSugestaoVisualizar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Model.MSugestao.datasource" />
-
-
     <EmbeddedResource Include="VCadastroGrupoPesquisa.resx">
       <DependentUpon>VCadastroGrupoPesquisa.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="VTipoDeAtividade.resx">
       <DependentUpon>VTipoDeAtividade.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,9 +281,6 @@
     <None Include="Properties\DataSources\Model.MCertificado.datasource" />
     <None Include="Properties\DataSources\Model.MTipoAtividadeCampo.datasource" />
     <None Include="Properties\DataSources\Model.MTipoDado.datasource" />
-
-
-
     <EmbeddedResource Include="VGrupoEditar.resx">
       <DependentUpon>VGrupoEditar.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,9 +288,6 @@
       <DependentUpon>VGrupoPesquisar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Model.MGrupoPesquisa.datasource" />
-    <EmbeddedResource Include="VLogin.resx">
-      <DependentUpon>VLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="VStatus.resx">
       <DependentUpon>VStatus.cs</DependentUpon>
     </EmbeddedResource>

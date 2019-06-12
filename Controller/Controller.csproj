@@ -60,7 +60,6 @@
 
     <Compile Include="CUsuario.cs" />
     <Compile Include="CCampo.cs" />
-    <Compile Include="ExcecaoPadrao.cs" />
 
     <Compile Include="CSugestao.cs" />
 
@@ -71,7 +70,6 @@
 
 
     <Compile Include="CStatus.cs" />
-    <Compile Include="CUsuario.cs" />
     <Compile Include="ExcecaoPadrao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

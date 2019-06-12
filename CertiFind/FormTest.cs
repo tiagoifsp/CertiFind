@@ -155,16 +155,6 @@ namespace CertiFind
             new VGrupoPesquisar().ShowDialog();
         }
 
-        private void FormTest_Load(object sender, EventArgs e)
-        {
-            if(VLogin.usuarioAtual != null)
-            {
-                label2.Text = VLogin.usuarioAtual.Nome + " (" + VLogin.usuarioAtual.ID + ")";
-            }
-            timer1.Start();
-
-            lblBase.Text = CStatus.Banco();
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {

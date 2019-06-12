@@ -28,42 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.criaçãoDeUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pesquisaDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recuperarSenhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recuperarSenhaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.criaçãoDeUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnVCadastroTipoDados = new System.Windows.Forms.Button();
             this.btnVPesquisaTipoDados = new System.Windows.Forms.Button();
             this.btnVPesquisaCampo = new System.Windows.Forms.Button();
             this.btnVCadastroCampo = new System.Windows.Forms.Button();
-
             this.btnGerarRestaurarBackup = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
             this.btnPesquisaGrupo = new System.Windows.Forms.Button();
-
             this.btnFormularioVSugestaoEnviar = new System.Windows.Forms.Button();
             this.btnFormularioVSugestaoVisualizar = new System.Windows.Forms.Button();
-
             this.btnVCadastroTipoAtividade = new System.Windows.Forms.Button();
             this.btnVPesquisaTipoAtividade = new System.Windows.Forms.Button();
             this.btnVCadastroTipoAtividadeCampo = new System.Windows.Forms.Button();
             this.btnVPesquisaTipoAtividadeCampo = new System.Windows.Forms.Button();
             this.btnPesquisaCertificado = new System.Windows.Forms.Button();
             this.btnCadastroCertificado = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
             this.btncadastrogp = new System.Windows.Forms.Button();
-
-            this.label2 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.Status = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -81,21 +71,21 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuárioToolStripMenuItem,
             this.recuperarSenhaToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.sairToolStripMenuItem,
+            this.usuárioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(938, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(780, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.criaçãoDeUsuárioToolStripMenuItem,
             this.tipoDeUsuárioToolStripMenuItem,
-            this.pesquisaDeUsuarioToolStripMenuItem});
+            this.pesquisaDeUsuarioToolStripMenuItem,
+            this.criaçãoDeUsuárioToolStripMenuItem});
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
             this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.usuárioToolStripMenuItem.Text = "Usuário";
@@ -121,13 +111,6 @@
             this.pesquisaDeUsuarioToolStripMenuItem.Text = "Pesquisa de Usuario";
             this.pesquisaDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.PesquisaDeUsuarioToolStripMenuItem_Click);
             // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
-            // 
             // recuperarSenhaToolStripMenuItem
             // 
             this.recuperarSenhaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -139,39 +122,21 @@
             // recuperarSenhaToolStripMenuItem1
             // 
             this.recuperarSenhaToolStripMenuItem1.Name = "recuperarSenhaToolStripMenuItem1";
-            this.recuperarSenhaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.recuperarSenhaToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
             this.recuperarSenhaToolStripMenuItem1.Text = "Recuperar Senha";
             this.recuperarSenhaToolStripMenuItem1.Click += new System.EventHandler(this.RecuperarSenhaToolStripMenuItem1_Click);
             // 
-            // menuStrip1
+            // sairToolStripMenuItem
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuárioToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(310, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // usuárioToolStripMenuItem
-            // 
-            this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.criaçãoDeUsuárioToolStripMenuItem});
-            this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.usuárioToolStripMenuItem.Text = "Usuário";
-            // 
-            // criaçãoDeUsuárioToolStripMenuItem
-            // 
-            this.criaçãoDeUsuárioToolStripMenuItem.Name = "criaçãoDeUsuárioToolStripMenuItem";
-            this.criaçãoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.criaçãoDeUsuárioToolStripMenuItem.Text = "Criação de Usuário";
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(339, 146);
-            this.label1.Location = new System.Drawing.Point(100, 60);
+            this.label1.Location = new System.Drawing.Point(206, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 1;
@@ -180,43 +145,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(420, 146);
+            this.label2.Location = new System.Drawing.Point(287, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.label2.Text = "Recebendo";
             // 
-
-            // btnFormularioVSugestaoEnviar
-            // 
-            this.btnFormularioVSugestaoEnviar.Location = new System.Drawing.Point(354, 93);
-            this.btnFormularioVSugestaoEnviar.Name = "btnFormularioVSugestaoEnviar";
-            this.btnFormularioVSugestaoEnviar.Size = new System.Drawing.Size(104, 23);
-            this.btnFormularioVSugestaoEnviar.TabIndex = 2;
-            this.btnFormularioVSugestaoEnviar.Text = "Enviar Sugestão";
-            this.btnFormularioVSugestaoEnviar.UseVisualStyleBackColor = true;
-            this.btnFormularioVSugestaoEnviar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnFormularioVSugestaoVisualizar
-            // 
-            this.btnFormularioVSugestaoVisualizar.Location = new System.Drawing.Point(538, 93);
-            this.btnFormularioVSugestaoVisualizar.Name = "btnFormularioVSugestaoVisualizar";
-            this.btnFormularioVSugestaoVisualizar.Size = new System.Drawing.Size(109, 23);
-            this.btnFormularioVSugestaoVisualizar.TabIndex = 3;
-            this.btnFormularioVSugestaoVisualizar.Text = "Visualizar Sugestão";
-            this.btnFormularioVSugestaoVisualizar.UseVisualStyleBackColor = true;
-            this.btnFormularioVSugestaoVisualizar.Click += new System.EventHandler(this.button2_Click);
-
-            // btncadastrogp
-            // 
-            this.btncadastrogp.Location = new System.Drawing.Point(184, 197);
-            this.btncadastrogp.Name = "btncadastrogp";
-            this.btncadastrogp.Size = new System.Drawing.Size(171, 23);
-            this.btncadastrogp.TabIndex = 1;
-            this.btncadastrogp.Text = "cadastro grupo pesquisa";
-            this.btncadastrogp.UseVisualStyleBackColor = true;
-            this.btncadastrogp.Click += new System.EventHandler(this.btncadastrogp_Click);
-
             // btnVCadastroTipoDados
             // 
             this.btnVCadastroTipoDados.Location = new System.Drawing.Point(16, 43);
@@ -257,7 +191,6 @@
             this.btnVCadastroCampo.UseVisualStyleBackColor = true;
             this.btnVCadastroCampo.Click += new System.EventHandler(this.btnVCadastroCampo_Click);
             // 
-
             // btnGerarRestaurarBackup
             // 
             this.btnGerarRestaurarBackup.Location = new System.Drawing.Point(16, 400);
@@ -267,7 +200,37 @@
             this.btnGerarRestaurarBackup.Text = "Gerar e Restaurar Backup";
             this.btnGerarRestaurarBackup.UseVisualStyleBackColor = true;
             this.btnGerarRestaurarBackup.Click += new System.EventHandler(this.btnGerarRestaurarBackup_Click);
-
+            // 
+            // btnPesquisaGrupo
+            // 
+            this.btnPesquisaGrupo.Location = new System.Drawing.Point(164, 86);
+            this.btnPesquisaGrupo.Name = "btnPesquisaGrupo";
+            this.btnPesquisaGrupo.Size = new System.Drawing.Size(148, 36);
+            this.btnPesquisaGrupo.TabIndex = 1;
+            this.btnPesquisaGrupo.Text = "Pesquisar Grupo";
+            this.btnPesquisaGrupo.UseVisualStyleBackColor = true;
+            this.btnPesquisaGrupo.Click += new System.EventHandler(this.btnPesquisaGrupo_Click);
+            // 
+            // btnFormularioVSugestaoEnviar
+            // 
+            this.btnFormularioVSugestaoEnviar.Location = new System.Drawing.Point(460, 84);
+            this.btnFormularioVSugestaoEnviar.Name = "btnFormularioVSugestaoEnviar";
+            this.btnFormularioVSugestaoEnviar.Size = new System.Drawing.Size(104, 23);
+            this.btnFormularioVSugestaoEnviar.TabIndex = 2;
+            this.btnFormularioVSugestaoEnviar.Text = "Enviar Sugestão";
+            this.btnFormularioVSugestaoEnviar.UseVisualStyleBackColor = true;
+            this.btnFormularioVSugestaoEnviar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnFormularioVSugestaoVisualizar
+            // 
+            this.btnFormularioVSugestaoVisualizar.Location = new System.Drawing.Point(644, 84);
+            this.btnFormularioVSugestaoVisualizar.Name = "btnFormularioVSugestaoVisualizar";
+            this.btnFormularioVSugestaoVisualizar.Size = new System.Drawing.Size(109, 23);
+            this.btnFormularioVSugestaoVisualizar.TabIndex = 3;
+            this.btnFormularioVSugestaoVisualizar.Text = "Visualizar Sugestão";
+            this.btnFormularioVSugestaoVisualizar.UseVisualStyleBackColor = true;
+            this.btnFormularioVSugestaoVisualizar.Click += new System.EventHandler(this.button2_Click);
+            // 
             // btnVCadastroTipoAtividade
             // 
             this.btnVCadastroTipoAtividade.Location = new System.Drawing.Point(16, 159);
@@ -327,34 +290,21 @@
             this.btnCadastroCertificado.Text = "VCadastroCertificado";
             this.btnCadastroCertificado.UseVisualStyleBackColor = true;
             this.btnCadastroCertificado.Click += new System.EventHandler(this.btnCadastroCertificado_Click);
-
             // 
-            // btnPesquisaGrupo
+            // btncadastrogp
             // 
-            this.btnPesquisaGrupo.Location = new System.Drawing.Point(58, 95);
-            this.btnPesquisaGrupo.Name = "btnPesquisaGrupo";
-            this.btnPesquisaGrupo.Size = new System.Drawing.Size(148, 36);
-            this.btnPesquisaGrupo.TabIndex = 1;
-            this.btnPesquisaGrupo.Text = "Pesquisar Grupo";
-            this.btnPesquisaGrupo.UseVisualStyleBackColor = true;
-            this.btnPesquisaGrupo.Click += new System.EventHandler(this.btnPesquisaGrupo_Click);
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Usuário atual: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(181, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Recebendo";
+            this.btncadastrogp.Location = new System.Drawing.Point(290, 188);
+            this.btncadastrogp.Name = "btncadastrogp";
+            this.btncadastrogp.Size = new System.Drawing.Size(171, 23);
+            this.btncadastrogp.TabIndex = 1;
+            this.btncadastrogp.Text = "cadastro grupo pesquisa";
+            this.btncadastrogp.UseVisualStyleBackColor = true;
+            this.btncadastrogp.Click += new System.EventHandler(this.btncadastrogp_Click);
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(192, 128);
+            this.lblStatus.Location = new System.Drawing.Point(298, 119);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(10, 13);
             this.lblStatus.TabIndex = 2;
@@ -363,7 +313,7 @@
             // Status
             // 
             this.Status.AutoSize = true;
-            this.Status.Location = new System.Drawing.Point(111, 127);
+            this.Status.Location = new System.Drawing.Point(217, 119);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(37, 13);
             this.Status.TabIndex = 1;
@@ -377,7 +327,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 151);
+            this.label3.Location = new System.Drawing.Point(217, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 3;
@@ -386,7 +336,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 173);
+            this.label4.Location = new System.Drawing.Point(161, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 13);
             this.label4.TabIndex = 4;
@@ -395,7 +345,7 @@
             // lblBytes
             // 
             this.lblBytes.AutoSize = true;
-            this.lblBytes.Location = new System.Drawing.Point(195, 151);
+            this.lblBytes.Location = new System.Drawing.Point(301, 142);
             this.lblBytes.Name = "lblBytes";
             this.lblBytes.Size = new System.Drawing.Size(69, 13);
             this.lblBytes.TabIndex = 5;
@@ -404,7 +354,7 @@
             // lblQtdArq
             // 
             this.lblQtdArq.AutoSize = true;
-            this.lblQtdArq.Location = new System.Drawing.Point(195, 173);
+            this.lblQtdArq.Location = new System.Drawing.Point(301, 164);
             this.lblQtdArq.Name = "lblQtdArq";
             this.lblQtdArq.Size = new System.Drawing.Size(69, 13);
             this.lblQtdArq.TabIndex = 6;
@@ -413,7 +363,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(99, 83);
+            this.label5.Location = new System.Drawing.Point(205, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 7;
@@ -422,7 +372,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(111, 106);
+            this.label6.Location = new System.Drawing.Point(217, 97);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 8;
@@ -431,7 +381,7 @@
             // lblBase
             // 
             this.lblBase.AutoSize = true;
-            this.lblBase.Location = new System.Drawing.Point(195, 83);
+            this.lblBase.Location = new System.Drawing.Point(301, 74);
             this.lblBase.Name = "lblBase";
             this.lblBase.Size = new System.Drawing.Size(10, 13);
             this.lblBase.TabIndex = 9;
@@ -440,7 +390,7 @@
             // lblMbBase
             // 
             this.lblMbBase.AutoSize = true;
-            this.lblMbBase.Location = new System.Drawing.Point(195, 106);
+            this.lblMbBase.Location = new System.Drawing.Point(301, 97);
             this.lblMbBase.Name = "lblMbBase";
             this.lblMbBase.Size = new System.Drawing.Size(10, 13);
             this.lblMbBase.TabIndex = 10;
@@ -450,30 +400,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 450);
-
+            this.ClientSize = new System.Drawing.Size(780, 479);
             this.Controls.Add(this.btnGerarRestaurarBackup);
-
             this.Controls.Add(this.btnPesquisaCertificado);
             this.Controls.Add(this.btnCadastroCertificado);
             this.Controls.Add(this.btnVPesquisaTipoAtividadeCampo);
             this.Controls.Add(this.btnVCadastroTipoAtividadeCampo);
             this.Controls.Add(this.btnVPesquisaTipoAtividade);
             this.Controls.Add(this.btnVCadastroTipoAtividade);
-
             this.Controls.Add(this.btnVPesquisaCampo);
             this.Controls.Add(this.btnVCadastroCampo);
             this.Controls.Add(this.btnVPesquisaTipoDados);
             this.Controls.Add(this.btnVCadastroTipoDados);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPesquisaGrupo);
-
             this.Controls.Add(this.btnFormularioVSugestaoVisualizar);
             this.Controls.Add(this.btnFormularioVSugestaoEnviar);
-
             this.Controls.Add(this.btncadastrogp);
-
-            this.ClientSize = new System.Drawing.Size(310, 238);
             this.Controls.Add(this.lblMbBase);
             this.Controls.Add(this.lblBase);
             this.Controls.Add(this.label6);
@@ -488,8 +430,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -539,7 +479,6 @@
 
 
         private System.Windows.Forms.Button btnPesquisaGrupo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.Timer timer1;
