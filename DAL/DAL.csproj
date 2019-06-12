@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DCampo.cs" />
+    <Compile Include="DCertificado.cs" />
+    <Compile Include="DTipoAtividade.cs" />
+    <Compile Include="DTipoAtividadeCampo.cs" />
     <Compile Include="DTipoDado.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="DUsuario.cs" />

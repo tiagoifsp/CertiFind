@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCertificado.cs" />
+    <Compile Include="CTipoAtividade.cs" />
+    <Compile Include="CTipoAtividadeCampo.cs" />
     <Compile Include="CUsuario.cs" />
     <Compile Include="CCampo.cs" />
     <Compile Include="ExcecaoPadrao.cs" />
