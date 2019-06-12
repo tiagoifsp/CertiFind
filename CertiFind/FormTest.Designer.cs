@@ -37,6 +37,10 @@
             this.btnVPesquisaTipoDados = new System.Windows.Forms.Button();
             this.btnVPesquisaCampo = new System.Windows.Forms.Button();
             this.btnVCadastroCampo = new System.Windows.Forms.Button();
+//<<<<<<< RF23
+            this.btnGerarRestaurarBackup = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
+//=======
             this.btnVCadastroTipoAtividade = new System.Windows.Forms.Button();
             this.btnVPesquisaTipoAtividade = new System.Windows.Forms.Button();
             this.btnVCadastroTipoAtividadeCampo = new System.Windows.Forms.Button();
@@ -45,6 +49,7 @@
             this.btnCadastroCertificado = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.btncadastrogp = new System.Windows.Forms.Button();
+//>>>>>>> master
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -140,6 +145,17 @@
             this.btnVCadastroCampo.UseVisualStyleBackColor = true;
             this.btnVCadastroCampo.Click += new System.EventHandler(this.btnVCadastroCampo_Click);
             // 
+//<<<<<<< RF23
+            // btnGerarRestaurarBackup
+            // 
+            this.btnGerarRestaurarBackup.Location = new System.Drawing.Point(16, 400);
+            this.btnGerarRestaurarBackup.Name = "btnGerarRestaurarBackup";
+            this.btnGerarRestaurarBackup.Size = new System.Drawing.Size(143, 23);
+            this.btnGerarRestaurarBackup.TabIndex = 5;
+            this.btnGerarRestaurarBackup.Text = "Gerar e Restaurar Backup";
+            this.btnGerarRestaurarBackup.UseVisualStyleBackColor = true;
+            this.btnGerarRestaurarBackup.Click += new System.EventHandler(this.btnGerarRestaurarBackup_Click);
+//=======
             // btnVCadastroTipoAtividade
             // 
             this.btnVCadastroTipoAtividade.Location = new System.Drawing.Point(16, 159);
@@ -200,18 +216,23 @@
             this.btnCadastroCertificado.UseVisualStyleBackColor = true;
             this.btnCadastroCertificado.Click += new System.EventHandler(this.btnCadastroCertificado_Click);
 //>>>>>>> master
+//>>>>>>> master
             // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 450);
+//<<<<<<< RF23
+            this.Controls.Add(this.btnGerarRestaurarBackup);
+//=======
             this.Controls.Add(this.btnPesquisaCertificado);
             this.Controls.Add(this.btnCadastroCertificado);
             this.Controls.Add(this.btnVPesquisaTipoAtividadeCampo);
             this.Controls.Add(this.btnVCadastroTipoAtividadeCampo);
             this.Controls.Add(this.btnVPesquisaTipoAtividade);
             this.Controls.Add(this.btnVCadastroTipoAtividade);
+//>>>>>>> master
             this.Controls.Add(this.btnVPesquisaCampo);
             this.Controls.Add(this.btnVCadastroCampo);
             this.Controls.Add(this.btnVPesquisaTipoDados);
@@ -238,17 +259,25 @@
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem criaçãoDeUsuárioToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+//<<<<<<< RF23
+//=======
         private System.Windows.Forms.Button btncadastrogp;
         private System.Windows.Forms.Label label2;
+//>>>>>>> master
         private System.Windows.Forms.Button btnVCadastroTipoDados;
         private System.Windows.Forms.Button btnVPesquisaTipoDados;
         private System.Windows.Forms.Button btnVPesquisaCampo;
         private System.Windows.Forms.Button btnVCadastroCampo;
+//<<<<<<< RF23
+        private System.Windows.Forms.Button btnGerarRestaurarBackup;
+        public System.Windows.Forms.Label label2;
+//=======
         private System.Windows.Forms.Button btnVCadastroTipoAtividade;
         private System.Windows.Forms.Button btnVPesquisaTipoAtividade;
         private System.Windows.Forms.Button btnVCadastroTipoAtividadeCampo;
         private System.Windows.Forms.Button btnVPesquisaTipoAtividadeCampo;
         private System.Windows.Forms.Button btnPesquisaCertificado;
         private System.Windows.Forms.Button btnCadastroCertificado;
+//>>>>>>> master
     }
 }

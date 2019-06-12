@@ -15,10 +15,10 @@ namespace Model
         public static string EmailVazio = "O campo E-mail não pode estar vazio. ";
         public static string SenhaVazio = "O campo Senha não pode estar vazio. ";
         public static string EmailInvalido = "O campo E-mail não é válido. ";
-//<<<<<<< RF16-Cadastro-Grupo-de-Pesquisa
+
         public static string NomeInvalido = "Nome esta vazio ou não é válido.";
         public static string DatasInvalidas = "Data de término não pode ser anterior a data de inicio.";
-//=======
+
         public static string ErroFalhaConexaoSGBD = "Falha na conexão com o SGBD.";
 
         //Tipo de dado
@@ -32,6 +32,13 @@ namespace Model
         public static string CampoNull = "Campo(s) inválido(s)";
         public static string CampoNome = "Campo nome inválido";
         public static string CampoTipoDado = "Campo tipo de dado inválido";
+
+        public static string CampoNomeDuplicado = "Campo nome já existe.";
+
+        //Backup
+        public static string CaminhoBackupNoaExiste = "O caminho para a pasta do Backup não existe.";
+
+
         public static string CampoNomeDuplicado = "Campo nome já existe";
         public static string CampoChaveEstrangeira = "Impossível excluir. Campo sendo usado no cadastro de Relacionamento";
 
@@ -55,6 +62,6 @@ namespace Model
         public static string CertificadoCampoTipoAtividade = "Campo tipo de atividade inválido";
         public static string CertificadoCampoUsuario = "Campo usuário inválido";
 
-//>>>>>>> master
+
     }
 }

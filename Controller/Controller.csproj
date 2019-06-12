@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,9 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
+    <Compile Include="CBackup.cs" />
+    <Compile Include="CLogs.cs" />
+
     <Compile Include="CCertificado.cs" />
     <Compile Include="CTipoAtividade.cs" />
     <Compile Include="CTipoAtividadeCampo.cs" />
+
     <Compile Include="CUsuario.cs" />
     <Compile Include="CCampo.cs" />
     <Compile Include="ExcecaoPadrao.cs" />

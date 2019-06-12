@@ -16,6 +16,9 @@ namespace CertiFind
         {
             InitializeComponent();
         }
+//<<<<<<< RF23
+        
+//=======
 
         private void btncadastrogp_Click(object sender, EventArgs e)
         {
@@ -24,6 +27,7 @@ namespace CertiFind
             vgp.Show();
         }
 
+//>>>>>>> master
         private void FormTest_Load(object sender, EventArgs e)
         {
             if(VLogin.usuarioAtual != null)
@@ -56,6 +60,11 @@ namespace CertiFind
             form.ShowDialog();
         }
 
+//<<<<<<< RF23
+        private void btnGerarRestaurarBackup_Click(object sender, EventArgs e)
+        {
+            VGerarRestaurarBackup form = new VGerarRestaurarBackup();
+//=======
 
         private void btnVPesquisaTipoAtividade_Click(object sender, EventArgs e)
         {
@@ -90,6 +99,7 @@ namespace CertiFind
         private void btnPesquisaCertificado_Click(object sender, EventArgs e)
         {
             VPesquisaCertificado form = new VPesquisaCertificado();
+//>>>>>>> master
             form.ShowDialog();
         }
     }

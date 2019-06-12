@@ -11,7 +11,6 @@ namespace DAL
 {
     public static class DUsuario
     {
-
         public static MUsuario Login(MUsuario u)
         {
             MUsuario retorno = null;

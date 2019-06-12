@@ -32,8 +32,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CertiFind.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -109,6 +113,12 @@
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="VGerarRestaurarBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VGerarRestaurarBackup.Designer.cs">
+      <DependentUpon>VGerarRestaurarBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VLogin.cs">
@@ -149,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VCadastroTipoDado.resx">
       <DependentUpon>VCadastroTipoDado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VGerarRestaurarBackup.resx">
+      <DependentUpon>VGerarRestaurarBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VPesquisaCampo.resx">
       <DependentUpon>VPesquisaCampo.cs</DependentUpon>
@@ -200,7 +213,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controller\Controller.csproj">
@@ -213,6 +228,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Data-Database-Restore.ico" />
     <Content Include="Resources\editar.png" />
     <Content Include="Resources\inserir.png" />
     <Content Include="Resources\remover.png" />
