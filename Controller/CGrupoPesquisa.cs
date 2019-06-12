@@ -30,5 +30,18 @@ namespace Controller
             retorno = DGrupoPesquisa.ObterUsuarioCombo();
             return retorno;
         }
+
+        public static List<MGrupoPesquisa> PesquisaGrupo(MGrupoPesquisa item)
+        {
+            List<MGrupoPesquisa> retorno = null;
+
+            if (item != null && item.Nome != null && item.Nome.Length <= 200)
+            {
+                retorno = DGrupoPesquisa.PesquisarGrupo(item);
+            }
+            retorno = DGrupoPesquisa.PesquisarGrupo(item);
+
+            return retorno;
+        }
     }
 }

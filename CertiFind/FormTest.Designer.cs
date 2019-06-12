@@ -45,6 +45,7 @@
 
             this.btnGerarRestaurarBackup = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.btnPesquisaGrupo = new System.Windows.Forms.Button();
 
             this.btnFormularioVSugestaoEnviar = new System.Windows.Forms.Button();
             this.btnFormularioVSugestaoVisualizar = new System.Windows.Forms.Button();
@@ -286,6 +287,16 @@
             this.btnCadastroCertificado.Click += new System.EventHandler(this.btnCadastroCertificado_Click);
 
             // 
+            // btnPesquisaGrupo
+            // 
+            this.btnPesquisaGrupo.Location = new System.Drawing.Point(58, 95);
+            this.btnPesquisaGrupo.Name = "btnPesquisaGrupo";
+            this.btnPesquisaGrupo.Size = new System.Drawing.Size(148, 36);
+            this.btnPesquisaGrupo.TabIndex = 1;
+            this.btnPesquisaGrupo.Text = "Pesquisar Grupo";
+            this.btnPesquisaGrupo.UseVisualStyleBackColor = true;
+            this.btnPesquisaGrupo.Click += new System.EventHandler(this.btnPesquisaGrupo_Click);
+            // 
             // FormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +317,7 @@
             this.Controls.Add(this.btnVPesquisaTipoDados);
             this.Controls.Add(this.btnVCadastroTipoDados);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnPesquisaGrupo);
 
             this.Controls.Add(this.btnFormularioVSugestaoVisualizar);
             this.Controls.Add(this.btnFormularioVSugestaoEnviar);
@@ -363,5 +375,6 @@
         private System.Windows.Forms.Button btnCadastroCertificado;
 
 
+        private System.Windows.Forms.Button btnPesquisaGrupo;
     }
 }

@@ -58,6 +58,7 @@
 
     <Compile Include="MUsuario.cs" />
     <Compile Include="MSugestao.cs" />
+    <Compile Include="MGrupoPesquisa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

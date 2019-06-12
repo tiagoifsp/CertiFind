@@ -102,5 +102,48 @@ namespace DAL
             return retorno;
         }
 
+        public static List<MGrupoPesquisa> PesquisarGrupo(MGrupoPesquisa item)
+        {
+            //throw new NotImplementedException();
+
+            bool conect = Conexao.Abrir();
+
+            if (!conect)
+            {
+                throw new Exception("Falha na conexão com o SGBD");
+            }
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = Conexao.Connection;
+
+            comando.CommandText = "" +
+                " SELECT Nome, DataInicio, DataTermino, FKUsuarioID " +
+                " FROM TBGrupoPesquisa " +
+                " WHERE 1=1 ";
+
+            SqlDataReader reader = comando.ExecuteReader();
+
+            List<MGrupoPesquisa> retorno = null;
+
+            while (reader.Read())
+            {
+                if (retorno == null)
+                    retorno = new List<MGrupoPesquisa>();
+
+                MGrupoPesquisa grupo = new MGrupoPesquisa();
+                grupo.Nome = reader["Nome"].ToString();
+                grupo.DataInicio = (DateTime)reader["DataInicio"];
+                grupo.DataTermino = (DateTime)reader["DataTermino"];
+                grupo.FKUsuarioID = (int)reader["FKUsuarioID"];
+
+                retorno.Add(grupo);
+            }
+
+            reader.Close();
+
+            Conexao.Fechar();
+            return retorno;
+
+        }
     }
 }

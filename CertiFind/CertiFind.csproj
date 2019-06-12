@@ -153,6 +153,20 @@
     <Compile Include="VLogin.Designer.cs">
       <DependentUpon>VLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="VGrupoEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VGrupoEditar.Designer.cs">
+      <DependentUpon>VGrupoEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VGrupoPesquisar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VGrupoPesquisar.Designer.cs">
+      <DependentUpon>VGrupoPesquisar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
+      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
 
     <Compile Include="VRecuperarSenha.cs">
       <SubType>Form</SubType>
@@ -281,6 +295,13 @@
 
 
 
+    <EmbeddedResource Include="VGrupoEditar.resx">
+      <DependentUpon>VGrupoEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VGrupoPesquisar.resx">
+      <DependentUpon>VGrupoPesquisar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Model.MGrupoPesquisa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -309,6 +330,9 @@
       <Project>{350da48d-daab-4585-86b0-923836031ae9}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Data-Database-Restore.ico" />
