@@ -32,7 +32,8 @@ namespace Controller
             pesquisa.Nome = item.Nome;
             pesquisa.TipoDado = 0;
 
-            List<MCampo> lista = Pesquisar(pesquisa);
+            //Pega o pesquisar especifico para inserir
+            List<MCampo> lista = PesquisarInserir(pesquisa);
             if (lista != null && lista.Count != 0)
             {
                 for (int i = 0; i < lista.Count; i++)
@@ -54,6 +55,18 @@ namespace Controller
             }
         }
 
+        //PESQUISAR PARA INSERIR
+        public static List<MCampo> PesquisarInserir(MCampo item)
+        {
+            List<MCampo> retorno = null;
+
+            if (item.Nome != null && item.Nome.Length <= 100)
+            {
+                retorno = DCampo.PesquisarInserir(item);
+            }
+            return retorno;
+        }
+
         //PESQUISAR
         public static List<MCampo> Pesquisar(MCampo item)
         {
@@ -62,6 +75,10 @@ namespace Controller
             if (item.Nome != null && item.Nome.Length <= 100)
             {
                 retorno = DCampo.Pesquisar(item);
+            }
+            else
+            {
+                retorno = DCampo.PesquisarInserir(item);
             }
 
             return retorno;
