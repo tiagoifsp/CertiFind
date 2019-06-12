@@ -165,8 +165,6 @@
     <Compile Include="VGrupoPesquisar.Designer.cs">
       <DependentUpon>VGrupoPesquisar.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormExemploInsercaoEdicao.resx">
-      <DependentUpon>FormExemploInsercaoEdicao.cs</DependentUpon>
 
     <Compile Include="VRecuperarSenha.cs">
       <SubType>Form</SubType>

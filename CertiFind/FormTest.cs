@@ -149,10 +149,6 @@ namespace CertiFind
             form.ShowDialog();
         }
 
-    }
-            }
-        }
-
         private void btnPesquisaGrupo_Click(object sender, EventArgs e)
         {
             new VGrupoPesquisar().ShowDialog();
