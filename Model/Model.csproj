@@ -57,6 +57,8 @@
 
 
     <Compile Include="MUsuario.cs" />
+	
+    <Compile Include="MStatus.cs" />
     <Compile Include="MSugestao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

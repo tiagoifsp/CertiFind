@@ -49,6 +49,7 @@
     <Compile Include="DTipoAtividadeCampo.cs" />
     <Compile Include="DTipoDado.cs" />
     <Compile Include="Conexao.cs" />
+	<Compile Include="DStatus.cs" />
     <Compile Include="DTipoUsuario.cs" />
     <Compile Include="DTipoSugestao.cs" />
     <Compile Include="DSugestao.cs" />
